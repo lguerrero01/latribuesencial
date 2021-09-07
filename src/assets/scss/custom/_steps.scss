@@ -41,7 +41,7 @@
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    border: 1px solid #ee0979;
+    border: 1px solid #64dc68;
     outline-width: 0;
     transition: All 0.5s ease-in;
     -webkit-transition: All 0.5s ease-in;
@@ -52,7 +52,7 @@
 /*buttons*/
 #msform .action-button {
     width: 100px;
-    background: #ee0979;
+    background: #e6ba5c;
     font-weight: bold;
     color: white;
     border: 0 none;
@@ -63,7 +63,7 @@
 }
 
 #msform .action-button:hover, #msform .action-button:focus {
-    box-shadow: 0 0 0 2px white, 0 0 0 3px #ee0979;
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #e7fb63;
 }
 
 #msform .action-button-previous {
@@ -121,11 +121,11 @@
 #progressbar li:before {
     content: counter(step);
     counter-increment: step;
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     line-height: 26px;
     display: block;
-    font-size: 12px;
+    font-size: 1.5rem;
     color: #333;
     background: white;
     border-radius: 25px;
@@ -152,7 +152,7 @@
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
 #progressbar li.active:before, #progressbar li.active:after {
-    background: #ee0979;
+    background: #61a926;
     color: white;
 }
 

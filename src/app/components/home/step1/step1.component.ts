@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -8,24 +8,41 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   ]
 })
 export class Step1Component implements OnInit {
+  // ======================================
+	//				Attributes
+	// ======================================
+	@Output() onIsValid: EventEmitter<boolean> = new EventEmitter();
 
+
+  // ======================================
+	//				Constructor
+	// ======================================
   constructor(private formBuilder: FormBuilder) { }
 
-  form1: FormGroup = this.formBuilder.group({
+  public form1: FormGroup = this.formBuilder.group({
     email: [ , [ Validators.required] ],
     name: [ , [ Validators.required] ],
     country: [ , [ Validators.required] ],
     countryRes : [ , [ Validators.required] ],
   })
 
+  // ======================================
+	//				onInit
+	// ======================================
   ngOnInit(): void {
+    console.log(this.form1.valid)
   }
   
-  campoEsValido( campo: string ) {
-    return this.form1.controls[campo].errors 
-            && this.form1.controls[campo].touched;
+  public valid() {
+    this.onIsValid.emit(this.form1.valid);
   }
-  guardar() {
+
+  public campoEsValido( field: string ) {
+    return this.form1.controls[field].errors 
+            && this.form1.controls[field].touched;
+  }
+
+  public guardar() {
 
     if ( this.form1.invalid )  {
       this.form1.markAllAsTouched();

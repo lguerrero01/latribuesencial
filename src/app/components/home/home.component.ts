@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  public step1= false;
+  public step1 = false;
   public step2 = false;
   public step3 = false;
   public step4 = false;
@@ -20,43 +20,44 @@ export class HomeComponent implements OnInit {
 
   next(){
 
-  if(this.step==1){
-    this.step1 = true;
-    this.step++
-  }
-
-  if(this.step==2){
-    this.step2 = true;
-    this.step++;
-  }
-
-  if(this.step==3){
-    this.step3 = true;
-    this.step++;
-  }
-
-  if(this.step==4){
-    this.step4 = true;
-    this.step++;
-  }
-
+    switch (this.step ) {
+      case 1:
+        this.step1 = true;
+        break;
+      case 2:
+        this.step2 = true;
+        break;
+      case 3:
+        this.step3 = true;
+        break;
+      case 4:
+        this.step4 = true;
+        break;
+      default:
+        break;
+    }
+    
+  this.step++;
 }
 
   previous(){
-
+    switch (this.step ) {
+      case 1:
+        this.step1 = false;
+        break;
+      case 2:
+        this.step2 = false;
+        break;
+      case 3:
+        this.step3 = false;
+        break;
+      case 4:
+        this.step4 = false;
+        break;
+      default:
+        break;
+    }
     this.step--
-    if(this.step==1){
-      this.step1 = false;
-    }
-    if(this.step==2){
-      this.step2 = false;
-    }
-    if(this.step==3){
-      this.step3 = false;
-    }
-    if(this.step==4){
-      this.step4 = false;
-    }
   }
 
   submit(){
