@@ -1,0 +1,252 @@
+@import 'font';
+
+.welcome {
+  background-image: url('../img/fondo-1.jpg');
+  background-position-y: top;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  background-size: 85vh;
+}
+
+#logo {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.text-center h3 {
+  font-size: 27px;
+  margin-top: 30px;
+  font-family: "madeSunflower";
+  color: #403a38;
+
+}
+
+.text-center h1 {
+  font-size: 51px;
+  font-family: "madeSunflower";
+
+}
+
+#button-start {
+  color: #de9a6b;
+  background-color: #f4e5e0;
+  border: none;
+  height: 70px;
+  border-radius: 10px 10px 10px 10px;
+  margin: 0;
+  font-family: "madeSunflower";
+  cursor: pointer;
+  margin-left: 2px;
+}
+
+#button-start p {
+  font-size: 40px;
+}
+
+.mx-2 {
+  margin-right: .5rem !important;
+  margin-left: 2px !important;
+}
+
+#button-start:hover {
+  background-color: #d7b367;
+  color: white;
+}
+
+
+#blank-space {
+  height: 75vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+}
+
+.text-white h2 {
+  padding: 0;
+  margin-bottom: 20px;
+  font-family: "madeSunflower";
+}
+
+.about-us {
+  background-image: url('../img/fondo-2.jpg');
+  background-position-y: top;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  background-size: 85vh;
+}
+
+.about-us ul li {
+  list-style-image: url('../img/diamante.svg');
+  font-size: 45px;
+}
+
+
+.about-us li p {
+  font-size: 17px;
+  font-family: "robotoRegular";
+  padding-top: 1rem;
+}
+
+p strong {
+  font-family: "madeSunflower";
+  color: #d7b367;
+}
+
+@media(min-width:320px) {
+  .welcome {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .about-us {
+    background-size: cover;
+    background-position-y: center;
+    background-position-x: -145px;
+  }
+
+  .text-white h2 {
+    margin-bottom: 0px;
+    font-size: 20px;
+  }
+
+  .text-center h3 {
+    margin-top: 5px;
+    font-size: 20px;
+  }
+  #logo{
+    width:114px;
+  }
+
+  .text-center h1 {
+    font-size: 44px;
+  }
+
+  .mx-auto {
+    margin-left: 0.2px !important;
+    margin-right: 0px !important;
+  }
+
+  #button-start {
+    height: 70px;
+    font-size: 10px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+}
+@media(min-width:375px){
+  .about-us{
+    background-position-y: center;
+    background-position-x: -110px;
+  }
+}
+@media(min-width:400px){
+  .about-us{
+    background-position-y: center;
+    background-position-x: -70px;
+  }
+}
+
+@media(min-width:425px){
+  .text-center h1 {
+    margin-bottom: 0px;
+    font-size: 50px;
+  }
+  .text-center h3{
+    font-size: 25px;
+    margin-top: 0;
+  }
+  #button-start{
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 600px) {
+  .welcome {
+    background-size: cover;
+  }
+
+  #button-start {
+    height: 70px;
+    font-size: 33px;
+  }
+
+  .about-us {
+    background-size: cover;
+  }
+}
+
+@media(min-width:768px) {
+  .welcome {
+    background-size: cover;
+    background-position-y: -158px;
+  }
+
+  .text-center h3 {
+    font-size: 30px;
+  }
+
+  #logo {
+    width: 160px;
+  }
+
+  .text-center h1 {
+    font-size: 60px;
+    margin-bottom: 10px;
+  }
+
+  #button-start {
+    width: 600px;
+  }
+  #button-start p{
+    font-size: 44px;
+  }
+
+  .text-white h2 {
+    width: 718px;
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  .about-us {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .row .mx-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .row .mx-auto {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #button-start {
+    margin-bottom: 15px;
+  }
+
+  .about-us li p {
+    font-size: 20px;
+
+  }
+}
+
+@media(min-width:1024px) {
+  .welcome {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .about-us li p {
+    font-size: 24px;
+  }
+
+  .about-us {
+    background-size: cover;
+    background-position: center;
+  }
+}
