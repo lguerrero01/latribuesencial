@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// import { HomeComponent } from './home/home.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { DiseasesComponent } from './components/diseases/diseases.component';
+import { KitsComponent } from './components/kits/kits.component';
 
 
 
 @NgModule({
   declarations: [
-    // HomeComponent,
-    LayoutComponent
+    LayoutComponent,
+    DiseasesComponent,
+    KitsComponent
   ],
   imports: [
     CommonModule,
-    // HomeComponent
   ]
 })
 export class SharedModule { }

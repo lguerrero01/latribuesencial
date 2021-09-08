@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { DecorationComponent } from './components/home/decoration/decoration.component';
 import { LayoutComponent } from './shared/components/layout/layout.component';
+import { AdviserComponent } from './components/adviser/adviser.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,11 @@ const routes: Routes = [
   {
 		path: 'home',
 		component: HomeComponent,
+		pathMatch: 'full',
+	},
+  {
+		path: 'asesor',
+		component: AdviserComponent,
 		pathMatch: 'full',
 	},
 ];
