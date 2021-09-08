@@ -1,14 +1,22 @@
 /*form styles*/
+body{
+    background-color: #efe4df;
+}
+
 .form-control{
     background-color:#fff4f0;
     font-family: 'madeSunflower';
-    height: 50px;
+    height: 60px;
+    border-radius: 10px;
+    box-shadow: 0px 15px 10px -15px #111;  
+    margin-top: 50px;
+    width: 300px;
+   
 }
 
 #msform {
     text-align: center;
     position: relative;
-    margin-top: 30px;
 }
 
 #msform fieldset {
@@ -160,6 +168,7 @@
 #progressbar li.active:before, #progressbar li.active:after {
     background: #C4C79F;
     color: white;
+    font-family: 'madeSunflower';
 }
 
 
@@ -167,6 +176,7 @@
 #progressbar li.inactive:before{
     background: burlywood;
     color: #000;
+    font-family: 'madeSunflower';
 
 }
 

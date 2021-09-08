@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
     <div class="col-md-9">
 
-        <form  class="" (ngSubmit)="guardar()" autocomplete="off" [formGroup]="form1">
+        <form (ngSubmit)="guardar()" autocomplete="off" [formGroup]="form1">
             
             <!-- Campo de Email -->
             <div class="mb-3 row">
@@ -61,7 +61,23 @@
                     </span>
                 </div>
             </div>
-
+            <!-- Campo de Telefono -->
+            <div class="mb-3 row">
+                <div class="col-sm-12">
+                    <input type="text"
+                           class="form-control"
+                           formControlName="phone"
+                           placeholder="Telefono*">
+                    
+                    <span class="form-text text-danger"
+                           *ngIf="phoneIsValid('phone')">
+                         Un Telefono es Requerido
+                    </span>
+                    <span>
+                        
+                    </span>
+                </div>
+            </div>
         </form>
 
     </div>
