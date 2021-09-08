@@ -2,6 +2,12 @@
 body{
     background-color: #efe4df;
 }
+.form1{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+}
 
 .form-control{
     background-color:#fff4f0;

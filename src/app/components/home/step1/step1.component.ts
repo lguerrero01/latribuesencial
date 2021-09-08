@@ -45,15 +45,7 @@ export class Step1Component implements OnInit {
     return this.form1.controls[field].errors 
             && this.form1.controls[field].touched;
   }
-  public phoneIsValid( field: any ) {
-    return this.form1.controls[field].errors 
-            && this.form1.controls[field].touched;
-  }
-  public phoneIsValid( field: any ) {
-    return this.form1.controls[field].errors 
-            && this.form1.controls[field].touched;
-  }
-
+  
   public guardar() {
 
     if ( this.form1.invalid )  {
