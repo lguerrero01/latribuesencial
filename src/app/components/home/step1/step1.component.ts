@@ -11,13 +11,12 @@ export class Step1Component implements OnInit {
   // ======================================
 	//				Attributes
 	// ======================================
-	@Output() onIsValid: EventEmitter<boolean> = new EventEmitter();
-
+  @Output() onIsValid: any = new EventEmitter<string>();
 
   // ======================================
 	//				Constructor
 	// ======================================
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) {}
 
   public form1: FormGroup = this.formBuilder.group({
     email: [ , [ Validators.required] ],
@@ -30,14 +29,13 @@ export class Step1Component implements OnInit {
 	//				onInit
 	// ======================================
   ngOnInit(): void {
-    console.log(this.form1.valid)
   }
   
-  public valid() {
+  public formValid() {
     this.onIsValid.emit(this.form1.valid);
   }
 
-  public campoEsValido( field: string ) {
+  public fieldValid( field: string ) {
     return this.form1.controls[field].errors 
             && this.form1.controls[field].touched;
   }
@@ -48,9 +46,6 @@ export class Step1Component implements OnInit {
       this.form1.markAllAsTouched();
       return;
     }
-
-
-    console.log(this.form1.value);
     this.form1.reset();
   }
 }

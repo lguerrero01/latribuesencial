@@ -1,7 +1,7 @@
-<div class="row justify-content-center">
-    <div class="col-md-9">
+<div class="container justify-content-center">
+    <div class="row">
 
-        <form  class="" (ngSubmit)="guardar()" autocomplete="off" [formGroup]="form1">
+        <form  class="col-md-12" (change)="formValid()" autocomplete="off" [formGroup]="form1">
             
             <!-- Campo de Email -->
             <div class="mb-3 row">
@@ -13,7 +13,7 @@
                            placeholder="Correo Electronico">
 
                     <span class="form-text text-danger"
-                          *ngIf="campoEsValido('email')">
+                          *ngIf="fieldValid('email')">
                         El correo es Requerido
                     </span>
                 </div>
@@ -27,7 +27,7 @@
                            formControlName="name"
                            placeholder="Nombre y Apellido">
                     <span class="form-text text-danger"
-                          *ngIf="campoEsValido('name')">
+                          *ngIf="fieldValid('name')">
                         El nombre y el apellido son requeridos
                     </span>
                 </div>
@@ -42,7 +42,7 @@
                            placeholder="Pais de Origen">
                     
                     <span class="form-text text-danger"
-                           *ngIf="campoEsValido('country')">
+                           *ngIf="fieldValid('country')">
                          Pais es Requerido
                     </span>
                 </div>
@@ -56,7 +56,7 @@
                            placeholder="Pais de Residencia">
                     
                     <span class="form-text text-danger"
-                           *ngIf="campoEsValido('countryRes')">
+                           *ngIf="fieldValid('countryRes')">
                          Pais de residencia es Requerido
                     </span>
                 </div>
