@@ -23,12 +23,14 @@ export class Step1Component implements OnInit {
     name: [ , [ Validators.required] ],
     country: [ , [ Validators.required] ],
     countryRes : [ , [ Validators.required] ],
+    phone : [ , [ Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)] ]
   })
 
   // ======================================
 	//				onInit
 	// ======================================
   ngOnInit(): void {
+    console.log(this.form1.controls)
   }
   
   public formValid() {
@@ -36,6 +38,10 @@ export class Step1Component implements OnInit {
   }
 
   public fieldValid( field: string ) {
+    return this.form1.controls[field].errors 
+            && this.form1.controls[field].touched;
+  }
+  public phoneIsValid( field: any ) {
     return this.form1.controls[field].errors 
             && this.form1.controls[field].touched;
   }
