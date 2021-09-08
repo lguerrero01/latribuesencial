@@ -1,7 +1,7 @@
 <div class="container justify-content-center">
     <div class="row">
 
-        <form  class="col-md-12" (change)="formValid()" autocomplete="off" [formGroup]="form1">
+        <form (ngSubmit)="guardar()" autocomplete="off" [formGroup]="form1">
             
             <!-- Campo de Email -->
             <div class="mb-3 row">
