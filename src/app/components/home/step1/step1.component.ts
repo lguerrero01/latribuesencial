@@ -45,7 +45,12 @@ export class Step1Component implements OnInit {
     return this.form1.controls[field].errors 
             && this.form1.controls[field].touched;
   }
+<<<<<<< Updated upstream
   
+=======
+
+
+>>>>>>> Stashed changes
   public guardar() {
 
     if ( this.form1.invalid )  {
