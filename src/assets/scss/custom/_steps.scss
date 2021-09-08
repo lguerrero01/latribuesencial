@@ -1,4 +1,10 @@
 /*form styles*/
+.form-control{
+    background-color:#fff4f0;
+    font-family: 'madeSunflower';
+    height: 50px;
+}
+
 #msform {
     text-align: center;
     position: relative;
@@ -6,7 +12,7 @@
 }
 
 #msform fieldset {
-    background: white;
+    background: rgb(187, 12, 12);
     border: 0 none;
     border-radius: 0px;
     box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
@@ -32,7 +38,7 @@
     margin-bottom: 10px;
     width: 100%;
     box-sizing: border-box;
-    font-family: montserrat;
+    font-family: 'madeSunflower';
     color: #2C3E50;
     font-size: 13px;
 }
@@ -126,7 +132,7 @@
     line-height: 26px;
     display: block;
     font-size: 1.5rem;
-    color: #333;
+    color: rgb(252, 2, 2);
     background: white;
     border-radius: 25px;
     margin: 0 auto 10px auto;
@@ -152,7 +158,7 @@
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
 #progressbar li.active:before, #progressbar li.active:after {
-    background: #61a926;
+    background: #C4C79F;
     color: white;
 }
 
