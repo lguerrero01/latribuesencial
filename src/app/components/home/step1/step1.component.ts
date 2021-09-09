@@ -23,26 +23,26 @@ export class Step1Component implements OnInit {
     name: [ , [ Validators.required] ],
     country: [ , [ Validators.required] ],
     countryRes : [ , [ Validators.required] ],
-    phone : [ , [ Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)] ]
+    phone : [ , [ Validators.required] ]
   })
 
   // ======================================
 	//				onInit
 	// ======================================
   ngOnInit(): void {
-    console.log(this.form1.controls)
+    console.log(this.form1.valid)
   }
   
   public formValid() {
     this.onIsValid.emit(this.form1.valid);
   }
 
-  public fieldValid( field: string ) {
+  public fieldValid( field: string ) {  
     return this.form1.controls[field].errors 
             && this.form1.controls[field].touched;
   }
-  public guardar() {
-
+   public guardar() {
+    console.log(this.form1.value)
     if ( this.form1.invalid )  {
       this.form1.markAllAsTouched();
       return;

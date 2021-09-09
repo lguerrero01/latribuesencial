@@ -7,7 +7,6 @@ import { FormsModule } from 'src/app/forms/forms.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from 'src/app/app-routing.module';
-import { Ng2TelInputModule } from 'ng2-tel-input';
 
 
 // ======================================
@@ -41,7 +40,7 @@ import { DecorationComponent } from './decoration/decoration.component';
     ReactiveFormsModule,
     CommonModule,
     AppRoutingModule,
-    Ng2TelInputModule
+    
   ]
 })
 export class HomeModule { }
