@@ -25,28 +25,9 @@ export class HomeComponent implements OnInit {
   }
  public next(){
   
-  this.valid = false;
-    // switch (this.step) {
-    //   case  1:
-    //     this.step1 = true;
-    //     break;
-    //   case 2:  
-    //     this.step2 = true;
-
-    //     break;
-    //   case 3:
-    //     this.step3 = true;
-    //     break;
-    //   case 4:
-    //     this.step4 = true;
-    //     break;
-    //   default:
-    //     break;
-    // }
-    this.valid = true;
 
   this.step++;
-}
+  }
 
   public previous(){
 
