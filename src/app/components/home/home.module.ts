@@ -12,6 +12,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 // ======================================
 //				Routing
 // ======================================
+import { HomeRoutingModule } from './home-routing.module';
 
 
 // ======================================
@@ -40,7 +41,7 @@ import { DecorationComponent } from './decoration/decoration.component';
     ReactiveFormsModule,
     CommonModule,
     AppRoutingModule,
-    
+    HomeRoutingModule
   ]
 })
 export class HomeModule { }

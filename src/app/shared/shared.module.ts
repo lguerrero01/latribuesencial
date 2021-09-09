@@ -14,6 +14,10 @@ import { KitsComponent } from './components/kits/kits.component';
   ],
   imports: [
     CommonModule,
+  ],
+  exports:[
+    KitsComponent,
+    DiseasesComponent
   ]
 })
 export class SharedModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-adviser',
@@ -6,24 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./adviser.component.scss']
 })
 export class AdviserComponent implements OnInit {
-  step: any;
-  valid!: boolean;
+  public step: number = 1;
+  public valid!: boolean;
 
-  constructor() { }
+  
+  constructor( private formBuilder: FormBuilder) { }
+
+  public personalInfo:FormGroup = this.formBuilder.group({
+    ocupation: [ , [ Validators.required] ]
+  })
 
   ngOnInit(): void {
   }
 
   public next(){
-  
-    this.valid = false;
-
-  
     this.step++;
   }
   
     public previous(){
-  
       this.step--
     }
   

@@ -1,54 +1,71 @@
 <div class="container mt-5">
-    <form class=" row justify-content-center" action="" autocomplete="off">
-        <div class="d-flex justify-content-center">
-            <span>Asesora (o)</span>
-        </div>
-            <!-- Campo de ocupacion -->
+    <div class="d-flex justify-content-center">
+        <span>Asesora (o)</span>
+    </div>
 
-        <div class=" row justify-content-center mb-3">
-            <div class="col-6">
-                
-                <input type="text"
-                                class="form-control"
-                                formControlName="ocupation"
-                                placeholder="Ocupacion Actual*">
-            </div>
-        </div>
-            <!-- Campo de Estado Civil -->
-
-        <div class=" row justify-content-center mb-3">
-            <div class="col-6">
-                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-              </select>
-                
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Edo. Civil*</option>
-                    <option value="1">Soltero</option>
-                    <option value="2">Casado</option>
-                </select>
-            </div>
-        </div>
-            <!-- Campo de Hijos -->
-
-        <div class=" row justify-content-center mb-3">
-            <div class="col-6">
-                <select class="form-select" aria-label="Default select example">
-                    <option selected><Table>Tienes Hijos?*</Table></option>
-                    <option value="1">Si</option>
-                    <option value="2">No</option>
+    <fieldset *ngIf="step == 1 "   class="animate__animated animate__fadeInRight">
+        <form class=" row justify-content-center" action="" autocomplete="off"  >
+           
+                <!-- Campo de ocupacion -->
+    
+            <div class=" row justify-content-center mb-3">
+                <div class="col-6">
                     
-                </select>
-
+                    <input type="text"
+                                    class="form-control"
+                                    formControlName="ocupation"
+                                    placeholder="Ocupacion Actual*">
+                </div>
             </div>
-        </div>
-    </form>
+                <!-- Campo de Estado Civil -->
+    
+            <div class=" row justify-content-center mb-3">
+                <div class="col-md-6">
+                    
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Edo. Civil*</option>
+                        <option value="1">Soltero</option>
+                        <option value="2">Casado</option>
+                    </select>
+                </div>
+            </div>
+                <!-- Campo de Hijos -->
+    
+            <div class=" row justify-content-center mb-3">
+                <div class="col-6">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected><Table>Tienes Hijos?*</Table></option>
+                        <option value="1">Si</option>
+                        <option value="2">No</option>
+                        
+                    </select>
+    
+                </div>
+            </div>
+        </form>
+    </fieldset>
+
+    <fieldset *ngIf="step == 2 "   class="animate__animated animate__fadeInRight">
+        <app-diseases></app-diseases>
+    </fieldset>
+
+    <fieldset *ngIf="step == 3 "   class="animate__animated animate__fadeInRight">
+        <app-kits></app-kits>
+    </fieldset>
+
+    <fieldset *ngIf="step == 4 "   class="animate__animated animate__fadeInRight">
+        <app-form1-adviser> </app-form1-adviser>
+    </fieldset>
+
+    <fieldset *ngIf="step == 5 "   class="animate__animated animate__fadeInRight">
+        <app-form2-adviser> </app-form2-adviser>
+    </fieldset>
+    
             <!-- Botones prev y next -->
     
     <div class="row justify-content-center">
         <button 
+            *ngIf="!(step == 1)" 
             (click)="previous()" 
             type="button" 
             name="previous" 
@@ -58,6 +75,7 @@
         </button>
 
         <button 
+            *ngIf="!(step == 4)" 
             (click)="next()" 
             type="button" 
             name="next" 
