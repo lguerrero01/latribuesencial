@@ -1,173 +1,220 @@
 /*form styles*/
-body{
-    background-color: #efe4df;
-}
-.text-danger{
-    background-color:#efe4df;
-}
-.form1{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    flex-wrap: wrap;
+body {
+  background-color: #efe4df;
 }
 
-.form-control{
-    background-color:#fff4f0;
+.text-danger {
+  background-color: #efe4df;
+}
+.text-center h2{
+    font-size: 20px;
     font-family: 'madeSunflower';
-    height: 60px;
-    border-radius: 10px;
-    box-shadow: 0px 15px 10px -15px #111;  
-    margin-top: 50px;
-    width: 300px;
-   
+}
+.step2{
+    height:70vh;
+}
+video{
+    margin-top: 30px;
+}
+h2{
+    font-family: 'madeSunflower';
+}
+p{
+    font-family: 'robotoRegular';
+    font-weight: 200;
+}
+#button-client, #button-adviser{
+    color: #000000;
+    box-shadow: 0px 15px 10px -15px #111; 
+    background-color: #ccb16b;
+    border: none;
+    height: 70px;
+    border-radius: 10px 10px 10px 10px;
+    margin-top: 40px;
+    font-family: 'madeSunflower'!important;
+    cursor: pointer;
+    margin-left: 2px;
+  }
+
+.form1 {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.form-control {
+  background-color: #fff4f0;
+  font-family: 'madeSunflower';
+  height: 60px;
+  border-radius: 10px;
+  box-shadow: 0px 15px 10px -15px #111;
+  margin-top: 50px;
+  width: 300px;
+
+}
+
+
+button:not(:disabled) {
+  color: #ccb16b;
+  background-color: #efe4df;
+  border: none;
+  font-size: 50px;
+  margin-left: 15px;
+  margin-top: 20px;
 }
 
 #msform {
-    text-align: center;
-    position: relative;
-    margin-top: 40px;
+  text-align: center;
+  position: relative;
+  margin-top: 40px;
 }
 
 /*inputs*/
-#msform input, #msform textarea {
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 0px;
-    margin-bottom: 10px;
-    width: 100%;
-    box-sizing: border-box;
-    font-family: 'madeSunflower';
-    color: #2C3E50;
-    font-size: 13px;
+#msform input,
+#msform textarea {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'madeSunflower';
+  color: #2C3E50;
+  font-size: 13px;
 }
 
-#msform input:focus, #msform textarea:focus {
-    -moz-box-shadow: none !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    border: 1px solid #64dc68;
-    outline-width: 0;
-    transition: All 0.5s ease-in;
-    -webkit-transition: All 0.5s ease-in;
-    -moz-transition: All 0.5s ease-in;
-    -o-transition: All 0.5s ease-in;
+#msform input:focus,
+#msform textarea:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 1px solid #64dc68;
+  outline-width: 0;
+  transition: All 0.5s ease-in;
+  -webkit-transition: All 0.5s ease-in;
+  -moz-transition: All 0.5s ease-in;
+  -o-transition: All 0.5s ease-in;
 }
 
 /*buttons*/
 #msform .action-button {
-    width: 100px;
-    background: #e6ba5c;
-    font-weight: bold;
-    color: white;
-    border: 0 none;
-    border-radius: 25px;
-    cursor: pointer;
-    padding: 10px 5px;
-    margin: 10px 5px;
+  width: 100px;
+  background: #e6ba5c;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 25px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px;
 }
 
-#msform .action-button:hover, #msform .action-button:focus {
-    box-shadow: 0 0 0 2px white, 0 0 0 3px #e7fb63;
+#msform .action-button:hover,
+#msform .action-button:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #e7fb63;
 }
 
 #msform .action-button-previous {
-    width: 100px;
-    background: #C5C5F1;
-    font-weight: bold;
-    color: white;
-    border: 0 none;
-    border-radius: 25px;
-    cursor: pointer;
-    padding: 10px 5px;
-    margin: 10px 5px;
+  width: 100px;
+  background: #C5C5F1;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 25px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px;
 }
 
-#msform .action-button-previous:hover, #msform .action-button-previous:focus {
-    box-shadow: 0 0 0 2px white, 0 0 0 3px #C5C5F1;
+#msform .action-button-previous:hover,
+#msform .action-button-previous:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #C5C5F1;
 }
 
 /*headings*/
 .fs-title {
-    font-size: 18px;
-    text-transform: uppercase;
-    color: #2C3E50;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
-    font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #2C3E50;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
 
 .fs-subtitle {
-    font-weight: normal;
-    font-size: 13px;
-    color: #666;
-    margin-bottom: 20px;
+  font-weight: normal;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 20px;
 }
 
 /*progressbar*/
 #progressbar {
-    margin-bottom: 30px;
-    overflow: hidden;
-    /*CSS counters to number the steps*/
-    counter-reset: step;
+  margin-bottom: 30px;
+  overflow: hidden;
+  /*CSS counters to number the steps*/
+  counter-reset: step;
 }
 
 #progressbar li {
-    list-style-type: none;
-    color: white;
-    text-transform: uppercase;
-    font-size: 9px;
-    width: 33.33%;
-    float: left;
-    position: relative;
-    letter-spacing: 1px;
+  list-style-type: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 9px;
+  width: 33.33%;
+  float: left;
+  position: relative;
+  letter-spacing: 1px;
 }
 
 #progressbar li:before {
-    content: counter(step);
-    counter-increment: step;
-    width: 30px;
-    height: 30px;
-    line-height: 26px;
-    display: block;
-    font-size: 1.5rem;
-    color: rgb(252, 2, 2);
-    background: white;
-    border-radius: 25px;
-    margin: 0 auto 10px auto;
+  content: counter(step);
+  counter-increment: step;
+  width: 30px;
+  height: 30px;
+  line-height: 26px;
+  display: block;
+  font-size: 1.5rem;
+  color: rgb(252, 2, 2);
+  background: white;
+  border-radius: 25px;
+  margin: 0 auto 10px auto;
 }
 
 /*progressbar connectors*/
 #progressbar li:after {
-    content: '';
-    width: 100%;
-    height: 2px;
-    background: white;
-    position: absolute;
-    left: -50%;
-    top: 9px;
-    z-index: -1; /*put it behind the numbers*/
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: white;
+  position: absolute;
+  left: -50%;
+  top: 9px;
+  z-index: -1;
+  /*put it behind the numbers*/
 }
 
 #progressbar li:first-child:after {
-    /*connector not needed before the first step*/
-    content: none;
+  /*connector not needed before the first step*/
+  content: none;
 }
 
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
-#progressbar li.active:before, #progressbar li.active:after {
-    background: #C4C79F;
-    color: white;
-    font-family: 'madeSunflower';
+#progressbar li.active:before,
+#progressbar li.active:after {
+  background: #C4C79F;
+  color: white;
+  font-family: 'madeSunflower';
 }
 
 
 
-#progressbar li.inactive:before{
-    background: burlywood;
-    color: #000;
-    font-family: 'madeSunflower';
+#progressbar li.inactive:before {
+  background: burlywood;
+  color: #000;
+  font-family: 'madeSunflower';
 
 }
 
@@ -185,34 +232,50 @@ body{
 //       animation-duration: 1s;animation-name: slidein;
 //   }
 
-   @-webkit-keyframes slidein {
-        from { margin-right:100%;width:300%;}
-        to { margin-right: 0%;width: 100%;           }
+@-webkit-keyframes slidein {
+  from {
+    margin-right: 100%;
+    width: 300%;
   }
 
-  @-moz-keyframes slidein {
-           from {
-               margin-left: 100%;width: 300%;
-           }
-           to {
-               margin-left: 0%; width: 100%;
-           }
-    }
-  @-o-keyframes slidein {
-           from {
-               margin-left: 100%;width: 300%;
-           }
-
-           to {
-               margin-left: 0%;width: 100%;
-           }
+  to {
+    margin-right: 0%;
+    width: 100%;
   }
-  @keyframes slidein {
-           from {
-               margin-left: 100%;width: 300%;
-           }
+}
 
-           to {
-               margin-left: 0%;width: 100%;
-           }
+@-moz-keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
   }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@-o-keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
