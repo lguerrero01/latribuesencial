@@ -37,21 +37,11 @@ export class Step1Component implements OnInit {
     this.onIsValid.emit(this.form1.valid);
   }
 
-  public fieldValid( field: string ) {
+  public fieldValid( field: string ) {  
     return this.form1.controls[field].errors 
             && this.form1.controls[field].touched;
   }
-  public phoneIsValid( field: any ) {
-    return this.form1.controls[field].errors 
-            && this.form1.controls[field].touched;
-  }
-<<<<<<< Updated upstream
-  
-=======
-
-
->>>>>>> Stashed changes
-  public guardar() {
+   public guardar() {
 
     if ( this.form1.invalid )  {
       this.form1.markAllAsTouched();

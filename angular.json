@@ -40,8 +40,7 @@
               "node_modules/intl-tel-input/build/css/intlTelInput.css"
             ],
             "scripts":[
-            "node_modules/bootstrap/dist/js/bootstrap.min.js",
-            "node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css"
+            "node_modules/bootstrap/dist/js/bootstrap.min.js"
           ]
           },
           "configurations": {
