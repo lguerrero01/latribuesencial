@@ -4,6 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { DecorationComponent } from './components/home/decoration/decoration.component';
 import { LayoutComponent } from './shared/components/layout/layout.component';
 import { AdviserComponent } from './components/adviser/adviser.component';
+import { ClientComponent } from './components/client/client.component';
 
 const routes: Routes = [
   {
@@ -20,7 +21,12 @@ const routes: Routes = [
 		path: 'asesor',
 		component: AdviserComponent,
 		pathMatch: 'full',
-	},
+  },
+  {
+		path: 'cliente',
+		component: ClientComponent,
+    pathMatch: 'full',
+  }
 ];
 
 @NgModule({
