@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     FormsModule,
     ReactiveFormsModule,
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  // exports: [Form1ClientComponent],
+  // schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ClientModule {}

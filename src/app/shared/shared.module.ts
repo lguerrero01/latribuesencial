@@ -7,7 +7,6 @@ import { LayoutComponent } from "./components/layout/layout.component";
 import { DiseasesComponent } from "./components/diseases/diseases.component";
 import { KitsComponent } from "./components/kits/kits.component";
 import { LastPageComponent } from "./components/last-page/last-page.component";
-import { RouterModule } from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -16,11 +15,7 @@ import { RouterModule } from "@angular/router";
     KitsComponent,
     LastPageComponent,
   ],
-  imports: [CommonModule, RouterModule],
-  exports: [
-    KitsComponent,
-    DiseasesComponent,
-    LayoutComponent
-  ],
+  imports: [CommonModule],
+  exports: [KitsComponent, DiseasesComponent, LayoutComponent],
 })
 export class SharedModule {}

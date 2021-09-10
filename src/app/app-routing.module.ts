@@ -8,7 +8,12 @@ import { LayoutComponent } from "./shared/components/layout/layout.component";
 
 const routes: Routes = [
   {
-    path: "home",
+		path: '',
+		redirectTo: '/',
+		pathMatch: 'full',
+	},
+  {
+    path: "",
     component: LayoutComponent,
     children: [
       {
