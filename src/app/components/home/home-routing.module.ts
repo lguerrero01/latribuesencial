@@ -3,7 +3,6 @@
 // ======================================
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LayoutComponent } from 'src/app/shared/components/layout/layout.component';
 import { HomeComponent } from './home.component';
 
 // ======================================
