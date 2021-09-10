@@ -3,17 +3,14 @@
 // ======================================
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from 'src/app/forms/forms.module';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AppRoutingModule } from 'src/app/app-routing.module';
 
 
 // ======================================
 //				Routing
 // ======================================
 import { HomeRoutingModule } from './home-routing.module';
-
 
 // ======================================
 //				Components
@@ -36,11 +33,9 @@ import { DecorationComponent } from './decoration/decoration.component';
     DecorationComponent
   ],
   imports: [
-    FormsModule,
-    SharedModule,
+    // SharedModule,
     ReactiveFormsModule,
     CommonModule,
-    AppRoutingModule,
     HomeRoutingModule
   ]
 })

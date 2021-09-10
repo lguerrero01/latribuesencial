@@ -1,31 +1,30 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { Form1AdviserComponent } from './form1-adviser/form1-adviser.component';
-import { Form2AdviserComponent } from './form2-adviser/form2-adviser.component';
+// ======================================
+//				Module
+// ======================================
+import { NgModule } from "@angular/core";
+// ======================================
+//				Router
+// ======================================
+import { RouterModule, Routes } from "@angular/router";
+// ======================================
+//				Components
+// ======================================
+import { AdviserComponent } from "./adviser.component";
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   children: [
-  //     { 
-  //       path: 'form1Adviser', component: Form1AdviserComponent
-  //      },
-  //     { 
-  //       path: 'form2Adviser', component: Form2AdviserComponent 
-  //     },
-  //     {
-  //       path: '**', redirectTo: 'form1Adviser'
-  //     }
-  //   ]
-  // }
+  {
+    path: "",
+    children: [
+      {
+        path: "",
+        component: AdviserComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forChild(routes)
-  ],
-  exports: [
-    RouterModule
-  ]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
-export class AdviserRoutingModule { }
+export class AdviserRoutingModule {}
