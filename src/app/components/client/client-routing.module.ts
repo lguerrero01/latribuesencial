@@ -1,30 +1,7 @@
-// ======================================
-//				Module 
-// ======================================
-
 import { NgModule } from '@angular/core';
-
-// ======================================
-//				Router
-// ======================================
-
 import { RouterModule, Routes } from '@angular/router';
 
-// ======================================
-//				Components 
-// ======================================
-import { ClientComponent } from './client.component';
-
-const routes: Routes = [
-  {
-      path: '',
-      children: [
-        { 
-          path: '', component: ClientComponent
-         }
-      ]
-    }
-];
+const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

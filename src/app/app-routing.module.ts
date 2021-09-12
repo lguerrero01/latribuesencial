@@ -3,39 +3,32 @@ import { RouterModule, Routes } from "@angular/router";
 // ======================================
 //				Components
 // ======================================
-import { LayoutComponent } from "./shared/components/layout/layout.component";
-
+import { HomeComponent } from "./components/home/home.component";
+import { StepperComponent } from "./components/home/stepper/stepper.component";
+import { AdviserComponent } from "./components/adviser/adviser.component";
+import { ClientComponent } from "./components/client/client.component";
+import { LastPageComponent } from "./shared/components/last-page/last-page.component";
 
 const routes: Routes = [
   {
-		path: '',
-		redirectTo: '/',
-		pathMatch: 'full',
-	},
-  {
     path: "",
-    component: LayoutComponent,
-    children: [
-      {
-        path: "steps",
-        loadChildren: () =>
-          import("./components/home/home.module").then((m) => m.HomeModule),
-      },
-      {
-        path: "adviser",
-        loadChildren: () =>
-          import("./components/adviser/adviser.module").then(
-            (m) => m.AdviserModule
-          ),
-      },
-      {
-        path: "client",
-        loadChildren: () =>
-          import("./components/client/client.module").then(
-            (m) => m.ClientModule
-          ),
-      },
-    ],
+    component: HomeComponent,
+  },
+  {
+    path: "steps",
+    component: StepperComponent,
+  },
+  {
+    path: "adviser",
+    component: AdviserComponent,
+  },
+  {
+    path: "client",
+    component: ClientComponent,
+  },
+  {
+    path: "last",
+    component: LastPageComponent,
   },
 ];
 

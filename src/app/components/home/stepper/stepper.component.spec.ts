@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Form2AdviseComponent } from './form2-advise.component';
+import { StepperComponent } from './stepper.component';
 
-describe('Form2AdviseComponent', () => {
-  let component: Form2AdviseComponent;
-  let fixture: ComponentFixture<Form2AdviseComponent>;
+describe('StepperComponent', () => {
+  let component: StepperComponent;
+  let fixture: ComponentFixture<StepperComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Form2AdviseComponent ]
+      declarations: [ StepperComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Form2AdviseComponent);
+    fixture = TestBed.createComponent(StepperComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

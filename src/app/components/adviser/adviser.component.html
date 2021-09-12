@@ -3,7 +3,7 @@
     <span>Asesora (o)</span>
   </div>
   <fieldset *ngIf="step == 1" class="animate__animated animate__fadeInRight">
-    <form class="row justify-content-center" action="" autocomplete="off">
+    <form class="row justify-content-center" [formGroup]="personalInfo" action="" autocomplete="off">
       <!-- Campo de ocupacion -->
 
       <div class="row justify-content-center mb-3">
@@ -42,22 +42,20 @@
   </fieldset>
 
   <fieldset *ngIf="step == 2" class="animate__animated animate__fadeInRight">
-    <!-- <app-diseases></app-diseases> -->
+     <app-diseases></app-diseases>
   </fieldset>
 
   <fieldset *ngIf="step == 3" class="animate__animated animate__fadeInRight">
-    <!-- <app-kits></app-kits> -->
+    <app-kits></app-kits> 
   </fieldset>
 
   <fieldset *ngIf="step == 4" class="animate__animated animate__fadeInRight">
-    <!-- <app-form1-adviser></app-form1-adviser> -->
+     <app-form1-adviser></app-form1-adviser> 
   </fieldset>
 
   <fieldset *ngIf="step == 5" class="animate__animated animate__fadeInRight">
-    <!-- <app-test></app-test> -->
-    <!-- <app-form2-adviser> </app-form2-adviser> -->
+    <app-form2-adviser> </app-form2-adviser>
   </fieldset>
-
   <!-- Botones prev y next -->
 
   <div class="row justify-content-center">
