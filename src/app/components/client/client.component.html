@@ -1,86 +1,54 @@
+<app-decoration></app-decoration>
+
 <div class="container mt-5">
-    <div class="mb-3 text-center">
-      <span><h2 class="border rounded-pill">Cliente (a)</h2></span>
-    </div>
-    <fieldset
-      *ngIf="step == 1"
-      [ngClass]="
+  <div class="mb-3 text-center">
+    <span>
+      <h2 class="border rounded-pill">Cliente (a)</h2>
+    </span>
+  </div>
+  <fieldset *ngIf="step == 1" [ngClass]="
         status
           ? 'animate__animated animate__fadeInRight'
           : 'animate__animated animate__fadeInLeft'
-      "
-    >
-      <app-form1-client></app-form1-client>
-    </fieldset>
+      ">
+    <app-form1-client></app-form1-client>
+  </fieldset>
 
-    <fieldset
-      *ngIf="step == 2"
-      [ngClass]="
+  <fieldset *ngIf="step == 2" [ngClass]="
         status
           ? 'animate__animated animate__fadeInRight'
           : 'animate__animated animate__fadeInLeft'
-      "
-    >
-      <app-diseases></app-diseases>
-    </fieldset>
+      ">
+    <app-diseases></app-diseases>
+  </fieldset>
 
-    <fieldset
-      *ngIf="step == 3"
-      [ngClass]="
+  <fieldset *ngIf="step == 3" [ngClass]="
         status
           ? 'animate__animated animate__fadeInRight'
           : 'animate__animated animate__fadeInLeft'
-      "
-    >
-      <app-kits></app-kits>
-    </fieldset>
+      ">
+    <app-kits></app-kits>
+  </fieldset>
 
-    <fieldset
-      *ngIf="step == 4"
-      [ngClass]="
+  <fieldset *ngIf="step == 4" [ngClass]="
         status
           ? 'animate__animated animate__fadeInRight'
           : 'animate__animated animate__fadeInLeft'
-      "
-    >
-      <app-last-page></app-last-page>
-    </fieldset>
-  </ng-container>
+      ">
+    <app-last-page></app-last-page>
+  </fieldset>
+
   <!-- Botones prev y next -->
 
   <div class="row justify-content-center">
-    <button
-      *ngIf="step != 1"
-      (click)="previous()"
-      type="button"
-      name="previous"
-      class="btn btn-danger col-1"
-      value="Previous"
-    >
-      <
-    </button>
-
     <div class="row justify-content-center">
-      <button
-        *ngIf="step != 1"
-        (click)="previous()"
-        type="button"
-        name="previous"
-        class="col-2"
-        value="Previous"
-      >
-      <i class="fa fa-chevron-left" aria-hidden="true"></i>
+      <button *ngIf="step != 1" (click)="previous()" type="button" name="previous" class="col-1" value="Previous">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
       </button>
 
-      <button
-        *ngIf="step != 4"
-        (click)="next()"
-        type="button"
-        name="next"
-        value="Next"
-        class="col-2"
-      >
-      <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      <button *ngIf="step != 4" (click)="next()" type="button" name="next" value="Next" class="col-1">
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </button>
     </div>
+  </div>
 </div>

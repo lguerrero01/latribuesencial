@@ -1,3 +1,13 @@
 .decoration{
     background-color: #ccb16b;
 }
+#logo{
+    width: 300px;
+    margin-left: 60px;
+}
+@media(max-width:347px){
+    #logo{
+        width: 140px;
+        margin-left: 10px;
+    }
+}
