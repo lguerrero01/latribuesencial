@@ -1,12 +1,7 @@
-
-<app-decoration></app-decoration>
-
-
-<div class="container mt-5 text-center">
-  <div class="mb-3">
-    <span>Cliente (a)</span>
-  </div>
-  <ng-container>
+<div class="container mt-5">
+    <div class="mb-3 text-center">
+      <span><h2 class="border rounded-pill">Cliente (a)</h2></span>
+    </div>
     <fieldset
       *ngIf="step == 1"
       [ngClass]="
@@ -65,15 +60,27 @@
       <
     </button>
 
-    <button
-      *ngIf="step != 4"
-      (click)="next()"
-      type="button"
-      name="next"
-      class="btn btn-primary col-1"
-      value="Next"
-    >
+    <div class="row justify-content-center">
+      <button
+        *ngIf="step != 1"
+        (click)="previous()"
+        type="button"
+        name="previous"
+        class="col-2"
+        value="Previous"
       >
-    </button>
-  </div>
+      <i class="fa fa-chevron-left" aria-hidden="true"></i>
+      </button>
+
+      <button
+        *ngIf="step != 4"
+        (click)="next()"
+        type="button"
+        name="next"
+        value="Next"
+        class="col-2"
+      >
+      <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </button>
+    </div>
 </div>
