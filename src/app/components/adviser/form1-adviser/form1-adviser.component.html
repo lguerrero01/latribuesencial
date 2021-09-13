@@ -1,1 +1,35 @@
-<p>form1-adviser works!</p>
+
+<div class="container">
+    
+    <div class="row justify-content-center">
+        <form class="col-6" [formGroup]="form1Adviser" action="" autocomplete="off">
+            <!-- Campo de ocupacion -->
+            <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="ocupation"
+                  placeholder="Ocupacion Actual*"
+                />
+            </div>
+            <!-- Campo de Estado Civil -->
+      
+            <div class="mb-3">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Edo. Civil*</option>
+                  <option value="1">Soltero</option>
+                  <option value="2">Casado</option>
+                </select>
+            </div>
+            <!-- Campo de Hijos -->
+      
+            <div class="mb-3">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected><Table>Tienes Hijos?*</Table></option>
+                  <option value="1">Si</option>
+                  <option value="2">No</option>
+                </select>
+            </div>
+          </form>
+    </div>
+</div>
