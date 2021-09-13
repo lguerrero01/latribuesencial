@@ -14,11 +14,10 @@ import { ReactiveFormsModule } from "@angular/forms";
 // ======================================
 import { HomeComponent } from "./components/home/home.component";
 import { AppComponent } from "./app.component";
-import { DecorationComponent } from "./components/home/decoration/decoration.component";
 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, DecorationComponent],
+  declarations: [AppComponent, HomeComponent],
   imports: [
     SharedModule,
     BrowserModule,
