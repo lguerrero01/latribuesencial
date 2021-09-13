@@ -1,8 +1,47 @@
-<div class="container mt-5">
-  <form class="row justify-content-center" action="">
-    <div class="d-flex justify-content-center">
-      <span>Cliente</span>
-    </div>
-  </form>
+<div class="container mt-5 text-center">
+  <div class="mb-3">
+    <span>Asesora (o)</span>
+  </div>
+  <fieldset *ngIf="step == 1" class="animate__animated animate__fadeInRight">
+    <app-form1-client></app-form1-client>
+  </fieldset>
+
+  <fieldset *ngIf="step == 2" class="animate__animated animate__fadeInRight">
+    <app-diseases></app-diseases>
+  </fieldset>
+
+  <fieldset *ngIf="step == 3" class="animate__animated animate__fadeInRight">
+    <app-kits></app-kits>
+  </fieldset>
+
+  <fieldset
+    *ngIf="step == 4"
+    class="animate__animated animate__fadeInRight"
+  > <app-last-page></app-last-page> </fieldset>
+
+  <!-- Botones prev y next -->
+
+  <div class="row justify-content-center">
+    <button
+      *ngIf="(step != 1)"
+      (click)="previous()"
+      type="button"
+      name="previous"
+      class="btn btn-danger col-1"
+      value="Previous"
+    >
+      <
+    </button>
+
+    <button
+      *ngIf="(step != 4)"
+      (click)="next()"
+      type="button"
+      name="next"
+      class="btn btn-primary col-1"
+      value="Next"
+    >
+      >
+    </button>
+  </div>
 </div>
-<app-form1-client></app-form1-client>

@@ -19,7 +19,7 @@ import { LastPageComponent } from "./components/last-page/last-page.component";
 @NgModule({
   declarations: [DiseasesComponent, KitsComponent, LastPageComponent],
   imports: [CommonModule, ReactiveFormsModule, FormsModule],
-  exports: [KitsComponent, DiseasesComponent],
+  exports: [KitsComponent, DiseasesComponent, LastPageComponent],
   providers: []
 })
 export class SharedModule {}

@@ -6,10 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./client.component.scss']
 })
 export class ClientComponent implements OnInit {
+  public step: number = 1;
+  public valid!: boolean;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  
+
+  ngOnInit(): void {}
+
+  public next() {
+    this.step++;
+  }
+
+  public previous() {
+    this.step--;
   }
 
 }
