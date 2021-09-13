@@ -1,12 +1,12 @@
+// ======================================
+//				Modules 
+// ======================================
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 // ======================================
 //				Components
 // ======================================
 import { HomeComponent } from "./components/home/home.component";
-import { StepperComponent } from "./components/home/stepper/stepper.component";
-import { AdviserComponent } from "./components/adviser/adviser.component";
-import { ClientComponent } from "./components/client/client.component";
 import { LastPageComponent } from "./shared/components/last-page/last-page.component";
 
 const routes: Routes = [
@@ -16,20 +16,24 @@ const routes: Routes = [
   },
   {
     path: "steps",
-    component: StepperComponent,
+    loadChildren: () => import('./components/stepper/stepper.module').then(m => m.StepperModule)
   },
   {
     path: "adviser",
-    component: AdviserComponent,
+    loadChildren: () => import('./components/adviser/adviser.module').then(m => m.AdviserModule)
   },
   {
     path: "client",
-    component: ClientComponent,
+    loadChildren: () => import('./components/client/client.module').then( m => m.ClientModule )
   },
   {
     path: "last",
     component: LastPageComponent,
   },
+  {
+    path: '**',
+    redirectTo: "/"
+  }
 ];
 
 @NgModule({

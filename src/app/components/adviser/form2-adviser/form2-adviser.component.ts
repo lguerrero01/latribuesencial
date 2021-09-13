@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form2-adviser',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Form2AdviserComponent implements OnInit {
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) {}
+
+  public form2Adviser: FormGroup = this.formBuilder.group({
+    why: ['', [Validators.required]],
+
+  });
 
   ngOnInit(): void {
   }

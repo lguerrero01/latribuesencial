@@ -11,7 +11,7 @@ export class Step1Component implements OnInit {
   // ======================================
 	//				Attributes
 	// ======================================
-  @Output() onIsValid: any = new EventEmitter<string>();
+  @Output() onIsValid = new EventEmitter<boolean>();
 
   // ======================================
 	//				Constructor

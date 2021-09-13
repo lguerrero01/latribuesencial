@@ -1,1 +1,28 @@
-<p>diseases works!</p>
+<div class="container pt-3">
+  <div class="row text-center">
+    <h3>Cuales son tus mayores preocupaciones de salud ?</h3>
+    <h2>Selecciona tantas como sean necesarias</h2>
+  </div>
+  <div class="row"></div>
+  <div class="row text-center">
+    <form [formGroup]="form" (ngSubmit)="submitForm()" novalidate>
+      <ul class="diseases">
+        <li class="diseases-list" *ngFor="let data of Data; let i = index">
+          <div class="" >
+            <input
+              type="checkbox"
+              [value]="data.value"
+              (change)="onCheckboxChange($event)"
+              class="checkbox"
+              [id]="data.value"
+            />
+            <label [for]="data.value">
+                <div class="title">{{data.name}}</div>
+            </label>
+          </div>
+        </li>
+      </ul>
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
+</div>

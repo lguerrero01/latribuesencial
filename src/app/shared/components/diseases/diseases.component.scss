@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.diseases {
+  font-family: "";
+  list-style: none;
+  overflow: auto;
+  max-height: 500px;
+  margin: 20px auto 50px auto;
+  width: 300px;
+  border: 1px solid rgba(37, 40, 46, 0.3);
+
+  .diseases-list {
+      background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 2px solid rgba(37, 40, 46, 0.3);
+    label {
+      display: flex;
+      align-items: center;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        right: 0px;
+        border: 1px solid rgba(37, 40, 46, 0.5);
+        border-radius: 50%;
+      }
+      
+    }
+    .checkbox {
+      display: none;
+      &:checked {
+        + label {
+          &::after {
+            content: "";
+            background: linear-gradient(90deg, #0ca72e 0%, #0dbb2a 100%);
+            border: 1px solid #8a867b;
+          }
+        }
+      }
+    }
+  }
+}

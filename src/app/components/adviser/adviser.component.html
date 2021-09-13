@@ -1,44 +1,9 @@
-<div class="container mt-5">
-  <div class="d-flex justify-content-center">
+<div class="container mt-5 text-center">
+  <div class="">
     <span>Asesora (o)</span>
   </div>
   <fieldset *ngIf="step == 1" class="animate__animated animate__fadeInRight">
-    <form class="row justify-content-center" [formGroup]="personalInfo" action="" autocomplete="off">
-      <!-- Campo de ocupacion -->
-
-      <div class="row justify-content-center mb-3">
-        <div class="col-6">
-          <input
-            type="text"
-            class="form-control"
-            formControlName="ocupation"
-            placeholder="Ocupacion Actual*"
-          />
-        </div>
-      </div>
-      <!-- Campo de Estado Civil -->
-
-      <div class="row justify-content-center mb-3">
-        <div class="col-md-6">
-          <select class="form-select" aria-label="Default select example">
-            <option selected>Edo. Civil*</option>
-            <option value="1">Soltero</option>
-            <option value="2">Casado</option>
-          </select>
-        </div>
-      </div>
-      <!-- Campo de Hijos -->
-
-      <div class="row justify-content-center mb-3">
-        <div class="col-6">
-          <select class="form-select" aria-label="Default select example">
-            <option selected><Table>Tienes Hijos?*</Table></option>
-            <option value="1">Si</option>
-            <option value="2">No</option>
-          </select>
-        </div>
-      </div>
-    </form>
+    <app-form1-adviser></app-form1-adviser>      
   </fieldset>
 
   <fieldset *ngIf="step == 2" class="animate__animated animate__fadeInRight">
@@ -50,11 +15,11 @@
   </fieldset>
 
   <fieldset *ngIf="step == 4" class="animate__animated animate__fadeInRight">
-     <app-form1-adviser></app-form1-adviser> 
+     <app-form2-adviser></app-form2-adviser> 
   </fieldset>
 
   <fieldset *ngIf="step == 5" class="animate__animated animate__fadeInRight">
-    <app-form2-adviser> </app-form2-adviser>
+    <app-form3-adviser> </app-form3-adviser>
   </fieldset>
   <!-- Botones prev y next -->
 
@@ -71,7 +36,7 @@
     </button>
 
     <button
-      *ngIf="!(step == 4)"
+      *ngIf="!(step == 5)"
       (click)="next()"
       type="button"
       name="next"
