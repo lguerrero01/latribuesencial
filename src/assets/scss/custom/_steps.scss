@@ -3,38 +3,61 @@ body {
   background-color: #efe4df;
 }
 
+
 .text-danger {
   background-color: #efe4df;
 }
-.text-center h2{
-    font-size: 20px;
-    font-family: 'madeSunflower';
+// STEPS
+
+.step2 .text-center h2 {
+  font-size: 30px;
+  font-family: 'madeSunflower';
+  margin-bottom: 55px;
 }
-.step2{
-    height:70vh;
+
+.step2 {
+  height: 70vh;
+}
+.step2 h2.text-center{
+  font-size: 20px;
+  margin-left: 4px;
+}
+.step3{
+  margin-left: 38px;
+}
+
+
+h2 {
+  font-family: 'madeSunflower';
+}
+
+.emblem{
+  background-color: #ccb16b;
+  border: 0.5px solid gray !important;
+  height: 38px;
+}
+
+p {
+  font-family: 'robotoRegular';
+  font-weight: 200;
 }
 video{
-    margin-top: 30px;
+  margin-left: 4;
 }
-h2{
-    font-family: 'madeSunflower';
+
+#button-client,
+#button-adviser {
+  color: #000000;
+  box-shadow: 0px 15px 10px -15px #111;
+  background-color: #ccb16b;
+  border: none;
+  height: 70px;
+  border-radius: 10px 10px 10px 10px;
+  margin-top: 40px;
+  font-family: 'madeSunflower' !important;
+  cursor: pointer;
+  margin-left: 2px;
 }
-p{
-    font-family: 'robotoRegular';
-    font-weight: 200;
-}
-#button-client, #button-adviser{
-    color: #000000;
-    box-shadow: 0px 15px 10px -15px #111; 
-    background-color: #ccb16b;
-    border: none;
-    height: 70px;
-    border-radius: 10px 10px 10px 10px;
-    margin-top: 40px;
-    font-family: 'madeSunflower'!important;
-    cursor: pointer;
-    margin-left: 2px;
-  }
 
 .form1 {
   display: flex;
@@ -50,10 +73,20 @@ p{
   border-radius: 10px;
   box-shadow: 0px 15px 10px -15px #111;
   margin-top: 50px;
-  width: 300px;
 
 }
 
+.form-select {
+  background-color: #fff4f0;
+  font-family: 'madeSunflower';
+  height: 60px;
+  border-radius: 10px;
+  box-shadow: 0px 15px 10px -15px #111;
+  margin-top: 50px;
+  color: #6c757d;
+
+
+}
 
 button:not(:disabled) {
   color: #ccb16b;
@@ -133,21 +166,7 @@ button:not(:disabled) {
 }
 
 /*headings*/
-.fs-title {
-  font-size: 18px;
-  text-transform: uppercase;
-  color: #2C3E50;
-  margin-bottom: 10px;
-  letter-spacing: 2px;
-  font-weight: bold;
-}
 
-.fs-subtitle {
-  font-weight: normal;
-  font-size: 13px;
-  color: #666;
-  margin-bottom: 20px;
-}
 
 /*progressbar*/
 #progressbar {
@@ -176,8 +195,8 @@ button:not(:disabled) {
   line-height: 26px;
   display: block;
   font-size: 1.5rem;
-  color: rgb(252, 2, 2);
-  background: white;
+  color: #ffffff;
+  background: #d8d2d2;
   border-radius: 25px;
   margin: 0 auto 10px auto;
 }
@@ -187,7 +206,7 @@ button:not(:disabled) {
   content: '';
   width: 100%;
   height: 2px;
-  background: white;
+  background: #ccb16b;
   position: absolute;
   left: -50%;
   top: 9px;
@@ -212,8 +231,8 @@ button:not(:disabled) {
 
 
 #progressbar li.inactive:before {
-  background: burlywood;
-  color: #000;
+  background: #d8d2d2;
+  color: rgb(255, 255, 255);
   font-family: 'madeSunflower';
 
 }
@@ -277,5 +296,76 @@ button:not(:disabled) {
   to {
     margin-left: 0%;
     width: 100%;
+  }
+}
+
+@media(max-width: 375px) {
+  .step3 {
+    margin-left: 21px;
+    width: 300px;
+  }
+
+  .step2 .text-center h2 {
+    font-family: 'madeSunflower';
+    margin-bottom: 61px;
+  }
+  
+}
+
+@media(min-width:425px) {
+  .form-control {
+    width: 345px;
+  }
+}
+
+@media(min-width:600px) {
+  .form-control {
+    width: 425px;
+    font-size: 20px;
+  }
+}
+
+@media(min-width: 800px){
+  .form-control{
+    width: 475px;
+  }
+}
+
+@media(min-width:1024px) {
+  .form-control {
+    width: 575px;
+    font-size: 30px;
+    height: 80px;
+  }
+  strong{
+    font-size: 20px;
+    margin-top: 15px;
+  }
+  .step2 h2.text-center {
+    font-family: 'madeSunflower';
+    margin-bottom: 61px;
+    font-size: 30px;
+  }
+}
+
+@media(min-width:1440px) {
+  .form-control {
+    width: 775px;
+    font-size: 45px;
+  }
+  h2{
+    font-size: 45px;
+  }
+  p{
+    font-size: 20px;
+  }
+  strong{
+    font-size: 28px;
+    margin-top: 15px;
+  }
+  .step2 h2.text-center {
+    font-family: 'madeSunflower';
+    margin-bottom: 61px;
+    font-size: 40px;
   }
 }

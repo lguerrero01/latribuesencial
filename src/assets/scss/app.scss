@@ -16,10 +16,6 @@
 //			Font Awesome
 // ===============================
 @import "font-awesome.scss";
-// ===============================
-//			CheckBox
-// ===============================
-@import "font-awesome.scss";
 
 .welcome {
   background-image: url('../img/fondo-1.jpg');
@@ -55,13 +51,13 @@
   height: 70px;
   border-radius: 10px 10px 10px 10px;
   margin: 0;
-  font-family: "madeSunflower";
   cursor: pointer;
   margin-left: 2px;
 }
 
 #button-start p {
   font-size: 40px;
+  font-family: "madeSunflower";
 }
 
 .mx-2 {
