@@ -15,7 +15,6 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { HomeComponent } from "./components/home/home.component";
 import { AppComponent } from "./app.component";
 import { DecorationComponent } from "./components/home/decoration/decoration.component";
-import { GetDiseasesService } from "@shared/services/get-diseases.service";
 
 
 @NgModule({

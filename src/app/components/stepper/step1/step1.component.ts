@@ -30,7 +30,7 @@ export class Step1Component implements OnInit {
 	//				onInit
 	// ======================================
   ngOnInit(): void {
-    console.log(this.form1.valid)
+    console.log('linea33',this.form1.value);
   }
   
   public formValid() {

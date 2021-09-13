@@ -6,32 +6,28 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./stepper.component.scss"],
 })
 export class StepperComponent implements OnInit {
-  public step1 = false;
-  public step2 = false;
-  public step3 = false;
-  public step4 = false;
+  // ======================================
+	//				Attributes
+	// ======================================
   public step = 1;
-  status: boolean = false;
-
-
+  status: boolean = true;
   public valid: boolean = false;
+
   constructor() {}
 
   ngOnInit(): void {}
-  clickEvent() {}
 
   public getValue($event: boolean) {
     this.valid = $event;
+    console.log("linea22",this.valid)
   }
   public next() {
     this.status = true;
-
     this.step++;
   }
 
   public previous() {
     this.status = false;
-
     this.step--;
   }
 

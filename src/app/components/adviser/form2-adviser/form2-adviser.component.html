@@ -11,6 +11,10 @@
           formControlName="why"
           placeholder="Tu Respuesta"
         />
+        <span class="form-text text-danger" *ngIf="fieldValid('why')">
+          Campo Requerido 
+        </span>
+        
       </div>
       <!-- Campo Como te describes -->
       <h2>¿Cómo te describes? y nombra 3 de tus fortalezas</h2>
@@ -21,6 +25,9 @@
           formControlName="desc"
           placeholder="Tu respuesta"
         />
+        <span class="form-text text-danger" *ngIf="fieldValid('desc')">
+          Campo Requerido 
+        </span>
       </div>
     </form>
   </div>

@@ -11,24 +11,34 @@
                   formControlName="ocupation"
                   placeholder="Ocupacion Actual*"
                 />
+                <span class="form-text text-danger" *ngIf="fieldValid('ocupation')">
+                  Ocupacion Requerida 
+                </span>
             </div>
+            
             <!-- Campo de Estado Civil -->
       
             <div class="mb-3">
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select" formControlName="maritalStatus" aria-label="Default select example">
                   <option selected>Edo. Civil*</option>
-                  <option value="1">Soltero</option>
-                  <option value="2">Casado</option>
+                  <option value="si">Soltero</option>
+                  <option value="no">Casado</option>
                 </select>
+                <span class="form-text text-danger" *ngIf="fieldValid('maritalStatus')">
+                  Campo Requerido 
+                </span>
             </div>
             <!-- Campo de Hijos -->
       
             <div class="mb-3">
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select" formControlName="sons" aria-label="Default select example">
                   <option selected><Table>Tienes Hijos?*</Table></option>
-                  <option value="1">Si</option>
-                  <option value="2">No</option>
+                  <option value="si">Si</option>
+                  <option value="no">No</option>
                 </select>
+                <span class="form-text text-danger" *ngIf="fieldValid('sons')">
+                  Campo Requerido 
+                </span>
             </div>
           </form>
     </div>

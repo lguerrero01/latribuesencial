@@ -1,6 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 // ======================================
-//				servives 
+//				servives
 // ======================================
 import { GetDiseasesService } from "@shared/services/get-diseases.service";
 // ======================================
@@ -20,10 +20,17 @@ import {
   styleUrls: ["./diseases.component.scss"],
 })
 export class DiseasesComponent implements OnInit {
-  public Data = this.diseases.Data;
-
+  // ======================================
+  //				Atributes
+  // ======================================
+  @Output() messageEvent = new EventEmitter<string>();
+  public Data = [];
   public form: FormGroup;
-  constructor(private fb: FormBuilder, private diseases: GetDiseasesService) {}
+
+  constructor(private fb: FormBuilder, private diseases: GetDiseasesService) {
+    this.Data = this.diseases.Data;
+  }
+
   ngOnInit(): void {
     this.form = this.fb.group({
       checkArray: this.fb.array([], [Validators.required]),
@@ -32,7 +39,7 @@ export class DiseasesComponent implements OnInit {
 
   onCheckboxChange(e) {
     const checkArray: FormArray = this.form.get("checkArray") as FormArray;
-    
+
     if (e.target.checked) {
       checkArray.push(new FormControl(e.target.value));
     } else {
@@ -48,6 +55,7 @@ export class DiseasesComponent implements OnInit {
   }
 
   submitForm() {
+    this.messageEvent.emit()
     console.log(this.form.value);
   }
 }
