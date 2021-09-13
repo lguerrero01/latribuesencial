@@ -12,19 +12,20 @@
     <div  class="col-md-6 col-md-offset-3 ">
         
         <!------------------- Step 1 Start ----------------------->
-            <fieldset *ngIf="step == 1 " class="" >
+            <fieldset *ngIf="step == 1 " [ngClass]="status ? 'animate__animated animate__fadeInRight' : 'animate__animated animate__fadeInLeft'">
                 <app-step1 (onIsValid)= "getValue($event)"></app-step1>
             </fieldset>
          <!------------------- Step 2 Start ----------------------->
-            <fieldset *ngIf="step == 2" class="animate__animated animate__fadeInRight"  >
+            <fieldset *ngIf="step == 2"   [ngClass]="status ? 'animate__animated animate__fadeInRight' : 'animate__animated animate__fadeInLeft'" >
                 <app-step2></app-step2>
             </fieldset>
+            <!-- class="animate__animated animate__fadeInRight" -->
         <!------------------- Step 3 Start ----------------------->
-            <fieldset *ngIf="step == 3"  class="animate__animated animate__fadeInRight">
+            <fieldset *ngIf="step == 3" [ngClass]="status ? 'animate__animated animate__fadeInRight' : 'animate__animated animate__fadeInLeft'" >
                 <app-step3></app-step3>
             </fieldset>
         <!------------------- Step 4 Start ----------------------->
-            <fieldset *ngIf="step == 4"  class="animate__animated animate__fadeInRight">
+            <fieldset *ngIf="step == 4" [ngClass]="status ? 'animate__animated animate__fadeInRight' : 'animate__animated animate__fadeInLeft'">
                 <app-step4></app-step4>
             </fieldset>
       

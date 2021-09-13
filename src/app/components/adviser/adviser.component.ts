@@ -7,11 +7,18 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
   styleUrls: ["./adviser.component.scss"],
 })
 export class AdviserComponent implements OnInit {
+// ======================================
+//				Atributes
+// ======================================
   public step: number = 1;
   public valid!: boolean;
+  status: boolean = false;
 
   constructor(private formBuilder: FormBuilder) {}
 
+// ======================================
+//				Reactive Forms
+// ======================================
   public personalInfo: FormGroup = this.formBuilder.group({
     ocupation: ['', [Validators.required]]
   });
@@ -19,10 +26,12 @@ export class AdviserComponent implements OnInit {
   ngOnInit(): void {}
 
   public next() {
+    this.status = true;
     this.step++;
   }
 
   public previous() {
+    this.status = false;
     this.step--;
   }
 }
