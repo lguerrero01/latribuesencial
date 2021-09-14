@@ -15,6 +15,10 @@ export class GetDiseasesService {
     { name: "Migraña", value: "migraña" },
     { name: "Dolores Musculares", value: "dolores musculares" },
     { name: "Problemas Respiratorios", value: "problemas respiratorios" },
+    { name: "Problemas de peso", value: "problemas de peso " },
   ];
   constructor() {}
+  public getData(arg: {}, arg2: {}) {
+      console.log("formulario desde el servicio", arg);
+  }
 }
