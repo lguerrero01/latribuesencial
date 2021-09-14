@@ -1,3 +1,4 @@
+<app-decoration></app-decoration>
 <div
   class="d-flex row justify-content-center animate__animated animate__fadeInUp"
 >
@@ -15,7 +16,7 @@
   </div>
   <div class="col-md-6 col-md-offset-3">
     <ng-container [formGroup]="stepForm">
-      <pre> {{ stepForm.value | json }}</pre>
+      <!-- <pre> {{ stepForm.value | json }}</pre> -->
       <!------------------- Step 1 Start ----------------------->
       <fieldset
         *ngIf="step == 1"

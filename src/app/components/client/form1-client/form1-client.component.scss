@@ -1,0 +1,73 @@
+h2 {
+  font-size: 18px;
+  margin-top: 40px;
+}
+
+.form-select {
+  margin-top: 25px;
+}
+
+// MEDIA QUERY
+@media(min-width:425px) {
+  .form-control {
+    width: 100%;
+    height: 70px;
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 27px;
+    margin-top: 50px;
+  }
+  
+  h3{
+      font-size: 27px;
+  }
+  .form-select{
+    height: 70px;
+    font-size: 18px;
+  }
+}
+@media(min-width:745px){
+    .center-input{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-content: center;
+    }
+    .form-select{
+        width: 500px;
+        height: 70px;
+        font-size: 20px;
+    }
+    .form-control{
+        font-size: 20px;
+    }
+    h3{
+        margin-top: 50px;
+    }
+}
+@media(min-width:1024px){
+    .form-select{
+        font-size: 25px;
+        width: 700px;
+    }
+    .form-control{
+        font-size: 25px;
+    }
+    h3{
+        font-size: 40px;
+    }
+    h2{
+        font-size: 35px;
+        margin-top: 95px;
+    }
+}
+@media(min-width:1440px){
+    .form-select{
+        font-size: 30px;
+        width: 700px;
+        height: 90px;
+    }
+}
+

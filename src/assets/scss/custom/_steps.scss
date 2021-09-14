@@ -35,6 +35,7 @@ h2 {
   background-color: #ccb16b;
   border: 0.5px solid gray !important;
   height: 38px;
+  line-height: 40px;
 }
 
 p {
@@ -90,6 +91,14 @@ video{
 
 button:not(:disabled) {
   color: #ccb16b;
+  background-color: #efe4df;
+  border: none;
+  font-size: 50px;
+  margin-left: 15px;
+  margin-top: 20px;
+}
+button:disabled {
+  color: #efe4df;
   background-color: #efe4df;
   border: none;
   font-size: 50px;
@@ -351,7 +360,7 @@ button:not(:disabled) {
 @media(min-width:1440px) {
   .form-control {
     width: 775px;
-    font-size: 45px;
+    font-size: 40px;
   }
   h2{
     font-size: 45px;

@@ -1,0 +1,14 @@
+button {
+  margin: 2px;
+}
+@media(min-width:768px){
+    .emblem{
+        width: 152px;
+    }
+}
+@media(min-width:1440px){
+    .emblem{
+        width: 180px;
+        height: 60px;
+    }
+}
