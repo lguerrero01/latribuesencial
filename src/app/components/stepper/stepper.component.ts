@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { FormsDataService } from "@shared/services/forms-data.service";
 import { GetDiseasesService } from "@shared/services/get-diseases.service";
 
 @Component({
@@ -12,11 +13,10 @@ export class StepperComponent implements OnInit {
   //				Attributes
   // ======================================
   public step = 1;
-  status: boolean = true;
+  public status: boolean = true;
   public valid: boolean = false;
   public stepForm!: FormGroup;
-
-  constructor(private fb: FormBuilder, private service: GetDiseasesService) {}
+  constructor(private fb: FormBuilder, private formService: FormsDataService) {}
 
   ngOnInit(): void {
     this.stepForm = this.fb.group({
@@ -30,10 +30,9 @@ export class StepperComponent implements OnInit {
     });
     console.log(this.stepForm);
   }
-
+  
   public next() {
-    console.log("formulario actualizado", this.stepForm);
-    this.service.getData(this.stepForm, {})
+    console.log("formulario actualizado", this.stepForm.value);
     this.status = true;
     this.step++;
   }

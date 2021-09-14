@@ -9,7 +9,8 @@
         id="button-client"
         class="btn btn-primary"
         type="button"
-        routerLink="/client"
+        routerLink="/cliente"
+        (click)="roleSelected('cliente')"
       >
         Cliente
       </button>
@@ -19,7 +20,8 @@
         id="button-adviser"
         class="btn btn-primary"
         type="button"
-        routerLink="/adviser"
+        routerLink="/asesor"
+        (click)="roleSelected('asesor')"
       >
         Asesor
       </button>

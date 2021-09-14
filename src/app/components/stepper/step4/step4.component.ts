@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsDataService } from '@shared/services/forms-data.service';
 
 @Component({
   selector: 'app-step4',
@@ -7,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class Step4Component implements OnInit {
+  public role!: string;
+  constructor(private formService: FormsDataService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit( ): void {
   }
-
+  public roleSelected ($event: string){
+    this.role =  $event 
+    this.formService.getRole(this.role);
+  }
 }

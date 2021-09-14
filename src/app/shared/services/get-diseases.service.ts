@@ -18,7 +18,5 @@ export class GetDiseasesService {
     { name: "Problemas de peso", value: "problemas de peso " },
   ];
   constructor() {}
-  public getData(arg: {}, arg2: {}) {
-      console.log("formulario desde el servicio", arg);
-  }
+ 
 }

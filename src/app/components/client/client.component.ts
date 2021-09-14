@@ -15,6 +15,9 @@ export class ClientComponent implements OnInit {
   public valid!: boolean;
   public status: boolean = false;
   public clientForm!: FormGroup;
+   // ======================================
+  //				Constructor
+  // ======================================
   constructor(private fb: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {
@@ -25,13 +28,13 @@ export class ClientComponent implements OnInit {
       }),
       checkArray: this.fb.array([], [Validators.required]),
     });
-    console.log(this.clientForm);
   }
 
   public next() {
     this.status = true;
+    console.log('linea 32 client',this.clientForm);
     if (this.step == 3) {
-      this.router.navigate(["/last"]);
+      this.router.navigate(["/despedida"]);
       return;
     }
     this.step++;
@@ -39,7 +42,6 @@ export class ClientComponent implements OnInit {
 
   public previous() {
     this.status = false;
-
     this.step--;
   }
 }

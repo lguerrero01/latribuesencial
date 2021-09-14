@@ -15,19 +15,19 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: "steps",
+    path: "pasos",
     loadChildren: () => import('./components/stepper/stepper.module').then(m => m.StepperModule)
   },
   {
-    path: "adviser",
+    path: "asesor",
     loadChildren: () => import('./components/adviser/adviser.module').then(m => m.AdviserModule)
   },
   {
-    path: "client",
+    path: "cliente",
     loadChildren: () => import('./components/client/client.module').then( m => m.ClientModule )
   },
   {
-    path: "last",
+    path: "despedida",
     component: LastPageComponent,
   },
   {

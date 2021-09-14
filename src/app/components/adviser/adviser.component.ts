@@ -21,7 +21,7 @@ export class AdviserComponent implements OnInit {
   //				Reactive Forms
   // ======================================
   public personalInfo: FormGroup = this.fb.group({});
-  public nuevaPropiedad: boolean = false
+  public nuevaPropiedad: boolean = false;
   ngOnInit(): void {
     this.adviserForm = this.fb.group({
       form1Adviser: this.fb.group({
