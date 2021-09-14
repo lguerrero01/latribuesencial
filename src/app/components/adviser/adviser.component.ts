@@ -33,7 +33,12 @@ export class AdviserComponent implements OnInit {
       form2Adviser: this.fb.group({
         bePart: ["", [Validators.required]],
         desc: ["", [Validators.required]],
-      })
+      }),
+      form3Adviser: this.fb.group({
+        card: ["", [Validators.required]],
+        working: ["", [Validators.required]],
+        help: ["", [Validators.required]],
+      }),
     });
   }
 

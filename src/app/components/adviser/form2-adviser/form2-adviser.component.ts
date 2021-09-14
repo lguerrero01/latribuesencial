@@ -17,19 +17,26 @@ export class Form2AdviserComponent implements OnInit {
   // ======================================
   @Input() formGroupName: string;
   form2Adviser: FormGroup;
+  // ======================================
+  //				Contructor
+  // ======================================
   constructor(private rootFormGroup: FormGroupDirective) {}
 
+  // ======================================
+  //				Oninit
+  // ======================================
   ngOnInit(): void {
     this.form2Adviser = this.rootFormGroup.control.get(
       this.formGroupName
     ) as FormGroup;
   }
-
+  // ======================================
+  //				Validaciones
+  // ======================================
   public fieldValid(field: string) {
     return (
       this.form2Adviser.controls[field].errors &&
       this.form2Adviser.controls[field].touched
     );
   }
- 
 }

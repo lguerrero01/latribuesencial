@@ -1,28 +1,54 @@
-<div class="container ">
-  <div class="row">
-    <h3>¿Posees alguna tarjeta que te permita hacer compras online?</h3>
-    <div class="d-flex justify-content-center">
-      <button type="button" class="btn btn-secondary">Si</button>
-      <button type="button" class="btn btn-secondary">No</button>
-    </div>
-  </div>
-  <div class="row">
-    <h3>¿Actualmente estas trabajando?</h3>
-    <div class="d-flex justify-content-center">
-      <button type="button" class="btn btn-secondary">Si</button>
-      <button type="button" class="btn btn-secondary">No</button>
-      <button type="button" class="btn btn-secondary">Otro</button>
-    </div>
-  </div>
-  <div class="row ">
-    <h3>
-      ¿Estás dispuesto a invertir para tu uso personal y para tu hogar 120$
-      aproximadamente en productos?
-    </h3>
-    <h2>Considerando que a su vez esto te ayudará a obtener ganancias.</h2>
-    <div class="d-flex justify-content-center">
-      <button type="button" class="btn btn-secondary">Si</button>
-      <button type="button" class="btn btn-secondary">No</button>
-    </div>
+<div class="container">
+  <div class="row justify-content-center text-center">
+    <form action=""  [formGroup]="form3Adviser" autocomplete="off">
+      <div class="row">
+        <h3>¿Posees alguna tarjeta que te permita hacer compras online?</h3>
+        <div class="d-flex justify-content-center">
+          <select
+            class="form-select"
+            formControlName="card"
+            aria-label="Default select example"
+          >
+            <option value="" disabled>Seleccione</option>
+            <option value="si">Si</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <h3>¿Actualmente estas trabajando?</h3>
+        <div class="d-flex justify-content-center">
+          <select
+            class="form-select"
+            formControlName="working"
+            aria-label="Default select example"
+          >
+            <option value="" disabled>Seleccione</option>
+            <option value="si">Si</option>
+            <option value="no">No</option>
+            <option value="otro">otro</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <h3>
+          ¿Estás dispuesto a invertir para tu uso personal y para tu hogar 120$
+          aproximadamente en productos?
+        </h3>
+        <h2>Considerando que a su vez esto te ayudará a obtener ganancias.</h2>
+        <div class="d-flex justify-content-center">
+          <select
+            class="form-select"
+            formControlName="help"
+            aria-label="Default select example"
+          >
+            <option value="" disabled>Seleccione</option>
+            <option value="si">Si</option>
+            <option value="no">No</option>
+            <option value="otro">otro</option>
+          </select>
+        </div>
+      </div>
+    </form>
   </div>
 </div>
