@@ -13,6 +13,9 @@
             <option value="si">Si</option>
             <option value="no">No</option>
           </select>
+          <p class="form-text text-danger" *ngIf="fieldValid('card')">
+            Campo Requerido
+          </p>
         </div>
       </div>
       <div class="row">
@@ -28,6 +31,9 @@
             <option value="no">No</option>
             <option value="otro">otro</option>
           </select>
+          <p class="form-text text-danger" *ngIf="fieldValid('working')">
+            Campo Requerido
+          </p>
         </div>
       </div>
       <div class="row">
@@ -47,6 +53,9 @@
             <option value="no">No</option>
             <option value="otro">otro</option>
           </select>
+          <p class="form-text text-danger" *ngIf="fieldValid('help')">
+            Campo Requerido
+          </p>
         </div>
       </div>
     </form>

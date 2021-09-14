@@ -2,16 +2,16 @@
   <div class="row justify-content-center">
     <form  [formGroup]="form1Adviser" action="" autocomplete="off">
       <!-- Campo de ocupacion -->
-      <div class="mb-3">
+      <div class=" mb-3">
         <input
           type="text"
           class="form-control"
           formControlName="ocupation"
           placeholder="Ocupacion Actual*"
         />
-        <span class="form-text text-danger" *ngIf="fieldValid('ocupation')">
+        <p class="text-danger" *ngIf="fieldValid('ocupation')">
           Ocupacion Requerida
-        </span>
+        </p>
       </div>
 
       <!-- Campo de Estado Civil -->
@@ -26,9 +26,9 @@
           <option value="soltero">Soltero</option>
           <option value="casado">Casado</option>
         </select>
-        <span class="form-text text-danger" *ngIf="fieldValid('maritalStatus')">
+        <p class="form-text text-danger" *ngIf="fieldValid('maritalStatus')">
           Campo Requerido
-        </span>
+        </p>
       </div>
       <!-- Campo de Hijos -->
 
@@ -42,9 +42,9 @@
           <option value="true">Si</option>
           <option value="false">No</option>
         </select>
-        <span class="form-text text-danger" *ngIf="fieldValid('sons')">
+        <p class="form-text text-danger" *ngIf="fieldValid('sons')">
           Campo Requerido
-        </span>
+        </p>
       </div>
     </form>
   </div>
