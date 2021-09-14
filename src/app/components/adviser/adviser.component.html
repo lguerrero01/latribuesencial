@@ -78,7 +78,6 @@
 
     <button
       [disabled]="!adviserForm.controls.form1Adviser.valid"
-      *ngIf="!(step == 5)"
       (click)="next()"
       type="button"
       name="next"
@@ -87,5 +86,6 @@
     >
       >
     </button>
+    <p>Presione siguiente para enviar informacion</p>
   </div>
 </div>

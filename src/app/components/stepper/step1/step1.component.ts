@@ -15,7 +15,6 @@ export class Step1Component implements OnInit {
   // ======================================
   //				Attributes
   // ======================================
-  // @Output() onIsValid = new EventEmitter<boolean>();
   @Input() formGroupName: string;
   form1: FormGroup;
 
@@ -28,21 +27,15 @@ export class Step1Component implements OnInit {
   //				onInit
   // ======================================
   ngOnInit(): void {
-    this.form1 = this.rootFormGroup.control.get(this.formGroupName) as FormGroup;
+    this.form1 = this.rootFormGroup.control.get(
+      this.formGroupName
+    ) as FormGroup;
   }
-
 
   public fieldValid(field: string) {
     return (
       this.form1.controls[field].errors && this.form1.controls[field].touched
     );
   }
-  //  public guardar() {
-  //   console.log(this.form1.value)
-  //   if ( this.form1.invalid )  {
-  //     this.form1.markAllAsTouched();
-  //     return;
-  //   }
-  //   this.form1.reset();
-  // }
+
 }

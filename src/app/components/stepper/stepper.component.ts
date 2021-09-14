@@ -16,6 +16,8 @@ export class StepperComponent implements OnInit {
   public status: boolean = true;
   public valid: boolean = false;
   public stepForm!: FormGroup;
+  public PAT_EMAIL = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+[.][a-zA-Z]{2,4}$";
+
   constructor(private fb: FormBuilder, private formService: FormsDataService) {}
 
   ngOnInit(): void {
@@ -28,10 +30,10 @@ export class StepperComponent implements OnInit {
         phone: ["", [Validators.required]],
       }),
     });
-    console.log(this.stepForm);
   }
-  
+
   public next() {
+    this.formService.getForm(this.stepForm.value);
     console.log("formulario actualizado", this.stepForm.value);
     this.status = true;
     this.step++;
@@ -40,12 +42,5 @@ export class StepperComponent implements OnInit {
   public previous() {
     this.status = false;
     this.step--;
-  }
-
-  public submit() {
-    // if(this.step==4){
-    //   this.education_step = true;
-    //   if (this.educationalDetails.invalid) { return }
-    // }
   }
 }

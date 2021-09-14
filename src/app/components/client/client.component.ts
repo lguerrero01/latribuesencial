@@ -15,7 +15,7 @@ export class ClientComponent implements OnInit {
   public valid!: boolean;
   public status: boolean = false;
   public clientForm!: FormGroup;
-   // ======================================
+  // ======================================
   //				Constructor
   // ======================================
   constructor(private fb: FormBuilder, private router: Router) {}
@@ -32,8 +32,8 @@ export class ClientComponent implements OnInit {
 
   public next() {
     this.status = true;
-    console.log('linea 32 client',this.clientForm);
     if (this.step == 3) {
+      console.log("enviando form de cliente", this.clientForm);
       this.router.navigate(["/despedida"]);
       return;
     }

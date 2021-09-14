@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-adviser",
@@ -15,7 +16,7 @@ export class AdviserComponent implements OnInit {
   status: boolean = false;
   public adviserForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private router: Router) {}
 
   // ======================================
   //				Reactive Forms
@@ -43,6 +44,11 @@ export class AdviserComponent implements OnInit {
   }
 
   public next() {
+    if (this.step == 6) {
+      console.log("enviando form de adviser", this.adviserForm);
+      this.router.navigate(["/despedida"]);
+      return;
+    }
     this.status = true;
     this.step++;
   }
