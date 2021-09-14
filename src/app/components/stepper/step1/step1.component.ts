@@ -1,52 +1,48 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import {
+  FormBuilder,
+  FormGroup,
+  FormGroupDirective,
+  Validators,
+} from "@angular/forms";
 
 @Component({
-  selector: 'app-step1',
-  templateUrl: './step1.component.html',
-  styles: [
-  ]
+  selector: "app-step1",
+  templateUrl: "./step1.component.html",
+  styles: [],
 })
 export class Step1Component implements OnInit {
   // ======================================
-	//				Attributes
-	// ======================================
-  @Output() onIsValid = new EventEmitter<boolean>();
+  //				Attributes
+  // ======================================
+  // @Output() onIsValid = new EventEmitter<boolean>();
+  @Input() formGroupName: string;
+  form1: FormGroup;
 
   // ======================================
-	//				Constructor
-	// ======================================
-  constructor(private formBuilder: FormBuilder) {}
-
-  public form1: FormGroup = this.formBuilder.group({
-    email: [ , [ Validators.required] ],
-    name: [ , [ Validators.required] ],
-    country: [ , [ Validators.required] ],
-    countryRes : [ , [ Validators.required] ],
-    phone : [ , [ Validators.required] ]
-  })
+  //				Constructor
+  // ======================================
+  constructor(private rootFormGroup: FormGroupDirective) {}
 
   // ======================================
-	//				onInit
-	// ======================================
+  //				onInit
+  // ======================================
   ngOnInit(): void {
-    console.log('linea33',this.form1.value);
-  }
-  
-  public formValid() {
-    this.onIsValid.emit(this.form1.valid);
+    this.form1 = this.rootFormGroup.control.get(this.formGroupName) as FormGroup;
   }
 
-  public fieldValid( field: string ) {  
-    return this.form1.controls[field].errors 
-            && this.form1.controls[field].touched;
+
+  public fieldValid(field: string) {
+    return (
+      this.form1.controls[field].errors && this.form1.controls[field].touched
+    );
   }
-   public guardar() {
-    console.log(this.form1.value)
-    if ( this.form1.invalid )  {
-      this.form1.markAllAsTouched();
-      return;
-    }
-    this.form1.reset();
-  }
+  //  public guardar() {
+  //   console.log(this.form1.value)
+  //   if ( this.form1.invalid )  {
+  //     this.form1.markAllAsTouched();
+  //     return;
+  //   }
+  //   this.form1.reset();
+  // }
 }

@@ -14,51 +14,53 @@
     </ul>
   </div>
   <div class="col-md-6 col-md-offset-3">
-    <!------------------- Step 1 Start ----------------------->
-    <fieldset
-      *ngIf="step == 1"
-      [ngClass]="
-        status
-          ? 'animate__animated animate__fadeInRight'
-          : 'animate__animated animate__fadeInLeft'
-      "
-    >
-      <app-step1 (onIsValid)="getValue($event)"></app-step1>
-    </fieldset>
-    <!------------------- Step 2 Start ----------------------->
-    <fieldset
-      *ngIf="step == 2"
-      [ngClass]="
-        status
-          ? 'animate__animated animate__fadeInRight'
-          : 'animate__animated animate__fadeInLeft'
-      "
-    >
-      <app-step2></app-step2>
-    </fieldset>
-    <!------------------- Step 3 Start ----------------------->
-    <fieldset
-      *ngIf="step == 3"
-      [ngClass]="
-        status
-          ? 'animate__animated animate__fadeInRight'
-          : 'animate__animated animate__fadeInLeft'
-      "
-    >
-      <app-step3></app-step3>
-    </fieldset>
-    <!------------------- Step 4 Start ----------------------->
-    <fieldset
-      *ngIf="step == 4"
-      [ngClass]="
-        status
-          ? 'animate__animated animate__fadeInRight'
-          : 'animate__animated animate__fadeInLeft'
-      "
-    >
-      <app-step4></app-step4>
-    </fieldset>
-
+    <ng-container [formGroup]="stepForm">
+      <pre> {{ stepForm.value | json }}</pre>
+      <!------------------- Step 1 Start ----------------------->
+      <fieldset
+        *ngIf="step == 1"
+        [ngClass]="
+          status
+            ? 'animate__animated animate__fadeInRight'
+            : 'animate__animated animate__fadeInLeft'
+        "
+      >
+        <app-step1 formGroupName="infoStepForm"></app-step1>
+      </fieldset>
+      <!------------------- Step 2 Start ----------------------->
+      <fieldset
+        *ngIf="step == 2"
+        [ngClass]="
+          status
+            ? 'animate__animated animate__fadeInRight'
+            : 'animate__animated animate__fadeInLeft'
+        "
+      >
+        <app-step2></app-step2>
+      </fieldset>
+      <!------------------- Step 3 Start ----------------------->
+      <fieldset
+        *ngIf="step == 3"
+        [ngClass]="
+          status
+            ? 'animate__animated animate__fadeInRight'
+            : 'animate__animated animate__fadeInLeft'
+        "
+      >
+        <app-step3></app-step3>
+      </fieldset>
+      <!------------------- Step 4 Start ----------------------->
+      <fieldset
+        *ngIf="step == 4"
+        [ngClass]="
+          status
+            ? 'animate__animated animate__fadeInRight'
+            : 'animate__animated animate__fadeInLeft'
+        "
+      >
+        <app-step4></app-step4>
+      </fieldset>
+    </ng-container>
     <!------------------- Buttons Form ----------------------->
     <div class="row justify-content-center">
       <button
@@ -73,7 +75,7 @@
       </button>
 
       <button
-        [disabled]="!valid"
+        [disabled]="!stepForm.controls.infoStepForm.valid"
         *ngIf="step != 4"
         (click)="next()"
         type="button"

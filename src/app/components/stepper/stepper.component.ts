@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
   selector: "app-stepper",
@@ -7,21 +8,34 @@ import { Component, OnInit } from "@angular/core";
 })
 export class StepperComponent implements OnInit {
   // ======================================
-	//				Attributes
-	// ======================================
+  //				Attributes
+  // ======================================
   public step = 1;
   status: boolean = true;
   public valid: boolean = false;
+  public stepForm!: FormGroup;
 
-  constructor() {}
+  constructor(private fb: FormBuilder) {}
 
-  ngOnInit(): void {}
-
-  public getValue($event: boolean) {
-    this.valid = $event;
-    console.log("linea22",this.valid)
+  ngOnInit(): void {
+    this.stepForm = this.fb.group({
+      infoStepForm: this.fb.group({
+        email: ["", [Validators.required]],
+        name: ["", [Validators.required]],
+        country: ["", [Validators.required]],
+        countryRes: ["", [Validators.required]],
+        phone: ["", [Validators.required]],
+      }),
+    });
+    console.log(this.stepForm);
   }
+
+  // public getValue($event: boolean) {
+  //   this.valid = $event;
+  //   console.log("linea22",this.valid)
+  // }
   public next() {
+    console.log("este es el formulario", this.stepForm);
     this.status = true;
     this.step++;
   }
