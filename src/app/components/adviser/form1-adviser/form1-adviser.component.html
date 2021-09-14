@@ -23,8 +23,8 @@
           aria-label="Default select example"
         >
           <option value="" disabled>Edo. Civil*</option>
-          <option value="si">Soltero</option>
-          <option value="no">Casado</option>
+          <option value="soltero">Soltero</option>
+          <option value="casado">Casado</option>
         </select>
         <span class="form-text text-danger" *ngIf="fieldValid('maritalStatus')">
           Campo Requerido
@@ -39,8 +39,8 @@
           aria-label="Default select example"
         >
           <option value="" selected><Table>Tienes Hijos?*</Table></option>
-          <option value="si">Si</option>
-          <option value="no">No</option>
+          <option value="true">Si</option>
+          <option value="false">No</option>
         </select>
         <span class="form-text text-danger" *ngIf="fieldValid('sons')">
           Campo Requerido

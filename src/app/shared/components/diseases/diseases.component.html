@@ -4,7 +4,7 @@
     <h2>Selecciona tantas como sean necesarias</h2>
   </div>
   <div class="row text-center">
-    <form [formGroup]="form" (ngSubmit)="submitForm()" >
+    <form [formGroup]="form"  >
       <ul class="diseases">
         <li class="diseases-list" *ngFor="let data of Data; let i = index">
           <div class="" >
@@ -21,7 +21,6 @@
           </div>
         </li>
       </ul>
-      <input type="submit" value="Submit" />
     </form>
   </div>
 </div>

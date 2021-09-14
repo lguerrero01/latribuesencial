@@ -1,5 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Component, Input, OnInit } from "@angular/core";
+import {
+  FormBuilder,
+  FormGroup,
+  FormGroupDirective,
+  Validators,
+} from "@angular/forms";
 
 @Component({
   selector: "app-form2-adviser",
@@ -10,14 +15,15 @@ export class Form2AdviserComponent implements OnInit {
   // ======================================
   //				Atributes
   // ======================================
-  constructor(private formBuilder: FormBuilder) {}
+  @Input() formGroupName: string;
+  form2Adviser: FormGroup;
+  constructor(private rootFormGroup: FormGroupDirective) {}
 
-  public form2Adviser: FormGroup = this.formBuilder.group({
-    bePart: ["", [Validators.required]],
-    desc: ["", [Validators.required]],
-  });
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.form2Adviser = this.rootFormGroup.control.get(
+      this.formGroupName
+    ) as FormGroup;
+  }
 
   public fieldValid(field: string) {
     return (
@@ -25,4 +31,5 @@ export class Form2AdviserComponent implements OnInit {
       this.form2Adviser.controls[field].touched
     );
   }
+ 
 }

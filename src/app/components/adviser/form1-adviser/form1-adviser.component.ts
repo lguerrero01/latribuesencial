@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Component, Input, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, FormGroupDirective, Validators } from "@angular/forms";
 
 @Component({
   selector: "app-form1-adviser",
@@ -10,16 +10,13 @@ export class Form1AdviserComponent implements OnInit {
   // ======================================
   //				Atributes
   // ======================================
+  @Input() formGroupName: string;
+  form1Adviser: FormGroup;
+  constructor(private rootFormGroup: FormGroupDirective) {}
 
-  constructor(private formBuilder: FormBuilder) {}
-
-  public form1Adviser: FormGroup = this.formBuilder.group({
-    ocupation: ["", [Validators.required]],
-    maritalStatus: ["", [Validators.required]],
-    sons: ["", [Validators.required]],
-  });
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.form1Adviser = this.rootFormGroup.control.get(this.formGroupName) as FormGroup;
+  }
 
   public fieldValid(field: string) {
     return (

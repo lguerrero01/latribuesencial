@@ -6,25 +6,35 @@
     </h3>
     <h2>Queremos saber más sobre ti:</h2>
   </div>
-    <form action="" [formGroup]="form1Client"  autocomplete="off">
+  <form  [formGroup]="form" autocomplete="off">
+    <div class="" >
       <!-- Campo de ocupacion -->
-      <div class="mb-3 ">
-        <select class="form-select" formControlName="sons" aria-label="Default select example">
+      <div class="mb-3">
+        <select
+          class="form-select"
+          formControlName="sons"
+          aria-label="Default select example"
+        >
           <option value="" disabled>¿Tienes Hijos?</option>
           <option value="Si">Si</option>
           <option value="No">No</option>
         </select>
         <p class="form-text text-danger" *ngIf="fieldValid('sons')">
-          Campo Requerido 
+          Campo Requerido
         </p>
       </div>
-      
 
       <div class="mb-3">
-        <input type="text" class="form-control" formControlName="sport" placeholder="¿Practicas algún deporte o pasatiempo?*" />
+        <input
+          type="text"
+          class="form-control"
+          formControlName="sport"
+          placeholder="¿Practicas algún deporte o pasatiempo?*"
+        />
         <p class="form-text text-danger" *ngIf="fieldValid('sport')">
-          Campo Requerido 
+          Campo Requerido
         </p>
       </div>
-    </form>
+    </div>
+  </form>
 </div>
