@@ -11,7 +11,7 @@ export class AdviserComponent implements OnInit {
   // ======================================
   //				Atributes
   // ======================================
-  public step: number = 5;
+  public step: number = 4;
   public valid!: boolean;
   status: boolean = false;
   public adviserForm!: FormGroup;
