@@ -32,8 +32,9 @@ export class ClientComponent implements OnInit {
 
   public next() {
     this.status = true;
+    console.log(this.clientForm.value);
     if (this.step == 3) {
-      console.log("enviando form de cliente", this.clientForm);
+      console.log("enviando form de cliente", this.clientForm.value);
       this.router.navigate(["/despedida"]);
       return;
     }

@@ -45,7 +45,7 @@ export class AdviserComponent implements OnInit {
 
   public next() {
     if (this.step == 6) {
-      console.log("enviando form de adviser", this.adviserForm);
+      console.log("enviando form de adviser", this.adviserForm.value);
       this.router.navigate(["/despedida"]);
       return;
     }

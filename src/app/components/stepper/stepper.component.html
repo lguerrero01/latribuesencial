@@ -61,7 +61,7 @@
             : 'animate__animated animate__fadeInLeft'
         "
       >
-        <app-step4></app-step4>
+        <app-step4 (messageEvent)="getRoute($event)"></app-step4>
       </fieldset>
     </ng-container>
     <!------------------- Buttons Form ----------------------->
@@ -69,7 +69,7 @@
       <button
         *ngIf="step != 1"
         (click)="previous()"
-        type="button"
+        type="submit"
         name="previous"
         class="col-1 animate__animated animate__fadeIn"
         value="Previous"
@@ -79,9 +79,9 @@
 
       <button
         [disabled]="!stepForm.controls.infoStepForm.valid"
-        *ngIf="step != 4"
+        *ngIf="step != 5"
         (click)="next()"
-        type="button"
+        type="submit"
         name="next"
         class="col-1 animate__animated animate__fadeIn"
         value="Next"

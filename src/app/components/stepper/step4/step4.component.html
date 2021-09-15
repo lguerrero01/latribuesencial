@@ -3,28 +3,30 @@
     <div class="row text-center">
       <h2>¿Cómo te gustaría comenzar con nosotras?</h2>
     </div>
-
-    <div class="row m-2">
-      <button
-        id="button-client"
-        class="btn btn-primary"
-        type="button"
-        routerLink="/cliente"
-        (click)="roleSelected('cliente')"
-      >
-        Cliente
-      </button>
-    </div>
-    <div class="row m-2">
-      <button
-        id="button-adviser"
-        class="btn btn-primary"
-        type="button"
-        routerLink="/asesor"
-        (click)="roleSelected('asesor')"
-      >
-        Asesor
-      </button>
-    </div>
+      <div class="row m-2">
+        <button
+          id="button-client"
+          class=""
+          type="ratio"
+          (click)="roleSelected('cliente')"
+          [ngClass]=" client ? 'bg-secondary' : '' "
+          value="cliente"
+        >
+          Cliente
+        </button>
+      </div>
+      <div class="row m-2">
+        <button
+         
+          id="button-adviser"
+          class=""
+          type="ratio"
+          (click)="roleSelected('asesor')"
+          [ngClass]=" adviser ? 'bg-secondary' : '' "
+          value="asesor"
+        >
+          Asesor
+        </button>
+      </div>
   </div>
 </div>

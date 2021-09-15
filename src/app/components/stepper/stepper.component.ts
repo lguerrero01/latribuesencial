@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 import { FormsDataService } from "@shared/services/forms-data.service";
 import { GetDiseasesService } from "@shared/services/get-diseases.service";
 
@@ -12,13 +13,18 @@ export class StepperComponent implements OnInit {
   // ======================================
   //				Attributes
   // ======================================
+  public ruta: string;
   public step = 1;
   public status: boolean = true;
   public valid: boolean = false;
   public stepForm!: FormGroup;
   public PAT_EMAIL = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+[.][a-zA-Z]{2,4}$";
 
-  constructor(private fb: FormBuilder, private formService: FormsDataService) {}
+  constructor(
+    private fb: FormBuilder,
+    private formService: FormsDataService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.stepForm = this.fb.group({
@@ -26,17 +32,29 @@ export class StepperComponent implements OnInit {
         email: ["", [Validators.required]],
         name: ["", [Validators.required]],
         country: ["", [Validators.required]],
-        countryRes: ["", [Validators.required]],
+        resCountry: ["", [Validators.required]],
         phone: ["", [Validators.required]],
       }),
+      // roles: this.fb.group({
+      //   role: [""],
+      // }),
     });
   }
 
+  public getRoute(route) {
+    this.ruta = route;
+    console.log(this.ruta);
+  }
   public next() {
-    this.formService.getForm(this.stepForm.value);
-    console.log("formulario actualizado", this.stepForm.value);
     this.status = true;
+
     this.step++;
+    if (this.step == 5) {
+      console.log("enviando form de pasos", this.stepForm.value);
+      this.formService.getForm(this.stepForm.value);
+      this.router.navigate([`/${this.ruta}`]);
+      return;
+    }
   }
 
   public previous() {
