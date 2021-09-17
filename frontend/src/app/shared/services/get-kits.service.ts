@@ -6,4 +6,7 @@ import { Injectable } from "@angular/core";
 export class GetKitsService {
   public kits = [];
   constructor() {}
+  public getKits () {
+    
+  }
 }

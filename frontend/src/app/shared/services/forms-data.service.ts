@@ -6,6 +6,7 @@ import { Router } from "@angular/router";
 })
 export class FormsDataService {
   public object: {} = {}
+  public formFinal: {} = { };
   constructor(private router: Router) {}
 
  
@@ -18,9 +19,12 @@ export class FormsDataService {
     }
     return role;
   }
+  public getFormBasic (form : {}) {
+    this.formFinal = {...form}
+  }
 
-  public getForm(form: {}) {
-    let forms = {...form}
-    console.log('obteniendo form desde servicio', forms)
+  public getFormFinal(form: {}) {
+    this.formFinal = {...form}
+    console.log('obteniendo form desde servicio', this.formFinal)
   }
 }
