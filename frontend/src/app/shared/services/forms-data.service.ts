@@ -23,7 +23,7 @@ export class FormsDataService {
     this.formFinal = {...form}
   }
 
-  public getFormFinal(form: {}) {
+  public getForm(form: {}) {
     this.formFinal = {...form}
     console.log('obteniendo form desde servicio', this.formFinal)
   }
