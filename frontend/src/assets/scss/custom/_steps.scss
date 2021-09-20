@@ -59,6 +59,10 @@ video{
   cursor: pointer;
   margin-left: 2px;
 }
+.button-choice{
+  color: #de9a6b !important;
+  background-color: #efe4df !important;
+}
 
 .form1 {
   display: flex;
@@ -324,7 +328,7 @@ button:disabled {
 
 @media(min-width:1440px) {
   .form-control {
-    font-size: 40px;
+    font-size: 30px;
   }
   h2{
     font-size: 45px;

@@ -1,27 +1,23 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <form  [formGroup]="form1Adviser" action="" autocomplete="off">
+<div class="container justify-content-center d-flex">
+  <div class="col-md-6">
+    <form [formGroup]="form1Adviser" action="" autocomplete="off">
       <!-- Campo de ocupacion -->
-      <div class=" mb-3">
-        <input
-          type="text"
-          class="form-control"
-          formControlName="ocupation"
-          placeholder="Ocupacion Actual*"
-        />
+      <div class="mb-3 row justify-content-center">
+
+        <input type="text" class="form-control" formControlName="ocupation" placeholder="Ocupacion Actual*" />
+
         <p class="text-danger" *ngIf="fieldValid('ocupation')">
           Ocupacion Requerida
         </p>
+
+
       </div>
 
       <!-- Campo de Estado Civil -->
 
-      <div class="mb-3">
-        <select
-          class="form-select"
-          formControlName="maritalStatus"
-          aria-label="Default select example"
-        >
+      <div class="mb-3 row">
+
+        <select class="form-select" formControlName="maritalStatus" aria-label="Default select example">
           <option value="" disabled>Edo. Civil*</option>
           <option value="soltero">Soltero</option>
           <option value="casado">Casado</option>
@@ -29,22 +25,24 @@
         <p class="form-text text-danger" *ngIf="fieldValid('maritalStatus')">
           Campo Requerido
         </p>
+
+
       </div>
       <!-- Campo de Hijos -->
 
-      <div class="mb-3">
-        <select
-          class="form-select"
-          formControlName="sons"
-          aria-label="Default select example"
-        >
-          <option value="" selected><Table>Tienes Hijos?*</Table></option>
+      <div class="mb-3 row">
+
+        <select class="form-select" formControlName="sons" aria-label="Default select example">
+          <option value="" selected>
+            <Table>Tienes Hijos?*</Table>
+          </option>
           <option value="true">Si</option>
           <option value="false">No</option>
         </select>
         <p class="form-text text-danger" *ngIf="fieldValid('sons')">
           Campo Requerido
         </p>
+
       </div>
     </form>
   </div>
