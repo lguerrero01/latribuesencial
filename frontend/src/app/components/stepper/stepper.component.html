@@ -16,9 +16,9 @@
       <li [ngClass]="step == 4 ? 'active' : 'inactive'"></li>
     </ul>
   </div>
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-6 col-md-offset-3 overflow-hidden">
     <ng-container [formGroup]="stepForm">
-      <pre> {{ stepForm.value | json }}</pre>
+      <!-- <pre> {{ stepForm.value | json }}</pre> -->
       <!------------------- Step 1 Start ----------------------->
       <fieldset
         *ngIf="step == 1"
