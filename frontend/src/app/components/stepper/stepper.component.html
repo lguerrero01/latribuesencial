@@ -1,11 +1,6 @@
 <app-decoration></app-decoration>
 <div
-  class="
-    d-flex
-    row
-    justify-content-center
-    animate__animated animate__fadeInUp 
-  "
+  class="d-flex row justify-content-center animate__animated animate__fadeInUp"
 >
   <!-- progressbar -->
   <div id="msform" class="row justify-content-center">
@@ -79,12 +74,20 @@
 
       <button
         [disabled]="!stepForm.controls.infoStepForm.valid"
-        *ngIf="step != 5"
+        *ngIf="step <= 3"
         (click)="next()"
         type="submit"
         name="next"
         class="col-1 animate__animated animate__fadeIn"
-        value="Next"
+      >
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </button>
+      <button
+        *ngIf="ruta && step == 4"
+        (click)="next()"
+        type="submit"
+        name="next"
+        class="col-1 animate__animated animate__fadeIn"
       >
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </button>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+import { FormsDataService } from "@shared/services/forms-data.service";
 
 @Component({
   selector: "app-client",
@@ -18,7 +19,11 @@ export class ClientComponent implements OnInit {
   // ======================================
   //				Constructor
   // ======================================
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private formService: FormsDataService
+  ) {}
 
   ngOnInit(): void {
     this.clientForm = this.fb.group({
@@ -35,6 +40,7 @@ export class ClientComponent implements OnInit {
     console.log(this.clientForm.value);
     if (this.step == 3) {
       console.log("enviando form de cliente", this.clientForm.value);
+      this.formService.getForm(this.clientForm.value);
       this.router.navigate(["/despedida"]);
       return;
     }

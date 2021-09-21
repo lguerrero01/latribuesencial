@@ -5,26 +5,12 @@ import { Router } from "@angular/router";
   providedIn: "root",
 })
 export class FormsDataService {
-  public object: {} = {}
-  public formFinal: {} = { };
-  constructor(private router: Router) {}
+  public formFinal: {} = {};
 
- 
-  public getRole(role: string) {
-    console.log("role elegido:", role);
-    if (role === 'cliente') {
-      // this.router.navigate(["/cliente"]);
-    } else {
-      // this.router.navigate(["/asesor"]);
-    }
-    return role;
-  }
-  public getFormBasic (form : {}) {
-    this.formFinal = {...form}
-  }
+  constructor() {}
 
   public getForm(form: {}) {
-    this.formFinal = {...form}
-    console.log('obteniendo form desde servicio', this.formFinal)
+    this.formFinal = { ...this.formFinal, ...form };
+    console.log("obteniendo form desde servicio", this.formFinal);
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsDataService } from '@shared/services/forms-data.service';
 
 @Component({
   selector: 'app-last-page',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LastPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private formService: FormsDataService) { }
 
   ngOnInit(): void {
   }
