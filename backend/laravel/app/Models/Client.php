@@ -24,9 +24,12 @@ class Client extends Model
         'email' => 'string',
         'country' => 'string',
         'resCountry' => 'string',
-        'phone' => 'number',
-        'children'=> 'enum',
-        'sport'=> 'string'
+        'phone' => 'integer',
+        'children'=> 'string',
+        'sport'=> 'string',
+        'workingStatus' =>'string',
+        'card' =>'string',
+        'help' =>'string'
     ];
 
 
