@@ -16,6 +16,8 @@ class CreateKitsTable extends Migration
         Schema::create('kits', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('name');
+
         });
     }
 
