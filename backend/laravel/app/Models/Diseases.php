@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Diseases extends Model
 {
+    use HasFactory;
     protected $fillable = [
         'name'
     ];
@@ -14,5 +15,4 @@ class Diseases extends Model
     protected $casts = [
         'name' => 'string',
     ];
-    use HasFactory;
 }

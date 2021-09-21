@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Kit extends Model
 {
     use HasFactory;
+    
+    protected $fillable = [
+        'name'
+    ];
+    
+    protected $casts = [
+        'name' => 'string',
+    ];
 }
