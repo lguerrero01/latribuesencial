@@ -8,10 +8,13 @@ import { catchError } from "rxjs/operators";
   providedIn: "root",
 })
 export class FormsDataService {
-
+  // api.latribu.test
+  // ======================================
+  //				Atributes
+  // ======================================
   public formFinal: {} = {};
   public apiUrl: string = "";
-  
+
   constructor(private httpClient: HttpClient) {}
 
   public httpOptions = {
@@ -20,7 +23,10 @@ export class FormsDataService {
     }),
   };
 
-  public sendForm(form: {}): Observable<any> {
+  // ======================================
+  //				send info to client
+  // ======================================
+  public sendFormClient(form: {}): Observable<any> {
     this.formFinal = { ...form };
 
     console.log("obteniendo form desde servicio", this.formFinal);
@@ -28,6 +34,23 @@ export class FormsDataService {
       .post<any>(this.apiUrl, JSON.stringify(form), this.httpOptions)
       .pipe(catchError(this.errorHandler));
   }
+
+  // ======================================
+  //				send info to adviser
+  // ======================================
+
+  public sendFormAdviser(form: {}): Observable<any> {
+    this.formFinal = { ...form };
+
+    console.log("obteniendo form desde servicio", this.formFinal);
+    return this.httpClient
+      .post<any>(this.apiUrl, JSON.stringify(form), this.httpOptions)
+      .pipe(catchError(this.errorHandler));
+  }
+
+  // ======================================
+  //				Error handler
+  // ======================================
 
   public errorHandler(error) {
     let errorMessage = "";

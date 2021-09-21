@@ -24,12 +24,18 @@ class Client extends Model
         'email' => 'string',
         'country' => 'string',
         'resCountry' => 'string',
+<<<<<<< Updated upstream
         'phone' => 'integer',
         'children'=> 'string',
         'sport'=> 'string',
         'workingStatus' =>'string',
         'card' =>'string',
         'help' =>'string'
+=======
+        'phone' => 'string',
+        'children'=> 'enum',
+        'sport'=> 'string'
+>>>>>>> Stashed changes
     ];
 
 

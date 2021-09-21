@@ -22,11 +22,21 @@ class ClientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
-
+    public function create(Request $request){
+        $data['name'] = $request['name'];
+        $data['email'] = $request['email'];
+        $data['country'] = $request['phone'];
+        $data['resCountry'] = $request['phone'];
+        $data['phone'] = $request['phone'];
+        $data['children'] = $request['phone'];
+        $data['sport'] = $request['phone'];
+        Client::create($data);
+        return response()->json([
+            'message' => "Client created",
+            'success' => true
+        ], 200);
+      }
+  
     /**
      * Store a newly created resource in storage.
      *
