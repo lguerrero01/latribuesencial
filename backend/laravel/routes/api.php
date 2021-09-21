@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdviserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::post('/client', [ClientController::class, 'create']);
+Route::post('/adviser', [AdviserController::class, 'create']);

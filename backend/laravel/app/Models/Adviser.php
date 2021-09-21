@@ -9,7 +9,7 @@ class Adviser extends Model
 {
     use HasFactory;
 
-    protected $fillable =[
+    protected $fillable = [
         'name',
         'email',
         'phone',
@@ -21,7 +21,6 @@ class Adviser extends Model
         'workingStatus',
         'card',
         'help'
-
     ];
     protected $cast = [
         'name' => 'string',
@@ -29,8 +28,11 @@ class Adviser extends Model
         'phone' => 'integer',
         'ocupation' => 'string',
         'maritalStatus' => 'string',
-        'children'=> 'stirng',
-        'bePart'=> 'string',
-        'desc'=> 'string'
+        'children' => 'stirng',
+        'bePart' => 'string',
+        'desc' => 'string',
+        'workingStatus' => 'string',
+        'card' => 'string',
+        'help' => 'string'
     ];
 }

@@ -22,9 +22,25 @@ class AdviserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $data['name'] = $request['name'];
+        $data['email'] = $request['email'];
+        $data['phone'] = $request['phone'];
+        $data['ocupation'] = $request['ocupation'];
+        $data['maritalStatus'] = $request['maritalStatus'];
+        $data['children'] = $request['children'];
+        $data['bePart'] = $request['bePart'];
+        $data['desc'] = $request['desc'];
+        $data['workingStatus'] = $request['workingStatus'];
+        $data['card'] = $request['card'];
+        $data['help'] = $request['help'];
+
+        Adviser::create($data);
+        return response()->json([
+            'message' => "Adviser created",
+            'success' => true
+        ], 200);
     }
 
     /**

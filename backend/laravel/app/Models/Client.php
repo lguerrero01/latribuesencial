@@ -7,37 +7,32 @@ use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
 {
-    use HasFactory;
-   
-   
-    protected $fillable =[
-      'name',
-      'email',
-      'country',
-      'resCountry',
-      'phone',
-      'children',
-      'sport',
-    ];
-    protected $casts = [
-        'name' => 'string',
-        'email' => 'string',
-        'country' => 'string',
-        'resCountry' => 'string',
-<<<<<<< Updated upstream
-        'phone' => 'integer',
-        'children'=> 'string',
-        'sport'=> 'string',
-        'workingStatus' =>'string',
-        'card' =>'string',
-        'help' =>'string'
-=======
-        'phone' => 'string',
-        'children'=> 'enum',
-        'sport'=> 'string'
->>>>>>> Stashed changes
-    ];
+  use HasFactory;
 
 
+  protected $fillable = [
+    'name',
+    'email',
+    'country',
+    'resCountry',
+    'phone',
+    'children',
+    'sport',
+    'workingStatus',
+    'card',
+    'help'
+  ];
+  
+  protected $casts = [
+    'name' => 'string',
+    'email' => 'string',
+    'country' => 'string',
+    'resCountry' => 'string',
+    'phone' => 'integer',
+    'children' => 'string',
+    'sport' => 'string',
+    'workingStatus' => 'string',
+    'card' => 'string',
+    'help' => 'string'
+  ];
 }
-
