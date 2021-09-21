@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Diseases extends Model
 {
+    protected $fillable = [
+        'name'
+    ];
+    
+    protected $casts = [
+        'name' => 'string',
+    ];
     use HasFactory;
 }
