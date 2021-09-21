@@ -8,4 +8,27 @@ use Illuminate\Database\Eloquent\Model;
 class Client extends Model
 {
     use HasFactory;
+   
+   
+    protected $fillable =[
+      'name',
+      'email',
+      'country',
+      'resCountry',
+      'phone',
+      'children',
+      'sport',
+    ];
+    protected $casts = [
+        'name' => 'string',
+        'email' => 'string',
+        'country' => 'string',
+        'resCountry' => 'string',
+        'phone' => 'number',
+        'children'=> 'enum',
+        'sport'=> 'string'
+    ];
+
+
 }
+

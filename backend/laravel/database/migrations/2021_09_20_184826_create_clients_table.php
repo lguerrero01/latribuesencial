@@ -21,6 +21,8 @@ class CreateClientsTable extends Migration
             $table->string('country');
             $table->string('resCountry');
             $table->number('phone');
+            $table->enum('children');
+            $table->string('sport');
             
         });
     }

@@ -1,32 +1,22 @@
 <div class="container ">
-  <div class="col justify-content-center ">
-    <div class="row text-center">
-      <h2>¿Cómo te gustaría comenzar con nosotras?</h2>
-    </div>
+  <div class="row justify-content-center">
+    <div class="col-6">
+
+      <div class="text-center ">
+        <h2>¿Cómo te gustaría comenzar con nosotras?</h2>
+      </div>
       <div class="row m-2">
-        <button
-          id="button-client"
-          class=""
-          type="ratio"
-          (click)="roleSelected('cliente')"
-          [ngClass]=" client ? 'button-choice' : '' "
-          value="cliente"
-        >
+        <button id="button-client" class="" type="ratio" (click)="roleSelected('cliente')"
+          [ngClass]=" client ? 'button-choice' : '' " value="cliente">
           Cliente
         </button>
       </div>
       <div class="row m-2">
-        <button
-         
-          id="button-adviser"
-          class=""
-          type="ratio"
-          (click)="roleSelected('asesor')"
-          [ngClass]=" adviser ? 'button-choice' : '' "
-          value="asesor"
-        >
+        <button id="button-adviser" class="" type="ratio" (click)="roleSelected('asesor')"
+          [ngClass]=" adviser ? 'button-choice' : '' " value="asesor">
           Asesor
         </button>
       </div>
+    </div>
   </div>
 </div>
