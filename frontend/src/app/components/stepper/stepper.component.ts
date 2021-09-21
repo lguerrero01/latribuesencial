@@ -13,14 +13,14 @@ export class StepperComponent implements OnInit {
   // ======================================
   //				Attributes
   // ======================================
-  public ruta: string = null ;
+  public ruta: string = null;
   public step = 1;
   public status: boolean = true;
   public valid: boolean = false;
   public stepForm!: FormGroup;
   public PAT_EMAIL = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+[.][a-zA-Z]{2,4}$";
 
-   // ======================================
+  // ======================================
   //				Constructor
   // ======================================
   constructor(
@@ -28,8 +28,8 @@ export class StepperComponent implements OnInit {
     private formService: FormsDataService,
     private router: Router
   ) {}
- // ======================================
-  //				Reactive Forms 
+  // ======================================
+  //				Reactive Forms
   // ======================================
   ngOnInit(): void {
     this.stepForm = this.fb.group({
@@ -39,7 +39,7 @@ export class StepperComponent implements OnInit {
         country: ["", [Validators.required]],
         resCountry: ["", [Validators.required]],
         phone: ["", [Validators.required]],
-      })
+      }),
     });
   }
 
@@ -53,7 +53,7 @@ export class StepperComponent implements OnInit {
     this.step++;
     if (this.step == 5) {
       console.log("enviando form de pasos", this.stepForm.value);
-      this.formService.getForm(this.stepForm.value);
+      this.formService.sendForm(this.stepForm.value);
       this.router.navigate([`/${this.ruta}`]);
       return;
     }
