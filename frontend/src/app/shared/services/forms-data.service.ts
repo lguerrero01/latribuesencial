@@ -8,15 +8,13 @@ import { catchError } from "rxjs/operators";
   providedIn: "root",
 })
 export class FormsDataService {
-  // api.latribu.test
+  
   // ======================================
   //				Atributes
   // ======================================
+  public basicInfo: {} = {};
   public formFinal: {} = {};
-  public apiUrl: string = "";
-
-  constructor(private httpClient: HttpClient) {}
-
+  public apiUrl: string = "http://api.latribu.test/api";
   public httpOptions = {
     headers: new HttpHeaders({
       "Content-Type": "application/json",
@@ -24,28 +22,46 @@ export class FormsDataService {
   };
 
   // ======================================
-  //				send info to client
+  //				Constructor
+  // ======================================
+
+  constructor(private httpClient: HttpClient) {}
+
+  public getInfoBasic(formBasic: {}) {
+    this.basicInfo = formBasic;
+    console.log("obteniendo formbasic desde el servicio", this.basicInfo);
+  }
+
+  // ======================================
+  //				Send info to client
   // ======================================
   public sendFormClient(form: {}): Observable<any> {
-    this.formFinal = { ...form };
+    this.formFinal = { ...form, ...this.basicInfo };
 
-    console.log("obteniendo form desde servicio", this.formFinal);
+    console.log("Obteniendo form final desde servicio", this.formFinal);
     return this.httpClient
-      .post<any>(this.apiUrl, JSON.stringify(form), this.httpOptions)
+      .post<any>(`${this.apiUrl}/client`, this.formFinal, this.httpOptions)
       .pipe(catchError(this.errorHandler));
   }
 
   // ======================================
-  //				send info to adviser
+  //				Send info to adviser
   // ======================================
 
-  public sendFormAdviser(form: {}): Observable<any> {
-    this.formFinal = { ...form };
+  public sendFormAdviser(form: {}) {
+    this.formFinal = { ...form, ...this.basicInfo };
 
-    console.log("obteniendo form desde servicio", this.formFinal);
-    return this.httpClient
-      .post<any>(this.apiUrl, JSON.stringify(form), this.httpOptions)
-      .pipe(catchError(this.errorHandler));
+    console.log("obteniendo form final desde servicio", this.formFinal);
+    this.httpClient
+      .post<any>(
+        "http://api.latribu.test/api/adviser",
+        this.formFinal,
+        this.httpOptions
+      )
+      .subscribe((rest) => {
+        console.log("listo mano", rest);
+      });
+    // .pipe(catchError(this.errorHandler));
   }
 
   // ======================================

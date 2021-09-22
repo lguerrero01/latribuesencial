@@ -17,13 +17,13 @@
       <div class="row">
         <h3>¿Actualmente estas trabajando?</h3>
         <div class="d-flex justify-content-center">
-          <select class="form-select" formControlName="working" aria-label="Default select example">
+          <select class="form-select" formControlName="workingStatus" aria-label="Default select example">
             <option value="" disabled>Seleccione</option>
             <option value="si">Si</option>
             <option value="no">No</option>
             <option value="otro">otro</option>
           </select>
-          <p class="form-text text-danger" *ngIf="fieldValid('working')">
+          <p class="form-text text-danger" *ngIf="fieldValid('workingStatus')">
             Campo Requerido
           </p>
         </div>

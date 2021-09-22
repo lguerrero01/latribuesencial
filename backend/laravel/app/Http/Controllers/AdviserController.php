@@ -24,17 +24,20 @@ class AdviserController extends Controller
      */
     public function create(Request $request)
     {
-        $data['name'] = $request['name'];
-        $data['email'] = $request['email'];
-        $data['phone'] = $request['phone'];
-        $data['ocupation'] = $request['ocupation'];
-        $data['maritalStatus'] = $request['maritalStatus'];
-        $data['children'] = $request['children'];
-        $data['bePart'] = $request['bePart'];
-        $data['desc'] = $request['desc'];
-        $data['workingStatus'] = $request['workingStatus'];
-        $data['card'] = $request['card'];
-        $data['help'] = $request['help'];
+        $data['name'] = $request['infoStepForm']['name'];
+        $data['email'] = $request['infoStepForm']['email'];
+        $data['country'] = $request['infoStepForm']['country'];
+        $data['resCountry'] = $request['infoStepForm']['resCountry'];
+        $data['phone'] = $request['infoStepForm']['phone'];
+
+        $data['ocupation'] = $request['form1Adviser']['ocupation'];
+        $data['maritalStatus'] = $request['form1Adviser']['maritalStatus'];
+        $data['children'] = $request['form1Adviser']['children'];
+        $data['bePart'] = $request['form2Adviser']['bePart'];
+        $data['desc'] = $request['form2Adviser']['desc'];
+        $data['workingStatus'] = $request['form3Adviser']['workingStatus'];
+        $data['card'] = $request['form3Adviser']['card'];
+        $data['help'] = $request['form3Adviser']['help'];
 
         Adviser::create($data);
         return response()->json([

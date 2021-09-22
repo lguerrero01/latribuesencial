@@ -53,13 +53,8 @@ export class StepperComponent implements OnInit {
 
     this.step++;
     if (this.step == 5) {
-      console.log("enviando form de pasos", this.stepForm.value);
-      if (this.ruta === "cliente") {
-        this.formService.sendFormClient(this.stepForm.value);
-      }
-      if (this.ruta === "asesor") {
-        this.formService.sendFormAdviser(this.stepForm.value);
-      }
+      console.log("enviando form de pasos desde el por pasos", this.stepForm.value);
+      this.formService.getInfoBasic(this.stepForm.value);
       this.router.navigate([`/${this.ruta}`]);
       return;
     }

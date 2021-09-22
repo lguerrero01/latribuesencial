@@ -12,7 +12,7 @@ export class AdviserComponent implements OnInit {
   // ======================================
   //				Atributes
   // ======================================
-  public step: number = 1;
+  public step: number = 5;
   public valid!: boolean;
   status: boolean = false;
   public adviserForm!: FormGroup;
@@ -29,7 +29,7 @@ export class AdviserComponent implements OnInit {
       form1Adviser: this.fb.group({
         ocupation: ["", [Validators.required]],
         maritalStatus: ["", [Validators.required]],
-        sons: ["", [Validators.required]],
+        children: ["", [Validators.required]],
       }),
       checkArray: this.fb.array([], [Validators.required]),
       form2Adviser: this.fb.group({
@@ -38,7 +38,7 @@ export class AdviserComponent implements OnInit {
       }),
       form3Adviser: this.fb.group({
         card: ["", [Validators.required]],
-        working: ["", [Validators.required]],
+        workingStatus: ["", [Validators.required]],
         help: ["", [Validators.required]],
       }),
     });
