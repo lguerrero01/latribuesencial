@@ -7,3 +7,23 @@
   min-height: 115vh;
 
 }
+#logo{
+  width: 190px;
+  margin-top: 25px !important;
+  margin-bottom: 75px;
+}
+h1{
+  font-size: 48px;
+}
+h3{
+  font-size: 35px;
+}
+@media(min-width:1024px){
+  h1{
+    font-size: 75px !important;
+    margin-bottom: 0px;
+  }
+  h3{
+    font-size: 45px !important;
+  }
+}
