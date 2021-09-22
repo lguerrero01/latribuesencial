@@ -12,12 +12,16 @@ export class AdviserComponent implements OnInit {
   // ======================================
   //				Atributes
   // ======================================
-  public step: number = 5;
+  public step: number = 1;
   public valid!: boolean;
   status: boolean = false;
   public adviserForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router, private formService: FormsDataService) {}
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private formService: FormsDataService
+  ) {}
 
   // ======================================
   //				Reactive Forms
@@ -46,7 +50,6 @@ export class AdviserComponent implements OnInit {
 
   public next() {
     if (this.step == 5) {
-      console.log("enviando form de adviser", this.adviserForm.value);
       this.formService.sendFormAdviser(this.adviserForm.value);
       this.router.navigate(["/despedida"]);
       return;

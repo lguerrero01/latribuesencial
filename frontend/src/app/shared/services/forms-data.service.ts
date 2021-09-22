@@ -8,7 +8,6 @@ import { catchError } from "rxjs/operators";
   providedIn: "root",
 })
 export class FormsDataService {
-  
   // ======================================
   //				Atributes
   // ======================================
@@ -29,19 +28,24 @@ export class FormsDataService {
 
   public getInfoBasic(formBasic: {}) {
     this.basicInfo = formBasic;
-    console.log("obteniendo formbasic desde el servicio", this.basicInfo);
   }
 
   // ======================================
   //				Send info to client
   // ======================================
-  public sendFormClient(form: {}): Observable<any> {
+  public sendFormClient(form: {}) {
     this.formFinal = { ...form, ...this.basicInfo };
 
     console.log("Obteniendo form final desde servicio", this.formFinal);
-    return this.httpClient
-      .post<any>(`${this.apiUrl}/client`, this.formFinal, this.httpOptions)
-      .pipe(catchError(this.errorHandler));
+    this.httpClient
+      .post<any>(
+        "http://api.latribu.test/api/client",
+        this.formFinal,
+        this.httpOptions
+      )
+      .subscribe((rest) => {
+        console.log(" se creo un cliente", rest);
+      });
   }
 
   // ======================================
@@ -59,7 +63,7 @@ export class FormsDataService {
         this.httpOptions
       )
       .subscribe((rest) => {
-        console.log("listo mano", rest);
+        console.log("Se creo un asesor", rest);
       });
     // .pipe(catchError(this.errorHandler));
   }

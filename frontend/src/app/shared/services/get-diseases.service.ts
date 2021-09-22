@@ -1,9 +1,16 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable, throwError } from "rxjs";
+import { catchError } from "rxjs/operators";
 
 @Injectable({
   providedIn: "root",
 })
 export class GetDiseasesService {
+  // ======================================
+  //			Atributes
+  // ======================================
+  public apiURL: string = "http://api.latribu.test/api";
   public Data: Array<any> = [
     { name: "Ansiedad", value: "ansiedad" },
     { name: "Dermatitis Atopica", value: "dermatitis atopica" },
@@ -17,6 +24,35 @@ export class GetDiseasesService {
     { name: "Problemas Respiratorios", value: "problemas respiratorios" },
     { name: "Problemas de peso", value: "problemas de peso " },
   ];
-  constructor() {}
- 
+
+  // ======================================
+  //			Constructor
+  // ======================================
+  constructor(private httpClient: HttpClient) {}
+
+  // ======================================
+  //				Get Diseases
+  // ======================================
+  public getDiseases(): Observable<any> {
+    return this.httpClient
+      .get<any>(`${this.apiURL}/diseases`)
+      .pipe(catchError(this.errorHandler));
+  }
+  // ======================================
+  //				Get kits
+  // ======================================
+  public getKitsByDiseases(diseases: []) {}
+
+  // ======================================
+  //				Error Handler
+  // ======================================
+  errorHandler(error) {
+    let errorMessage = "";
+    if (error.error instanceof ErrorEvent) {
+      errorMessage = error.error.message;
+    } else {
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    return throwError(errorMessage);
+  }
 }

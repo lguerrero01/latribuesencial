@@ -28,23 +28,35 @@ export class DiseasesComponent implements OnInit {
   public Data = [];
   formArray!: FormArray;
   public form: FormGroup;
+  public checked: any = [{ name: "", id: "", check: false }];
 
+  // ======================================
+  //				Constructor
+  // ======================================
   constructor(
     private fb: FormBuilder,
     private rootFormGroup: FormGroupDirective,
     private diseases: GetDiseasesService
-  ) {
-    this.Data = this.diseases.Data;
-  }
+  ) {}
 
+  // ======================================
+  //				onInit
+  // ======================================
   ngOnInit(): void {
     this.form = this.rootFormGroup.control;
     this.formArray = this.form.get(this.checkArray) as FormArray;
+
+    this.diseases.getDiseases().subscribe((resp) => {
+      this.Data = resp;
+    });
   }
 
+  // ======================================
+  //				on checkbox change
+  // ======================================
   onCheckboxChange(e) {
     const checkArray: FormArray = this.form.get("checkArray") as FormArray;
-
+    
     if (e.target.checked) {
       checkArray.push(new FormControl(e.target.value));
     } else {
@@ -58,5 +70,4 @@ export class DiseasesComponent implements OnInit {
       });
     }
   }
-
 }

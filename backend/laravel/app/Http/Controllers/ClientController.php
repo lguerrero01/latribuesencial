@@ -24,6 +24,7 @@ class ClientController extends Controller
      */
     public function create(Request $request)
     {
+        // dd($request->all());
         $data['name'] = $request['infoStepForm']['name'];
         $data['email'] = $request['infoStepForm']['email'];
         $data['country'] = $request['infoStepForm']['country'];

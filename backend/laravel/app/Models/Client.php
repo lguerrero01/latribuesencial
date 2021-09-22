@@ -17,10 +17,7 @@ class Client extends Model
     'resCountry',
     'phone',
     'children',
-    'sport',
-    'workingStatus',
-    'card',
-    'help'
+    'sport'
   ];
   
   protected $casts = [

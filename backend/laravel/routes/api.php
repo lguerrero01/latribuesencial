@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdviserController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\DiseasesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,3 +20,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/client', [ClientController::class, 'create']);
 Route::post('/adviser', [AdviserController::class, 'create']);
+
+Route::get('/diseases', [DiseasesController::class, 'getDiseases']);
+

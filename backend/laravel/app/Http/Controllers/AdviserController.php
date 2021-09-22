@@ -29,7 +29,7 @@ class AdviserController extends Controller
         $data['country'] = $request['infoStepForm']['country'];
         $data['resCountry'] = $request['infoStepForm']['resCountry'];
         $data['phone'] = $request['infoStepForm']['phone'];
-
+        
         $data['ocupation'] = $request['form1Adviser']['ocupation'];
         $data['maritalStatus'] = $request['form1Adviser']['maritalStatus'];
         $data['children'] = $request['form1Adviser']['children'];

@@ -20,10 +20,9 @@ class CreateClientsTable extends Migration
             $table->string('email');
             $table->string('country');
             $table->string('resCountry');
-            $table->string('phone');
+            $table->integer('phone');
             $table->string('children');
             $table->string('sport');
-          
         });
     }
 

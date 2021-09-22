@@ -18,6 +18,8 @@ class CreateAdvisersTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('email');
+            $table->string('country');
+            $table->string('resCountry');
             $table->integer('phone');
             $table->string('ocupation');
             $table->string('maritalStatus');
@@ -26,10 +28,7 @@ class CreateAdvisersTable extends Migration
             $table->string('desc');
             $table->string('workingStatus');
             $table->string('card');
-            $table->string('help');
-
-
-            
+            $table->string('help'); 
         });
     }
 

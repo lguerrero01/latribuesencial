@@ -28,7 +28,7 @@ export class ClientComponent implements OnInit {
   ngOnInit(): void {
     this.clientForm = this.fb.group({
       basicInfoClient: this.fb.group({
-        sons: ["", [Validators.required]],
+        children: ["", [Validators.required]],
         sport: ["", [Validators.required]],
       }),
       checkArray: this.fb.array([], [Validators.required]),

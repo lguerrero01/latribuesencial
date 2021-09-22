@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container overflow-hidden ">
   <div class="row text-center">
     <h3>Cuales son tus mayores preocupaciones de salud ?</h3>
     <h2>Selecciona tantas como sean necesarias</h2>
@@ -10,12 +10,13 @@
           <div class="" >
             <input
               type="checkbox"
-              [value]="data.value"
+              [value]="data.name"
               (change)="onCheckboxChange($event)"
               class="checkbox"
-              [id]="data.value"
+              [id]="data.name"
+              [checked]="data.check"
             />
-            <label [for]="data.value">
+            <label [for]="data.name">
                 <div class="title">{{data.name}}</div>
             </label>
           </div>

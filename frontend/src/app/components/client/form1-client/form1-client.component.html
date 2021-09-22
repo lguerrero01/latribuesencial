@@ -12,14 +12,14 @@
       <div class="mb-3">
         <select
           class="form-select"
-          formControlName="sons"
+          formControlName="children"
           aria-label="Default select example"
         >
           <option value="" disabled>¿Tienes Hijos?</option>
           <option value="Si">Si</option>
           <option value="No">No</option>
         </select>
-        <p class="form-text text-danger" *ngIf="fieldValid('sons')">
+        <p class="form-text text-danger" *ngIf="fieldValid('children')">
           Campo Requerido
         </p>
       </div>
