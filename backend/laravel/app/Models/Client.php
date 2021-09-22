@@ -31,8 +31,5 @@ class Client extends Model
     'phone' => 'integer',
     'children' => 'string',
     'sport' => 'string',
-    'workingStatus' => 'string',
-    'card' => 'string',
-    'help' => 'string'
   ];
 }
