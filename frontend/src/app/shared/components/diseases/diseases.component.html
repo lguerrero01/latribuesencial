@@ -1,4 +1,4 @@
-<div class="container overflow-hidden ">
+<div class="container overflow-hidden">
   <div class="row text-center">
     <h3>Cuales son tus mayores preocupaciones de salud ?</h3>
     <h2>Selecciona tantas como sean necesarias</h2>
@@ -9,23 +9,22 @@
         <div class="double-bounce1"></div>
         <div class="double-bounce2"></div>
       </div>
-      
     </ng-template>
-    <ng-container *ngIf="Data.length > 0 else spinner">
-      <form [formGroup]="form" >
-        <ul class="diseases">
+    <ng-container *ngIf="Data.length > 0; else spinner">
+      <form [formGroup]="form">
+        <ul class="diseases animate__animated animate__fadeIn">
           <li class="diseases-list" *ngFor="let data of Data; let i = index">
-            <div class="" >
+            <div class="">
               <input
                 type="checkbox"
-                [value]="data.name"
+                [value]="data.id"
                 (change)="onCheckboxChange($event)"
                 class="checkbox"
-                [id]="data.name"
+                [id]="data.id"
                 [checked]="data.check"
               />
-              <label [for]="data.name">
-                  <div class="title">{{data.name}}</div>
+              <label [for]="data.id">
+                <div class="title">{{ data.name }}</div>
               </label>
             </div>
           </li>

@@ -14,6 +14,7 @@ export class FormsDataService {
   public basicInfo: {} = {};
   public formFinal: {} = {};
   public apiUrl: string = "http://api.latribu.test/api";
+
   public httpOptions = {
     headers: new HttpHeaders({
       "Content-Type": "application/json",
@@ -38,13 +39,9 @@ export class FormsDataService {
 
     console.log("Obteniendo form final desde servicio", this.formFinal);
     this.httpClient
-      .post<any>(
-        "http://api.latribu.test/api/client",
-        this.formFinal,
-        this.httpOptions
-      )
+      .post<any>(`${this.apiUrl}/client`, this.formFinal, this.httpOptions)
       .subscribe((rest) => {
-        console.log(" se creo un cliente", rest);
+        console.log("Se creo un cliente", rest);
       });
   }
 
@@ -55,17 +52,17 @@ export class FormsDataService {
   public sendFormAdviser(form: {}) {
     this.formFinal = { ...form, ...this.basicInfo };
 
-    console.log("obteniendo form final desde servicio", this.formFinal);
+    console.log("Obteniendo form final desde servicio", this.formFinal);
     this.httpClient
-      .post<any>(
-        "http://api.latribu.test/api/adviser",
-        this.formFinal,
-        this.httpOptions
-      )
-      .subscribe((rest) => {
-        console.log("Se creo un asesor", rest);
-      });
-    // .pipe(catchError(this.errorHandler));
+      .post<any>(`${this.apiUrl}/adviser`, this.formFinal, this.httpOptions)
+      .subscribe(
+        (rest) => {
+          console.log("Se creo un asesor", rest);
+        },
+        (err) => {
+          console.error("Hay un error al crear un asesor: ", err);
+        }
+      );
   }
 
   // ======================================

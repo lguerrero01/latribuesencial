@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKitsTable extends Migration
+class DiseasesKits extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateKitsTable extends Migration
      */
     public function up()
     {
-        Schema::create('kits', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->string('name');
-            $table->foreignId('product_id')->constrained('products');
-
+        Schema::create('diseases', function (Blueprint $table) {
+            $table->foreignId('diseases_id')->constrained('diseases');
+            $table->foreignId('kits_id')->constrained('kits');
         });
     }
 
@@ -29,6 +26,6 @@ class CreateKitsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kits');
+        //
     }
 }

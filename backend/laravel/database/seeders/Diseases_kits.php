@@ -19,28 +19,33 @@ class DiseasesSeeder extends Seeder
      {
           $data = [
                [
-                    "name" => "Ansiedad",
+                    "diseases_id" => "1",
+                    "kits_id" => "2"
                     
                ],
                [
-                    "name" => "Dermatitis Atopica",
+                    "diseases_id" => "1",
+                    "kits_id" => "2"
                    
                ],
                [
-                    "name" => "Insomnio",
+                    "diseases_id" => "1",
+                    "kits_id" => "3"
                   
                ],
                [
-                    "name" => "Eczema",
+                    "diseases_id" => "1",
+                    "kits_id" => "3"
                    
                ],
                [
-                    "name" => "Caida del Cabello",
+                    "diseases_id" => "1",
+                    "kits_id" => "1"
                     
                ],
                [
-                    "name" => "Problemas estomacales",
-                    
+                    "diseases_id" => "1",
+                    "kits_id" => "2"       
                ]
           ];
           foreach ($data as $value) {

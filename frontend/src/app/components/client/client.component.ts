@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { FormsDataService } from "@shared/services/forms-data.service";
+import { GetKitsService } from "@shared/services/get-kits.service";
 
 @Component({
   selector: "app-client",
@@ -22,7 +23,8 @@ export class ClientComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private formService: FormsDataService
+    private formService: FormsDataService,
+    private getKits: GetKitsService
   ) {}
 
   ngOnInit(): void {
@@ -38,6 +40,10 @@ export class ClientComponent implements OnInit {
   public next() {
     this.status = true;
     console.log(this.clientForm.value);
+    if (this.step == 2 ) {
+     this.getKits.getKitsByDiseases(this.clientForm.value.checkArray);
+    }
+
     if (this.step == 3) {
       console.log("enviando form de cliente", this.clientForm.value);
       this.formService.sendFormClient(this.clientForm.value);

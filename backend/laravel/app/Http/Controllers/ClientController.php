@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
+use App\Models\Diseases;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -24,7 +25,16 @@ class ClientController extends Controller
      */
     public function create(Request $request)
     {
-        // dd($request->all());
+        // $infoStepForm    = $request->infoStepForm;
+        // $basicInfoClient = $request->basicInfoClient;
+
+        // dd(Diseases::with(['kits'])->find($request->checkArray)->groupBy('kit_id')->first()->first()->kits);
+
+        // array_merge($infoStepForm, $basicInfoClient);
+
+        // dd($infoStepForm);
+
+
         $data['name'] = $request['infoStepForm']['name'];
         $data['email'] = $request['infoStepForm']['email'];
         $data['country'] = $request['infoStepForm']['country'];

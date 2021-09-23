@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { FormsDataService } from "@shared/services/forms-data.service";
+import { GetKitsService } from "@shared/services/get-kits.service";
 
 @Component({
   selector: "app-adviser",
@@ -20,7 +21,8 @@ export class AdviserComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private formService: FormsDataService
+    private formService: FormsDataService,
+    private getKits: GetKitsService
   ) {}
 
   // ======================================
@@ -48,7 +50,13 @@ export class AdviserComponent implements OnInit {
     });
   }
 
+  // ======================================
+  //				Next Step
+  // ======================================
   public next() {
+    if (this.step == 2) {
+      this.getKits.getKitsByDiseases(this.adviserForm.value.checkArray);
+    }
     if (this.step == 5) {
       this.formService.sendFormAdviser(this.adviserForm.value);
       this.router.navigate(["/despedida"]);
@@ -58,10 +66,17 @@ export class AdviserComponent implements OnInit {
     this.step++;
   }
 
+  // ======================================
+  //				Previous Step
+  // ======================================
   public previous() {
     this.status = false;
     this.step--;
   }
+  
+  // ======================================
+  //				Validation
+  // ======================================
   public disabled(field: string) {
     return this.adviserForm.controls[field].valid;
   }

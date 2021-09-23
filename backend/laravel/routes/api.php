@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdviserController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DiseasesController;
+use App\Http\Controllers\KitController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -10,11 +11,6 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 | API Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
 */
 
 
@@ -22,4 +18,6 @@ Route::post('/client', [ClientController::class, 'create']);
 Route::post('/adviser', [AdviserController::class, 'create']);
 
 Route::get('/diseases', [DiseasesController::class, 'getDiseases']);
+
+Route::post('/getKits', [KitController::class, 'getKits']);
 

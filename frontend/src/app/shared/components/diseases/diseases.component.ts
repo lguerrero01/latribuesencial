@@ -34,25 +34,25 @@ export class DiseasesComponent implements OnInit {
   //				Constructor
   // ======================================
   constructor(
-    private fb: FormBuilder,
     private rootFormGroup: FormGroupDirective,
     private diseases: GetDiseasesService
   ) {}
 
   // ======================================
-  //				onInit
+  //				OnInit
   // ======================================
   ngOnInit(): void {
     this.form = this.rootFormGroup.control;
     this.formArray = this.form.get(this.checkArray) as FormArray;
 
     this.diseases.getDiseases().subscribe((resp) => {
+      console.log(resp)
       this.Data = resp;
     });
   }
 
   // ======================================
-  //				on checkbox change
+  //				On checkbox change
   // ======================================
   onCheckboxChange(e) {
     const checkArray: FormArray = this.form.get("checkArray") as FormArray;

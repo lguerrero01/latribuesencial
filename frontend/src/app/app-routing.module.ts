@@ -1,5 +1,5 @@
 // ======================================
-//				Modules 
+//				Modules
 // ======================================
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
@@ -16,24 +16,31 @@ const routes: Routes = [
   },
   {
     path: "pasos",
-    loadChildren: () => import('./components/stepper/stepper.module').then(m => m.StepperModule)
+    loadChildren: () =>
+      import("./components/stepper/stepper.module").then(
+        (m) => m.StepperModule
+      ),
   },
   {
     path: "asesor",
-    loadChildren: () => import('./components/adviser/adviser.module').then(m => m.AdviserModule)
+    loadChildren: () =>
+      import("./components/adviser/adviser.module").then(
+        (m) => m.AdviserModule
+      ),
   },
   {
     path: "cliente",
-    loadChildren: () => import('./components/client/client.module').then( m => m.ClientModule )
+    loadChildren: () =>
+      import("./components/client/client.module").then((m) => m.ClientModule),
   },
   {
     path: "despedida",
     component: LastPageComponent,
   },
   {
-    path: '**',
-    redirectTo: "/"
-  }
+    path: "**",
+    redirectTo: "/",
+  },
 ];
 
 @NgModule({

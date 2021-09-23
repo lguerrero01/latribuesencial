@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Diseases;
 use App\Models\Kit;
 use Illuminate\Http\Request;
 
@@ -22,9 +23,11 @@ class KitController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function getKits(Request $request)
     {
-        //
+        // return ( $request->checkArray);
+        // dd($request->checkArray);
+        return(Diseases::with(['kits'])->find($request->checkArray)->groupBy('kit_id')->first()->first());
     }
 
     /**

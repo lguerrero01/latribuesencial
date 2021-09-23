@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Relations\{ BelongsToMany};
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,30 +11,24 @@ class Kit extends Model
     use HasFactory;
     
     protected $fillable = [
-        'name'
+        'name',
+        'urlImg'
     ];
     
     protected $casts = [
         'name' => 'string',
+        'urlImg' => 'string'
     ];
     
-    /**
-     * Get the products that owns the Kit
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function products(): BelongsTo
-    {
-        return $this->belongsTo(Products::class);
-    }
 
     /**
-     * Get all of the diseases for the Kit
+     * The roles that belong to the Kit
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function diseases(): HasMany
+    public function diseases(): BelongsToMany
     {
-        return $this->hasMany(Diseases::class, 'foreign_key', 'local_key');
+        return $this->belongsToMany(Diseases::class);
     }
+
 }
