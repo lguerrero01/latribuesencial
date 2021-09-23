@@ -17,7 +17,9 @@ class CreateDiseasesTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
+            $table->foreignId('kit_id')->constrained('kits');
         });
+        
     }
 
     /**

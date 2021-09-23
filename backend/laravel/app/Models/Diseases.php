@@ -15,4 +15,14 @@ class Diseases extends Model
     protected $casts = [
         'name' => 'string',
     ];
+
+ /**
+  * Get the Kits that owns the Diseases
+  *
+  * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+  */
+ public function kits(): BelongsTo
+ {
+     return $this->belongsTo(Kits::class);
+ }
 }

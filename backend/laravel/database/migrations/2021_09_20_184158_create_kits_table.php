@@ -17,6 +17,7 @@ class CreateKitsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
+            $table->foreignId('product_id')->constrained('products');
 
         });
     }
