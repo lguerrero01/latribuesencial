@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::post('/client', [ClientController::class, 'create']);
+
 Route::post('/adviser', [AdviserController::class, 'create']);
 
 Route::get('/diseases', [DiseasesController::class, 'getDiseases']);

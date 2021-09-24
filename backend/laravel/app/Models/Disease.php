@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Diseases extends Model
+class Disease extends Model
 {
     use HasFactory;
     protected $fillable = [
@@ -25,6 +25,6 @@ class Diseases extends Model
      */
     public function kits(): BelongsToMany
     {
-        return $this->belongsToMany(Kit::class);
+        return $this->belongsToMany(\App\Models\Kit::class);
     }
 }

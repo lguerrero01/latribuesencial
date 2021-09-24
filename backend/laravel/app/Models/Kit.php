@@ -12,12 +12,12 @@ class Kit extends Model
     
     protected $fillable = [
         'name',
-        'urlImg'
+        'imgUrl'
     ];
     
     protected $casts = [
         'name' => 'string',
-        'urlImg' => 'string'
+        'imgUrl' => 'string'
     ];
     
 
@@ -28,7 +28,6 @@ class Kit extends Model
      */
     public function diseases(): BelongsToMany
     {
-        return $this->belongsToMany(Diseases::class);
+        return $this->belongsToMany(\App\Models\Disease::class);
     }
-
 }

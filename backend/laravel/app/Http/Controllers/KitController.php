@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Diseases;
+use App\Models\Disease;
 use App\Models\Kit;
 use Illuminate\Http\Request;
 
@@ -27,7 +27,10 @@ class KitController extends Controller
     {
         // return ( $request->checkArray);
         // dd($request->checkArray);
-        return(Diseases::with(['kits'])->find($request->checkArray)->groupBy('kit_id')->first()->first());
+        // return($request->checkArray);
+        return Kit::wherehas('diseases', function ($query) use ($request){
+            $query->whereIn('disease_id', $request->checkArray);
+        })->get();
     }
 
     /**

@@ -4,45 +4,30 @@
     <h2>PARA TI</h2>
   </div>
   <ng-template #spinner>
+    <div class="text-center text-danger" >
+      <p>Debe seleccionar al menos una afeccion</p>
+    </div>
     <div class="spinner">
       <div class="double-bounce1"></div>
       <div class="double-bounce2"></div>
     </div>
   </ng-template>
-  <!-- <ng-container *ngIf="Data.length > 0; else spinner"> </ng-container> -->
-  <div class="row">
-   
-    <div class="card-group text-center">
-      <div class="card m-1">
-        <img
-          class="card-img-top"
-          src="../../../../assets/img/kits.png"
-          alt="Kits"
-        />
-        <div class="card-body">
-          <h5 class="card-title">Kit Hábitos Saludables</h5>
+  <!-- <pre>{{ data }}</pre> -->
+  <div class="row ">
+    <ng-container *ngIf="items.length > 0; else spinner">
+      <div class="card-group text-center animate__animated animate__fadeIn">
+        <div class="card m-1"  *ngFor="let item of items">
+          <img
+            class="card-img-top"
+            src="{{item.imgUrl}}"
+            alt="{{item.name}}"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+          </div>
         </div>
+
       </div>
-      <div class="card m-1">
-        <img
-          class="card-img-top"
-          src="../../../../assets/img/kits.png"
-          alt="Card image cap"
-        />
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-        </div>
-      </div>
-      <div class="card m-1">
-        <img
-          class="card-img-top"
-          src="../../../../assets/img/kits.png"
-          alt="Card image cap"
-        />
-        <div class="card-body">
-          <h5 class="card-title">Kit de Inicio Saludable</h5>
-        </div>
-      </div>
-    </div>
+    </ng-container>
   </div>
 </div>

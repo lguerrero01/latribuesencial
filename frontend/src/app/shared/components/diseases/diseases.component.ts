@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 // ======================================
 //				servives
 // ======================================
@@ -7,11 +7,9 @@ import { GetDiseasesService } from "@shared/services/get-diseases.service";
 //				Components
 // ======================================
 import {
-  FormBuilder,
   FormGroup,
   FormArray,
   FormControl,
-  Validators,
   FormGroupDirective,
 } from "@angular/forms";
 
@@ -46,7 +44,6 @@ export class DiseasesComponent implements OnInit {
     this.formArray = this.form.get(this.checkArray) as FormArray;
 
     this.diseases.getDiseases().subscribe((resp) => {
-      console.log(resp)
       this.Data = resp;
     });
   }

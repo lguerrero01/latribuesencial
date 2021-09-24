@@ -16,20 +16,21 @@ class KitSeeder extends Seeder
     {
         $data = [
             [
-                "name" => "Kit Hábitosd Saludables",
-                "urlImg" => "url/",
-                "diseases_id" => "1"
+                "name" => "Kit de Inicio Saludable BOTELLAS DE 5 ML Aproximadamente 80 gotas por botella",
+                "imgUrl" => "http://latribu.test/storage/",
             ],
             [
-                "name" => ">Kit de Inicio Saludable",
-                "urlImg" => "url/",
-                "diseases_id" => "2"
+                "name" => "Colección Aroma Esenciales BOTELLAS DE 5 ML Aproximadamente 80 gotas",
+                "imgUrl" => "http://latribu.test/storage/",
             ],
             [
-                "name" => "Kit Hábitos Saludables",
-                "urlImg" => "url/",
-                "diseases_id" => "3"
+                "name" => "Kit Habitos Saludables BOTELLAS DE 5 ML",
+                "imgUrl" => "http://latribu.test/storage/",
             ],
+            [
+                "name" => "Esenciales para el hogar BOTELLAS DE 15 ML APROXIMDADMENTE 250 GOTAS POR BOTELLA",
+                "imgUrl" => "http://latribu.test/storage/",
+            ]
         ];
         foreach ($data as $value) {
             Kit::create($value);

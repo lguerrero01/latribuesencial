@@ -1,11 +1,11 @@
 <?php
 
-namespace Database\ Seeders;
+namespace Database\Seeders;
 
-use App\ Models\ Diseases;
-use Illuminate\ Support\ Facades\ DB;
-use Illuminate\ Database\ Seeder;
-use Illuminate\ Support\ Str;
+use App\Models\Disease;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class DiseasesSeeder extends Seeder {
     /**
@@ -14,180 +14,165 @@ class DiseasesSeeder extends Seeder {
      * @return void
      */
 
-    public
-    function run() {
-        $data = [
-            [
-                "name" => "Ansiedad",
+     public function run()
+     {
+          $data = [
+               [
+                    "name" => "Ansiedad",
 
-            ],
-            [
-                "name" => "Dermatitis Atopica",
+               ],
+               [
+                    "name" => "Dermatitis Atopica",
 
-            ],
-            [
-                "name" => "Insomnio",
+               ],
+               [
+                    "name" => "Insomnio",
 
-            ],
-            [
-                "name" => "Eczema",
+               ],
+               [
+                    "name" => "Eczema",
 
-            ],
-            [
-                "name" => "Caida del Cabello",
+               ],
+               [
+                    "name" => "Caida del Cabello",
 
-            ],
+               ],
 
-            [
-                "name" => "Problemas estomacales",
+               [
+                    "name" => "Problemas estomacales",
 
-            ],
+               ],
 
-            [
-                "name" => "Infecciones urinarias",
-            ],
+               [
+                    "name" => "Infecciones urinarias",
 
+               ],
 
+               [
+                    "name" => "Migraña",
 
-            [
-                "name" => "Migraña",
-            ],
+               ],
 
+               [
+                    "name" => "Dolores musculares",
 
+               ],
 
-            [
-                "name" => "Dolores musculares",
-            ],
+               [
+                    "name" => "Problemas respiratorios",
 
+               ],
 
+               [
+                    "name" => "Debilidad en el sistema inmunológico",
 
-            [
-                "name" => "Problemas respiratorios",
-            ],
+               ],
 
+               [
+                    "name" => "Fibromialgia",
 
-            [
+               ],
 
-                "name" => "Fibromialgia",
+               [
+                    "name" => "Hiperactividad en los niños",
 
-            ],
+               ],
 
+               [
+                    "name" => "Menopausia",
 
-            [
-                "name" => "Hiperactividad en los niños",
-            ],
+               ],
 
+               [
+                    "name" => "Alergias",
 
+               ],
 
-            [
-                "name" => "Menopausia",
-            ],
+               [
+                    "name" => "Cansancio",
 
+               ],
 
+               [
+                    "name" => "Caspa",
 
-            [
-                "name" => "Alergias",
-            ],
+               ],
 
+               [
+                    "name" => "Dolores de garganta",
 
+               ],
 
-            [
-                "name" => "Cansancio",
-            ],
+               [
+                    "name" => "Estreñimiento",
 
+               ],
 
+               [
+                    "name" => "Gripes recurrentes",
 
-            [
-                "name" => "Caspa",
-            ],
+               ],
 
+               [
+                    "name" => "Herpes labial",
 
+               ],
 
-            [
-                "name" => "Dolores de garganta",
-            ],
+               [
+                    "name" => "Hongos en la piel",
 
+               ],
 
+               [
+                    "name" => "Manchas en la piel",
 
-            [
-                "name" => "Estreñimiento",
-            ],
+               ],
 
+               [
+                    "name" => "Dolores menstruales",
 
+               ],
 
-            [
-                "name" => "Gripes recurrentes",
-            ],
+               [
+                    "name" => "Náuseas",
 
+               ],
 
+               [
+                    "name" => "Dolores de oído",
 
-            [
-                "name" => "Herpes labial",
-            ],
+               ],
 
+               [
+                    "name" => "Náuseas",
 
+               ],
 
-            [
-                "name" => "Hongos en la piel",
-            ],
+               [
+                    "name" => "Pie de atleta",
 
+               ],
 
-            [
-                "name" => "Manchas en la piel",
-            ],
+               [
+                    "name" => "Piojos",
 
+               ],
 
+               [
+                    "name" => "Embarazo",
 
-            [
-                "name" => "Dolores menstruales",
-            ],
+               ],
 
+               [
+                    "name" => "Reducción de carga tóxica",
 
-
-            [
-                "name" => "Náuseas",
-            ],
-
-
-
-            ["name" => "Dolores de oído", ],
-
-
-
-            [
-                "name" => "Náuseas",
-            ],
-
-
-
-            [
-                "name" => "Pie de atleta",
-            ],
-
-
-
-            [
-                 "name" => "Piojos", 
-            ],
-
-
-
-            [
-                "name" => "Embarazo",
-            ],
-
-
-
-
-            [
-                "name" => "Reducción de carga tóxica",
-            ],
-
-
-
-        ];
-        foreach($data as $value) {
-            Diseases::create($value);
-        }
-    }
+               ],
+          ];
+          foreach ($data as $value) {
+               Disease::create($value)->kits()->attach([
+                    1,
+                    2, 3
+               ]);
+          }
+     }
 }

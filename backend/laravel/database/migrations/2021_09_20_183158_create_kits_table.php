@@ -17,8 +17,7 @@ class CreateKitsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
-            $table->string('imgUrl');
-            $table->foreignId('diseases_id')->constrained('diseases');
+            $table->string('imgUrl')->nullable();
         });
     }
 

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Diseases;
+use App\Models\Disease;
 use Illuminate\Http\Request;
 
 class DiseasesController extends Controller
@@ -18,7 +18,7 @@ class DiseasesController extends Controller
     }
     public function getDiseases()
     {
-        $data = Diseases::get();
+        $data = Disease::get();
         return response()->json($data, 200);
     }
     /**
@@ -29,7 +29,7 @@ class DiseasesController extends Controller
     public function create(Request $request)
     {
         $data['name'] = $request['checkArray'];
-        Diseases::create($data);
+        Disease::create($data);
         return response()->json([
             'message' => "Diseases created",
             'success' => true

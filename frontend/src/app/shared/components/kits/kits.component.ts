@@ -8,18 +8,21 @@ import { GetKitsService } from "@shared/services/get-kits.service";
 })
 export class KitsComponent implements OnInit {
   @Input() checks: [] = [];
-  public kits: [] = [];
+  public items: any = [];
   constructor(private showKits: GetKitsService) {}
 
   ngOnInit(): void {
-    console.log("desde kits", this.checks);
     this.showKitsByDiseases(this.checks);
   }
 
   public showKitsByDiseases(diseases: []) {
+    console.log('linea 20', diseases)
     this.showKits.getKitsByDiseases(diseases).subscribe((resp) => {
-      console.log("respuesta de kits", resp);
-      this.kits = resp;
+      console.log("respuesta definitiva de kits ", resp);
+      this.items = resp;
+    },
+    (err) => {
+      console.error("Hay un error al obtener los kits ", err);
     });
   }
 }

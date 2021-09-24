@@ -36,13 +36,19 @@ export class FormsDataService {
   // ======================================
   public sendFormClient(form: {}) {
     this.formFinal = { ...form, ...this.basicInfo };
-
-    console.log("Obteniendo form final desde servicio", this.formFinal);
     this.httpClient
       .post<any>(`${this.apiUrl}/client`, this.formFinal, this.httpOptions)
-      .subscribe((rest) => {
-        console.log("Se creo un cliente", rest);
-      });
+      .subscribe(
+        (rest) => {
+          console.log("Se creo un cliente", rest);
+        },
+        (err) => {
+          console.error(
+            "Hay un error al crear un cliente, intente llenando los pasos nuevamente",
+            err
+          );
+        }
+      );
   }
 
   // ======================================
@@ -52,7 +58,6 @@ export class FormsDataService {
   public sendFormAdviser(form: {}) {
     this.formFinal = { ...form, ...this.basicInfo };
 
-    console.log("Obteniendo form final desde servicio", this.formFinal);
     this.httpClient
       .post<any>(`${this.apiUrl}/adviser`, this.formFinal, this.httpOptions)
       .subscribe(
@@ -60,7 +65,10 @@ export class FormsDataService {
           console.log("Se creo un asesor", rest);
         },
         (err) => {
-          console.error("Hay un error al crear un asesor: ", err);
+          console.error(
+            "Hay un error al crear un asesor, intente llenando los pasos nuevamente  ",
+            err
+          );
         }
       );
   }

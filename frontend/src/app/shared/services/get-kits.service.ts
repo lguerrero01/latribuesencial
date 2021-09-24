@@ -27,9 +27,12 @@ export class GetKitsService {
   //				Get kits by Diseases
   // ======================================
   public getKitsByDiseases(diseases: []): Observable<any> {
-    console.log("obteniendo enfermedades desde servicio", diseases);
     return this.httpClient
-      .post<any>(`${this.apiUrl}/getKits`, diseases, this.httpOptions)
+      .post<any>(
+        `${this.apiUrl}/getKits`,
+        { checkArray: diseases },
+        this.httpOptions
+      )
       .pipe(catchError(this.errorHandler));
   }
 
