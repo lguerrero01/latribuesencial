@@ -39,114 +39,109 @@ class DiseasesSeeder extends Seeder
                     
                ],
                [
-                    "name" => "Problemas estomacales",
+                    "name" => "Problemas estomacales",],
 
 
 
-                    "name" => "Infecciones urinarias",
+                    ["name" => "Infecciones urinarias",],
 
 
 
-                    "name" => "Migraña",
+                    ["name" => "Migraña",],
 
 
 
-                    "name" => "Dolores musculares",
+                    ["name" => "Dolores musculares",],
 
 
 
-                    "name" => "Problemas respiratorios",
-
-
-
-                    "name" => "Debilidad en el sistema inmunológico",
-
-
-
-                    "name" => "Fibromialgia",
-                    
-                    
-                    
-                    "name" => "Hiperactividad en los niños",
-
-
-
-                    "name" => "Menopausia",
-
-
-
-                    "name" => "Alergias",
-
-
-
-                    "name" => "Cansancio",
-
-
-
-                    "name" => "Caspa",
-
-
-
-                    "name" => "Dolores de garganta",
-
-
-
-                    "name" => "Estreñimiento",
-
-
-
-                    "name" => "Gripes recurrentes",
-
-
-
-                    "name" => "Herpes labial",
-
-
-
-                    "name" => "Hongos en la piel",
-
-
-
-                    "name" => "Manchas en la piel",
-
-
-
-                    "name" => "Dolores menstruales",
-
-
-
-                    "name" => "Náuseas",
-
-
-
-                    "name" => "Dolores de oído",
-
-
-
-                    "name" => "Náuseas",
-
-
-
-                    "name" => "Pie de atleta",
-
-
-
-                    "name" => "Piojos",
-
-
-
-                    "name" => "Embarazo",
-
-
-
-                    "name" => "Reducción de carga tóxica",
-
-
+                    ["name" => "Problemas respiratorios",],
 
 
 
                     
-               ]
+
+
+
+                    ["name" => "Fibromialgia",
+                    ],
+                    
+                    
+                    ["name" => "Hiperactividad en los niños",],
+
+
+
+                    ["name" => "Menopausia",],
+
+
+
+                    ["name" => "Alergias",],
+
+
+
+                    ["name" => "Cansancio",],
+
+
+
+                    ["name" => "Caspa",],
+
+
+
+                    ["name" => "Dolores de garganta",],
+
+
+
+                    ["name" => "Estreñimiento",],
+
+
+
+                    ["name" => "Gripes recurrentes",],
+
+
+
+                    ["name" => "Herpes labial",],
+
+
+
+                    ["name" => "Hongos en la piel",],
+
+
+
+                    ["name" => "Manchas en la piel",],
+
+
+
+                   [ "name" => "Dolores menstruales",],
+
+
+
+                   [ "name" => "Náuseas",],
+
+
+
+                    ["name" => "Dolores de oído",],
+
+
+
+                    ["name" => "Náuseas",],
+
+
+
+                   [ "name" => "Pie de atleta",],
+
+
+
+                  [  "name" => "Piojos",],
+
+
+                    ["name" => "Embarazo",],
+
+
+
+                   [ "name" => "Reducción de carga tóxica",],
+
+
+
           ];
           foreach ($data as $value) {
                Diseases::create($value);
