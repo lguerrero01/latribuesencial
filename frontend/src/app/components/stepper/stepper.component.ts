@@ -34,7 +34,7 @@ export class StepperComponent implements OnInit {
   ngOnInit(): void {
     this.stepForm = this.fb.group({
       infoStepForm: this.fb.group({
-        email: ["", [Validators.required]],
+        email: ["", [Validators.required,  Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
         name: ["", [Validators.required]],
         country: ["", [Validators.required]],
         resCountry: ["", [Validators.required]],

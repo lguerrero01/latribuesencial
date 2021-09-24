@@ -1,4 +1,4 @@
-<div class="container justify-content-center ">
+<div class="container justify-content-center">
   <div class="row">
     <form class="form1" autocomplete="off" [formGroup]="form1">
       <!-- Campo de Email -->
@@ -13,8 +13,9 @@
           <p class="m-2 form-text text-danger" *ngIf="fieldValid('email')">
             El correo es requerido
           </p>
-         
-          
+          <p class="m-2 form-text text-danger" *ngIf="validEmail('email')">
+            Debe ser un correo valido
+          </p>
         </div>
       </div>
 

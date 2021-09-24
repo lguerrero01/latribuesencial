@@ -37,5 +37,9 @@ export class Step1Component implements OnInit {
       this.form1.controls[field].errors && this.form1.controls[field].touched
     );
   }
+  
+  public validEmail(field: string){
+    return this.form1.controls[field].errors?.pattern;
+  }
 
 }
