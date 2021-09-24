@@ -16,7 +16,7 @@
   <div class="row ">
     <ng-container *ngIf="items.length > 0; else spinner">
       <div class="card-group text-center animate__animated animate__fadeIn">
-        <div class="card m-1"  *ngFor="let item of items">
+        <div class="card m-3 shadow p-3"  *ngFor="let item of items">
           <img
             class="card-img-top"
             src="{{item.imgUrl}}"

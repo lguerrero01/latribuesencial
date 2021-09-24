@@ -60,10 +60,6 @@ export class GetDiseasesService {
       .get<any>(`${this.apiURL}/diseases`)
       .pipe(catchError(this.errorHandler));
   }
-  // ======================================
-  //				Get kits
-  // ======================================
-  public getKitsByDiseases(diseases: []) {}
 
   // ======================================
   //				Error Handler
