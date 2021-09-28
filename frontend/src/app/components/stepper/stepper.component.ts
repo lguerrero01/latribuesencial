@@ -61,6 +61,7 @@ export class StepperComponent implements OnInit {
   }
 
   public previous() {
+    this.ruta = '';
     this.status = false;
     this.step--;
   }

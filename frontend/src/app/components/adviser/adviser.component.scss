@@ -1,7 +1,3 @@
-button {
-  color: #ccb16b;
-}
-
 .emblem {
   background-color: #ccb16b;
   border: 0.5px solid gray !important;
@@ -14,25 +10,24 @@ button {
   line-height: 40px;
 }
 
-@media(min-width:375px) {
+@media (min-width: 375px) {
   .emblem {
     width: 156px;
   }
-
 }
 
-@media(min-width:425px) {
+@media (min-width: 425px) {
   .emblem {
     width: 170px;
   }
 }
-@media(min-width:768px) {
-    .emblem {
-      width: 195px;
-    }
+@media (min-width: 768px) {
+  .emblem {
+    width: 195px;
   }
-  @media(min-width:1440px) {
-    .emblem {
-      width: 263px;
-    }
+}
+@media (min-width: 1440px) {
+  .emblem {
+    width: 263px;
   }
+}

@@ -73,7 +73,7 @@ export class AdviserComponent implements OnInit {
     this.status = false;
     this.step--;
   }
-  
+
   // ======================================
   //				Validation
   // ======================================
