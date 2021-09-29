@@ -23,12 +23,10 @@ export class DiseasesComponent implements OnInit {
   // ======================================
   //				Atributes
   // ======================================
-  // @Input() checkArray!: string;
   public values: string[] = [];
   public Data = [];
   formArray!: FormArray;
   public form: FormGroup;
-  public checked: any = [{ name: "", id: "", check: false }];
 
   // ======================================
   //				Constructor
@@ -50,15 +48,15 @@ export class DiseasesComponent implements OnInit {
     this.form.valueChanges.subscribe((resp) => {
       this.formService.disableNext$.next(!this.formArray.length);
     });
-    
-    this.diseases.getDiseases().subscribe((resp) => {
-      this.Data = resp;
 
-    });
-    
     this.formArray.controls.forEach((item, index) => {
       this.values.push(this.formArray.at(index).value as string);
     });
+
+    this.diseases.getDiseases().subscribe((resp) => {
+      this.Data = resp;
+    });
+
     // console.log("linea 43", this.values);
     // this.Data = this.diseases.Data;
   }
