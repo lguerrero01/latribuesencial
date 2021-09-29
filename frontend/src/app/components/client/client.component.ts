@@ -17,6 +17,7 @@ export class ClientComponent implements OnInit {
   public valid!: boolean;
   public status: boolean = false;
   public clientForm!: FormGroup;
+  public disabled: boolean = true;
   // ======================================
   //				Constructor
   // ======================================
@@ -28,6 +29,10 @@ export class ClientComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.formService.disableNext$.subscribe((rest) => {
+      this.disabled = rest;
+    });
+    
     this.clientForm = this.fb.group({
       basicInfoClient: this.fb.group({
         children: ["", [Validators.required]],
@@ -40,8 +45,8 @@ export class ClientComponent implements OnInit {
   public next() {
     this.status = true;
     console.log(this.clientForm.value);
-    if (this.step == 2 ) {
-     this.getKits.getKitsByDiseases(this.clientForm.value.checkArray)
+    if (this.step == 2) {
+      this.getKits.getKitsByDiseases(this.clientForm.value.checkArray);
     }
 
     if (this.step == 3) {
@@ -56,5 +61,8 @@ export class ClientComponent implements OnInit {
   public previous() {
     this.status = false;
     this.step--;
+  }
+  public getValid($event: boolean) {
+    this.valid = $event;
   }
 }

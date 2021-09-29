@@ -56,7 +56,7 @@
     </button>
 
     <button
-      [disabled]="!clientForm.controls.basicInfoClient.valid"
+      [disabled]="disabled"
       *ngIf="step != 4"
       (click)="next()"
       type="button"

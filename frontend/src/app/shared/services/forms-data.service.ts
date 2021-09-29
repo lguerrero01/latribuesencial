@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Observable, throwError } from "rxjs";
+import { BehaviorSubject, Observable, throwError } from "rxjs";
 import { catchError } from "rxjs/operators";
 
 @Injectable({
@@ -14,7 +14,7 @@ export class FormsDataService {
   public basicInfo: {} = {};
   public formFinal: {} = {};
   public apiUrl: string = "http://api.latribu.test/api";
-
+  public disableNext$ = new BehaviorSubject(true);
   public httpOptions = {
     headers: new HttpHeaders({
       "Content-Type": "application/json",
