@@ -36,6 +36,7 @@ export class FormsDataService {
   // ======================================
   public sendFormClient(form: {}) {
     this.formFinal = { ...form, ...this.basicInfo };
+    console.log('enviando info',this.formFinal);
     this.httpClient
       .post<any>(`${this.apiUrl}/client`, this.formFinal, this.httpOptions)
       .subscribe(

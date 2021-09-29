@@ -50,17 +50,17 @@ export class DiseasesComponent implements OnInit {
     this.form.valueChanges.subscribe((resp) => {
       this.formService.disableNext$.next(!this.formArray.length);
     });
+    
+    this.diseases.getDiseases().subscribe((resp) => {
+      this.Data = resp;
 
+    });
     
     this.formArray.controls.forEach((item, index) => {
       this.values.push(this.formArray.at(index).value as string);
     });
-
-    console.log("liena 43", this.values);
-    this.Data = this.diseases.Data;
-    // this.diseases.getDiseases().subscribe((resp) => {
-    //   this.Data = resp;
-    // });
+    // console.log("linea 43", this.values);
+    // this.Data = this.diseases.Data;
   }
 
   // ======================================

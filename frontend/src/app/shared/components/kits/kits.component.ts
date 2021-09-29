@@ -18,7 +18,6 @@ export class KitsComponent implements OnInit {
   public showKitsByDiseases(diseases: []) {
     console.log('linea 20', diseases)
     this.showKits.getKitsByDiseases(diseases).subscribe((resp) => {
-      console.log("respuesta definitiva de kits ", resp);
       this.items = resp;
     },
     (err) => {

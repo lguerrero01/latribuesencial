@@ -18,15 +18,15 @@
               <input
                 type="checkbox"
                 class="checkbox"
-                [id]="data.value"
-                [value]="data.value"
+                [id]="data.id"
+                [value]="data.id"
                 
                 (change)="onCheckboxChange($event)"
-                [checked]="values.includes(data.value)" 
+                [checked]="values.includes(data.id)" 
               />
 
-              <label [for]="data.value">
-                <div class="title">{{ data.name }} {{data.value}}</div>
+              <label [for]="data.id">
+                <div class="title">{{ data.name }} {{data.id}}</div>
               </label>
             </div>
           </li>
