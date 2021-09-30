@@ -2,14 +2,21 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from "@angular/forms";
+// ======================================
+//				modules
+// ======================================
 import { StepperRoutingModule } from "./stepper-routing.module";
+import { SharedModule } from "@shared/shared.module";
+// ======================================
+//				Components
+// ======================================
 import { Step2Component } from "./step2/step2.component";
 import { Step3Component } from "./step3/step3.component";
 import { Step4Component } from "./step4/step4.component";
 import { Step1Component } from "./step1/step1.component";
 import { StepperComponent } from "./stepper.component";
-import { SharedModule } from '@shared/shared.module';
-
+import { Ng2TelInputModule } from "ng2-tel-input";
+import { TextMaskModule } from "angular2-text-mask";
 @NgModule({
   declarations: [
     StepperComponent,
@@ -23,7 +30,10 @@ import { SharedModule } from '@shared/shared.module';
     FormsModule,
     CommonModule,
     StepperRoutingModule,
-    SharedModule
+    SharedModule,
+    Ng2TelInputModule,
+    FormsModule,
+    TextMaskModule
   ],
 })
 export class StepperModule {}

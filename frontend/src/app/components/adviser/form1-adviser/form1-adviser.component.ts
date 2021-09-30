@@ -24,4 +24,8 @@ export class Form1AdviserComponent implements OnInit {
       this.form1Adviser.controls[field].touched
     );
   }
+
+  public validPattern(field: string) {
+    return this.form1Adviser.controls[field].errors?.pattern;
+  }
 }

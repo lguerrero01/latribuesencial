@@ -33,7 +33,7 @@ export class AdviserComponent implements OnInit {
   ngOnInit(): void {
     this.adviserForm = this.fb.group({
       form1Adviser: this.fb.group({
-        ocupation: ["", [Validators.required]],
+        ocupation: ["", [Validators.required ,Validators.pattern(/^[a-zA-Z\s]*$/)]],
         maritalStatus: ["", [Validators.required]],
         children: ["", [Validators.required]],
       }),

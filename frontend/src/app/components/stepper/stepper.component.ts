@@ -29,13 +29,13 @@ export class StepperComponent implements OnInit {
     private router: Router
   ) {}
   // ======================================
-  //				Reactive Forms
+  //				Reactive Forms [- +()0-9]+
   // ======================================
   ngOnInit(): void {
     this.stepForm = this.fb.group({
       infoStepForm: this.fb.group({
         email: ["", [Validators.required,  Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
-        name: ["", [Validators.required]],
+        name: ["", [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/)]],
         country: ["", [Validators.required]],
         resCountry: ["", [Validators.required]],
         phone: ["", [Validators.required]],
