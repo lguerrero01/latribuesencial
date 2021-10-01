@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { GetKitsService } from "@shared/services/get-kits.service";
 
+import { FormsDataService } from "@shared/services/forms-data.service";
+
 @Component({
   selector: "app-kits",
   templateUrl: "./kits.component.html",
@@ -12,11 +14,14 @@ export class KitsComponent implements OnInit {
   // ======================================
   @Input() checks: [] = [];
   public items: any = [];
-
+  public kitSelected: number = 0;
   // ======================================
   //				Constructor
   // ======================================
-  constructor(private showKits: GetKitsService) {}
+  constructor(
+    private showKits: GetKitsService,
+    private formService: FormsDataService
+  ) {}
 
   ngOnInit(): void {
     this.showKitsByDiseases(this.checks);
@@ -34,5 +39,15 @@ export class KitsComponent implements OnInit {
         console.error("Hay un error al obtener los kits ", err);
       }
     );
+  }
+
+  // ======================================
+  //        Send kit to service
+  // ======================================
+
+  public sendKit(id: number) {
+    this.kitSelected = id;
+    this.formService.getKit(id);
+    
   }
 }

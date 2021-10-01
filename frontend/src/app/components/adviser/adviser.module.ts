@@ -8,6 +8,7 @@ import { Form1AdviserComponent } from "./form1-adviser/form1-adviser.component";
 import { Form2AdviserComponent } from "./form2-adviser/form2-adviser.component";
 import { AdviserComponent } from "./adviser.component";
 import { Form3AdviserComponent } from './form3-adviser/form3-adviser.component';
+import { TextMaskModule } from "angular2-text-mask";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { Form3AdviserComponent } from './form3-adviser/form3-adviser.component';
     CommonModule,
     AdviserRoutingModule,
     ReactiveFormsModule,
+    TextMaskModule
   ],
 })
 export class AdviserModule {}

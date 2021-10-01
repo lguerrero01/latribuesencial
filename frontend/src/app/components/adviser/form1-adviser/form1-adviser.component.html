@@ -3,14 +3,19 @@
     <form [formGroup]="form1Adviser" action="" autocomplete="off">
       <!-- Campo de ocupacion -->
       <div class="mb-3 row justify-content-center">
-
-        <input type="text" class="form-control" formControlName="ocupation" placeholder="Ocupacion Actual*"  pattern="^[a-zA-Z\s]*$"/>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="ocupation"
+          placeholder="Ocupacion Actual*"
+          pattern="^[a-zA-Z\s]*$"
+        />
 
         <p class="text-danger" *ngIf="fieldValid('ocupation')">
           Ocupacion Requerida
         </p>
 
-        <p class="form-text text-danger" *ngIf="validPattern('ocupation')">
+        <p class="text-danger" *ngIf="validPattern('ocupation')">
           Debe contener solo letras.
         </p>
       </div>
@@ -18,35 +23,38 @@
       <!-- Campo de Estado Civil -->
 
       <div class="mb-3 row">
-
-        <select class="form-select" formControlName="maritalStatus" aria-label="Default select example">
+        <select
+          class="form-select"
+          formControlName="maritalStatus"
+          aria-label="Default select example"
+        >
           <option value="" disabled>Edo. Civil*</option>
           <option value="soltero">Soltero</option>
           <option value="casado">Casado</option>
           <option value="divociado">Divorciado</option>
           <option value="viudo">Viudo</option>
         </select>
-        <p class="form-text text-danger" *ngIf="fieldValid('maritalStatus')">
+        <p class="text-danger" *ngIf="fieldValid('maritalStatus')">
           Campo Requerido
         </p>
-
-
       </div>
       <!-- Campo de Hijos -->
 
       <div class="mb-3 row">
-
-        <select class="form-select" formControlName="children" aria-label="Default select example">
+        <select
+          class="form-select"
+          formControlName="children"
+          aria-label="Default select example"
+        >
           <option value="" selected>
             <Table>Tienes Hijos?*</Table>
           </option>
           <option value="true">Si</option>
           <option value="false">No</option>
         </select>
-        <p class="form-text text-danger" *ngIf="fieldValid('children')">
+        <p class="text-danger" *ngIf="fieldValid('children')">
           Campo Requerido
         </p>
-
       </div>
     </form>
   </div>

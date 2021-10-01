@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from "@angular/core";
 //				servives
 // ======================================
 import { GetDiseasesService } from "@shared/services/get-diseases.service";
+import { FormsDataService } from "@shared/services/forms-data.service";
 // ======================================
 //				Components
 // ======================================
@@ -12,7 +13,6 @@ import {
   FormControl,
   FormGroupDirective,
 } from "@angular/forms";
-import { FormsDataService } from "@shared/services/forms-data.service";
 
 @Component({
   selector: "app-diseases",

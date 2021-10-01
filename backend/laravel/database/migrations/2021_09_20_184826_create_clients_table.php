@@ -20,9 +20,10 @@ class CreateClientsTable extends Migration
             $table->string('email');
             $table->string('country');
             $table->string('resCountry');
-            $table->integer('phone');
+            $table->string('phone');
             $table->string('children');
             $table->string('sport');
+            $table->foreignId('kit_id')->constrained();
         });
     }
 

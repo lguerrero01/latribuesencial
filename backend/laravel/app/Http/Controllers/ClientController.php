@@ -25,25 +25,17 @@ class ClientController extends Controller
      */
     public function create(Request $request)
     {
-        // $infoStepForm    = $request->infoStepForm;
-        // $basicInfoClient = $request->basicInfoClient;
-
-        // dd(Diseases::with(['kits'])->find($request->checkArray)->groupBy('kit_id')->first()->first()->kits);
-
-        // array_merge($infoStepForm, $basicInfoClient);
-
-        // dd($infoStepForm);
 
 
-        $data['name'] = $request['infoStepForm']['name'];
+        $data['name'] = $request->infoStepForm['name'];
         $data['email'] = $request['infoStepForm']['email'];
         $data['country'] = $request['infoStepForm']['country'];
         $data['resCountry'] = $request['infoStepForm']['resCountry'];
         $data['phone'] = $request['infoStepForm']['phone'];
-
         $data['children'] = $request['basicInfoClient']['children'];
         $data['sport'] = $request['basicInfoClient']['sport'];
-        
+        $data['kit_id'] = $request['kit'];
+
         Client::create($data);
         return response()->json([
             'message' => "Client created",

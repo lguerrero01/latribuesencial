@@ -158,15 +158,6 @@ class DiseasesSeeder extends Seeder {
 
                ],
 
-               [
-                    "name" => "Embarazo",
-
-               ],
-
-               [
-                    "name" => "Reducción de carga tóxica",
-
-               ],
           ];
           foreach ($data as $value) {
                Disease::create($value)->kits()->attach([

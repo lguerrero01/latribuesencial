@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Adviser extends Model
 {
@@ -22,7 +23,8 @@ class Adviser extends Model
         'desc',
         'workingStatus',
         'card',
-        'help'
+        'help',
+        'kit_id'
     ];
     protected $cast = [
         'name' => 'string',
@@ -39,4 +41,8 @@ class Adviser extends Model
         'card' => 'string',
         'help' => 'string'
     ];
+    public function kit(): HasOne
+    {
+        return $this->hasOne(Kits::class);
+    }
 }

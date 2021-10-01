@@ -38,6 +38,7 @@ class AdviserController extends Controller
         $data['workingStatus'] = $request['form3Adviser']['workingStatus'];
         $data['card'] = $request['form3Adviser']['card'];
         $data['help'] = $request['form3Adviser']['help'];
+        $data['kit_id'] = $request['kit'];
 
         Adviser::create($data);
         return response()->json([

@@ -16,19 +16,19 @@ class KitSeeder extends Seeder
     {
         $data = [
             [
-                "name" => "Kit de Inicio Saludable BOTELLAS DE 5 ML Aproximadamente 80 gotas por botella",
+                "name" => "Kit de Inicio Saludable",
                 "imgUrl" =>  env('APP_URL')."/storage/kits/inicio_saludable.png",
             ],
             [
-                "name" => "Colección Aroma Esenciales BOTELLAS DE 5 ML Aproximadamente 80 gotas",
+                "name" => "Colección Aroma Esenciales",
                 "imgUrl" =>  env('APP_URL')."/storage/kits/aromas_esenciales.png",
             ],
             [
-                "name" => "Kit Habitos Saludables BOTELLAS DE 5 ML",
+                "name" => "Kit Habitos Saludables",
                 "imgUrl" =>  env('APP_URL')."/storage/kits/habitos_saludables.png",
             ],
             [
-                "name" => "Esenciales para el hogar BOTELLAS DE 15 ML APROXIMDADMENTE 250 GOTAS POR BOTELLA",
+                "name" => "Esenciales para el hogar",
                 "imgUrl" => env('APP_URL')."/storage/kits/soluciones_limpia.png",
             ]
         ];

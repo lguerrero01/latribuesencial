@@ -11,6 +11,7 @@ export class FormsDataService {
   // ======================================
   //				Atributes
   // ======================================
+  public kit: any = 0;
   public basicInfo: {} = {};
   public formFinal: {} = {};
   public apiUrl: string = "http://api.latribu.test/api";
@@ -27,6 +28,16 @@ export class FormsDataService {
 
   constructor(private httpClient: HttpClient) {}
 
+  // ======================================
+  //				Get kit
+  // ======================================
+  public getKit(kitId: {}) {
+    this.kit = kitId;
+    console.log("obteniendo kit desde el servicio", this.kit);
+  }
+  // ======================================
+  //				Get first form steps
+  // ======================================
   public getInfoBasic(formBasic: {}) {
     this.basicInfo = formBasic;
   }
@@ -35,8 +46,10 @@ export class FormsDataService {
   //				Send info to client
   // ======================================
   public sendFormClient(form: {}) {
-    this.formFinal = { ...form, ...this.basicInfo };
-    console.log('enviando info',this.formFinal);
+    this.formFinal = { ...form, ...this.basicInfo};
+    this.formFinal["kit"] = this.kit;
+
+    console.log("enviando info", this.formFinal);
     this.httpClient
       .post<any>(`${this.apiUrl}/client`, this.formFinal, this.httpOptions)
       .subscribe(
@@ -58,7 +71,8 @@ export class FormsDataService {
 
   public sendFormAdviser(form: {}) {
     this.formFinal = { ...form, ...this.basicInfo };
-
+    this.formFinal["kit"] = this.kit;
+    console.log("enviando info", this.formFinal);
     this.httpClient
       .post<any>(`${this.apiUrl}/adviser`, this.formFinal, this.httpOptions)
       .subscribe(
