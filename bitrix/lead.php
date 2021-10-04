@@ -4,27 +4,21 @@ require_once(__DIR__ . '/crest.php');
 
 class Lead
 {
-    private $title;
-    private $name;
-    private $lastName;
-    private $documentType;
-    private $documentId;
-    private $phone;
+    private $title; 
     private $email;
-    private $carBrand;
-    private $carModel;
-    private $carYear;
+    private $name;
+    private $country;
+    private $resCountry; 
+    private $phone; 
+  
+   
 
     public function __construct(
-        $name,
-        $lastName,
-        $documentType,
-        $documentId,
-        $phone,
-        $email,
-        $carBrand,
-        $carModel,
-        $carYear
+         $email,  
+         $name,
+         $country,
+         $resCountry,
+         $phone
     ) {
         $this->name = ucwords(filter_var($name, FILTER_SANITIZE_STRING));
         $this->lastName = ucwords(filter_var($lastName, FILTER_SANITIZE_STRING));
