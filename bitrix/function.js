@@ -4,15 +4,11 @@ window.onload = function () {
 
 async function postData() {
   let formData = new FormData();
-  formData.append('name', document.getElementById("name").value);
-  formData.append('lastName', document.getElementById("lastName").value);
-  formData.append('documentType', document.getElementById("documentType").value);
-  formData.append('documentId', document.getElementById("documentId").value);
   formData.append('email', document.getElementById("email").value);
+  formData.append('name', document.getElementById("name").value);
+  formData.append('country', document.getElementById("country").value);
+  formData.append('resCountry', document.getElementById("resCountry").value);
   formData.append('phone', document.getElementById("phone").value);
-  formData.append('carBrand', document.getElementById("carBrand").value);
-  formData.append('carModel', document.getElementById("carModel").value);
-  formData.append('carYear', document.getElementById("carYear").value);
 
   fetch('register.php', {
       method: 'post',

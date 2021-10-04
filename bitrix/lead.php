@@ -10,26 +10,25 @@ class Lead
     private $country;
     private $resCountry; 
     private $phone; 
-  
-   
+    private $children;
+    private $sport;   
 
     public function __construct(
          $email,  
          $name,
          $country,
          $resCountry,
-         $phone
+         $phone,
+         $children,
+         $sport
     ) {
-        $this->name = ucwords(filter_var($name, FILTER_SANITIZE_STRING));
-        $this->lastName = ucwords(filter_var($lastName, FILTER_SANITIZE_STRING));
-        $this->documentType = $this->getDocumentType($documentType);
-        $this->documentId = filter_var($documentId, FILTER_SANITIZE_NUMBER_INT);
-        $this->phone = $this->getPhoneNumber(filter_var($phone, FILTER_SANITIZE_NUMBER_INT));
         $this->email = filter_var($email, FILTER_SANITIZE_EMAIL);
-        $this->carBrand = filter_var($carBrand, FILTER_SANITIZE_STRING);
-        $this->carModel = filter_var($carModel, FILTER_SANITIZE_STRING);
-        $this->carYear = filter_var($carYear, FILTER_SANITIZE_STRING);
-        $this->title = $this->name . ' ' . $this->lastName . ' Landing Page - Campaña Publicitaria';
+        $this->name = ucwords(filter_var($name, FILTER_SANITIZE_STRING));
+        $this->country = filter_var($country, FILTER_SANITIZE_STRING);
+        $this->resCountry = filter_var($resCountry, FILTER_SANITIZE_STRING);
+        $this->phone = $this->getPhoneNumber(filter_var($phone, FILTER_SANITIZE_NUMBER_INT));
+        $this->children = filter_var($children, FILTER_SANITIZE_EMAIL);
+        $this->sport = filter_var($sport, FILTER_SANITIZE_EMAIL);
     }
 
 
@@ -39,10 +38,7 @@ class Lead
             'crm.lead.add',
             [
                 'fields' => [
-                    'TITLE' => $this->title, // nombre del prospecto
                     'NAME' => $this->name, // nombre del contacto
-                    'LAST_NAME' => $this->lastName, // apellido del contacto
-                    'SOURCE_ID' => '12', // fuente(origen) 12 = landing page - campañas publicitarias
                     'HAS_PHONE' => 'Y', // indica si el campo phone esta activo
                     'HAS_EMAIL' => 'Y', // indica si el campo email esta activo
                     'PHONE' => [[ // 
@@ -54,22 +50,16 @@ class Lead
                         "VALUE" => $this->email
                     ]],
                     "OPENED" => "Y", // prospecto disponible para todos
-                    'UF_CRM_1596600472' => [100], // Posible Cliente de
-                    'UF_CRM_1596725312' => '170', // Tipo de Prospecto
-                    'UF_CRM_1596950775' => '6462', // Categoria
-                    'UF_CRM_1606156549' => '1266', // Cliente de
-                    'UF_CRM_1618343757229' => $this->documentId, // Documento de identidad
-                    'UF_CRM_1618343805346' => $this->documentType, // Tipo de documento de identidad
-                    'UF_CRM_1619024910556' => '6138', // sector de actividad
-                    'UF_CRM_1619706478410' => [$this->carBrand], // marca del vehiculo
-                    'UF_CRM_1619706499613' => [$this->carModel], // modelo del vehiculo
-                    'UF_CRM_1619706522222' => [$this->carYear] // anio del vehiculo
+                    'UF_CRM_1633358912' => $this->country, // Pais de Origen
+                    'UF_CRM_1633358938' => $this->resCountry, // Pais de residencia
+                    'UF_CRM_1633360888176' => $this->children, // Documento de identidad
+                    'UF_CRM_1633360995266' => $this->sport, // Tipo de documento de identidad
                 ]
             ]
         );
 
         if (isset($result['error'])) {
-            return $this->return('El correo electronico no cumple con el formato valido', 422);
+            return $this->return('no cumple con el formato valido', 422);
         }
 
         return  $this->return('ok', 200);
@@ -82,29 +72,6 @@ class Lead
      * "4168" => "J"
      * "4170" => "E"
      */
-    private function getDocumentType(string $var = null): string
-    {
-        $data = '';
-        switch ($var) {
-            case 'J':
-                $data = '4168';
-                break;
-
-            case 'E':
-                $data = '4170';
-                break;
-
-            case 'V':
-                $data = '4166';
-                break;
-
-            default:
-                $data = '4166';
-                break;
-        }
-
-        return $data;
-    }
 
     private function getPhoneNumber(string $var = null)
     {
