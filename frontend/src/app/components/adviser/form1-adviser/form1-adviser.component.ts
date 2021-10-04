@@ -15,6 +15,8 @@ export class Form1AdviserComponent implements OnInit {
   // ======================================
   //				Atributes
   // ======================================
+  public letters = [/[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/,/[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/,/[0-9]/, /[0-9]/, /[0-9]/]
+
   @Input() formGroupName: string;
   form1Adviser: FormGroup;
   

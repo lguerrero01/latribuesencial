@@ -11,7 +11,7 @@
       </div>
     </ng-template>
     <ng-container *ngIf="Data.length > 0; else spinner"  class="row justify-content-center">
-      <form [formGroup]="form" class="col-6">
+      <form [formGroup]="form" class="col-md-6 col-sm-12">
         <ul class="diseases animate__animated animate__fadeIn ">
           <li class="diseases-list" *ngFor="let data of Data; let i = index">
             <div class="">

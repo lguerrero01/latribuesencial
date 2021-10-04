@@ -1,3 +1,3 @@
-export interface Kits{
-    name : string;
+export interface Kits {
+  name: string;
 }

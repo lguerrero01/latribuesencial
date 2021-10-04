@@ -50,9 +50,11 @@ export class ClientComponent implements OnInit {
     }
 
     if (this.step == 3) {
+     
       console.log("enviando form de cliente", this.clientForm.value);
       this.formService.sendFormClient(this.clientForm.value);
-      this.router.navigate(["/despedida"]);
+      // this.router.navigate('');
+      window.location.href = 'https://www.doterra.com/US/en/selectRegion/WC/8619844';
       return;
     }
     this.step++;
