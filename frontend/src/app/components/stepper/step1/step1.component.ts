@@ -19,7 +19,7 @@ export class Step1Component implements OnInit {
   //				Attributes
   // ======================================
   public letters = [/[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/,/[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/,/[0-9]/, /[0-9]/, /[0-9]/]
-  public mask2 = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]
+  public mask2 = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
   @Input() formGroupName: string;
   form1: FormGroup;
   public countries: any = countries;

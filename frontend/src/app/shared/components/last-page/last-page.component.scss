@@ -1,10 +1,11 @@
 .last-page {
-  background-image: url('../../../../assets/img/last-page.jpg') !important;
+  // background-image: url('../../../../assets/img/fondo-prueba.png') !important;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 100%;
   min-height: 115vh;
+  background-color: #ccb16b;
 
 }
 #logo{
@@ -14,9 +15,12 @@
 }
 h1{
   font-size: 48px;
+  color: #ffff;
 }
 h3{
   font-size: 35px;
+  color: #ffff;
+
 }
 @media(min-width:1024px){
   h1{

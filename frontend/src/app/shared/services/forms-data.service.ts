@@ -33,7 +33,6 @@ export class FormsDataService {
   // ======================================
   public getKit(kitId: {}) {
     this.kit = kitId;
-    console.log("obteniendo kit desde el servicio", this.kit);
   }
   // ======================================
   //				Get first form steps

@@ -53,12 +53,11 @@ export class DiseasesComponent implements OnInit {
       this.values.push(this.formArray.at(index).value as string);
     });
 
-    this.diseases.getDiseases().subscribe((resp) => {
-      this.Data = resp;
-    });
-
-    // console.log("linea 43", this.values);
-    // this.Data = this.diseases.Data;
+      this.diseases.getDiseases().subscribe((resp) => {
+        this.Data = resp;
+      });
+      
+  
   }
 
   // ======================================
