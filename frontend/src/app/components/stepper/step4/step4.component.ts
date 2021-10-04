@@ -29,15 +29,14 @@ export class Step4Component implements OnInit {
     if ($event.includes("cliente")) {
       this.client = true;
       this.adviser = false;
-      this.messageEvent.emit($event);
     }
     {
       if ($event.includes("asesor")) {
         this.client = false;
         this.adviser = true;
-        this.messageEvent.emit($event);
       }
     }
+    this.messageEvent.emit($event);
 
     // this.formService.getRole($event);
   }
