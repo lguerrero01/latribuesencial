@@ -4,7 +4,6 @@ require_once(__DIR__ . '/crest.php');
 
 class Lead
 {
-    private $title; 
     private $email;
     private $name;
     private $country;

@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, throwError } from "rxjs";
 import { catchError } from "rxjs/operators";
+import { environment } from "../../../environments/environment.prod";
 
 @Injectable({
   providedIn: "root",
@@ -10,7 +11,8 @@ export class GetDiseasesService {
   // ======================================
   //			Atributes
   // ======================================
-  public apiURL: string = "http://api.latribu.test/api";
+  public apiUrl: string = environment.urlAPI;
+
   public Data: Array<any> = [
     { name: "Ansiedad", id: "1" },
     { name: "Dermatitis Atopica", id: "2" },
@@ -43,8 +45,7 @@ export class GetDiseasesService {
     { name: "Pie de atleta", id: "27" },
     { name: "Piojos", id: "28" },
     { name: "Embarazo", id: "29" },
-    { name: "Reducción de carga tóxica", id: "30" }
-    
+    { name: "Reducción de carga tóxica", id: "30" },
   ];
 
   // ======================================
@@ -57,7 +58,7 @@ export class GetDiseasesService {
   // ======================================
   public getDiseases(): Observable<any> {
     return this.httpClient
-      .get<any>(`${this.apiURL}/diseases`)
+      .get<any>(`${this.apiUrl}/diseases`)
       .pipe(catchError(this.errorHandler));
   }
 

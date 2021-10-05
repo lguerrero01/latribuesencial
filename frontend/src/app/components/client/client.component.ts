@@ -32,7 +32,7 @@ export class ClientComponent implements OnInit {
     this.formService.disableNext$.subscribe((rest) => {
       this.disabled = rest;
     });
-    
+
     this.clientForm = this.fb.group({
       basicInfoClient: this.fb.group({
         children: ["", [Validators.required]],
@@ -50,11 +50,7 @@ export class ClientComponent implements OnInit {
     }
 
     if (this.step == 3) {
-     
-      console.log("enviando form de cliente", this.clientForm.value);
       this.formService.sendFormClient(this.clientForm.value);
-      // this.router.navigate('');
-      window.location.href = 'https://www.doterra.com/US/en/selectRegion/WC/8619844';
       return;
     }
     this.step++;
