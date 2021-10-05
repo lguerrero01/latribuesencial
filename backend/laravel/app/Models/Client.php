@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Client extends Model
 {
@@ -17,7 +18,8 @@ class Client extends Model
     'resCountry',
     'phone',
     'children',
-    'sport'
+    'sport',
+    'kit_id'
   ];
   
   protected $casts = [
@@ -29,4 +31,9 @@ class Client extends Model
     'children' => 'string',
     'sport' => 'string',
   ];
+
+  public function kit(): HasOne
+  {
+      return $this->hasOne(Kits::class);
+  }
 }

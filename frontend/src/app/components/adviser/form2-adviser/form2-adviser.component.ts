@@ -13,9 +13,13 @@ import {
 })
 export class Form2AdviserComponent implements OnInit {
   // ======================================
-  //				Atributes
+  //				Inputs
   // ======================================
   @Input() formGroupName: string;
+
+  // ======================================
+  //				Atributes
+  // ======================================
   form2Adviser: FormGroup;
   // ======================================
   //				Contructor
@@ -31,7 +35,7 @@ export class Form2AdviserComponent implements OnInit {
     ) as FormGroup;
   }
   // ======================================
-  //				Validaciones
+  //				Validations 
   // ======================================
   public fieldValid(field: string) {
     return (
@@ -39,4 +43,9 @@ export class Form2AdviserComponent implements OnInit {
       this.form2Adviser.controls[field].touched
     );
   }
+
+  public validPattern(field: string) {
+    return this.form2Adviser.controls[field].errors?.pattern;
+  }
+
 }

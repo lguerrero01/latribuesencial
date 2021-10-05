@@ -9,11 +9,11 @@
             <option value="si">Si</option>
             <option value="no">No</option>
           </select>
-              <p class=" row form-text text-danger" *ngIf="fieldValid('card')">
-                Campo Requerido
-              </p>
         </div>
       </div>
+      <p class="row text-danger" *ngIf="fieldValid('card')">
+        Campo Requerido
+      </p>
       <div class="row">
         <h3>¿Actualmente estas trabajando?</h3>
         <div class="d-flex justify-content-center">
@@ -21,9 +21,8 @@
             <option value="" disabled>Seleccione</option>
             <option value="si">Si</option>
             <option value="no">No</option>
-            <option value="otro">otro</option>
           </select>
-          <p class="form-text text-danger" *ngIf="fieldValid('workingStatus')">
+          <p class="text-danger" *ngIf="fieldValid('workingStatus')">
             Campo Requerido
           </p>
         </div>
@@ -39,9 +38,8 @@
             <option value="" disabled>Seleccione</option>
             <option value="si">Si</option>
             <option value="no">No</option>
-            <option value="otro">otro</option>
           </select>
-          <p class="form-text text-danger" *ngIf="fieldValid('help')">
+          <p class="text-danger" *ngIf="fieldValid('help')">
             Campo Requerido
           </p>
         </div>

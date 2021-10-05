@@ -191,7 +191,7 @@ p strong {
   }
 
   .about-us {
-    background-size: 120vh;
+    background-size: 100vh;
   }
 }
 
@@ -256,8 +256,11 @@ p strong {
 
 @media(min-width:1024px) {
   .welcome {
+    background-image: url('../img/christin-hume-0MoF-Fe0w0A-unsplash.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    
   }
 
   .about-us li p {
@@ -265,6 +268,8 @@ p strong {
   }
 
   .about-us {
+    background-image: url('../img/Fondo2-2500.png');
+
     background-size: cover;
     background-position: center;
   }

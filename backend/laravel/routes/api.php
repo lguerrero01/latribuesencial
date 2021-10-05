@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdviserController;
+use App\Http\Controllers\BitrixConnection;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DiseasesController;
 use App\Http\Controllers\KitController;
@@ -21,4 +22,6 @@ Route::post('/adviser', [AdviserController::class, 'create']);
 Route::get('/diseases', [DiseasesController::class, 'getDiseases']);
 
 Route::post('/getKits', [KitController::class, 'getKits']);
+
+Route::post('/sendBitrix', [BitrixConnection::class, 'Add']);
 

@@ -15,6 +15,7 @@ import { HttpClientModule } from "@angular/common/http";
 // ======================================
 import { HomeComponent } from "./components/home/home.component";
 import { AppComponent } from "./app.component";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -27,6 +28,8 @@ import { AppComponent } from "./app.component";
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
+    BrowserAnimationsModule,
+    
   ],
   bootstrap: [AppComponent],
 })

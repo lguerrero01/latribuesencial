@@ -20,7 +20,7 @@ class CreateAdvisersTable extends Migration
             $table->string('email');
             $table->string('country');
             $table->string('resCountry');
-            $table->integer('phone');
+            $table->string('phone');
             $table->string('ocupation');
             $table->string('maritalStatus');
             $table->string('children');
@@ -29,6 +29,8 @@ class CreateAdvisersTable extends Migration
             $table->string('workingStatus');
             $table->string('card');
             $table->string('help'); 
+            $table->foreignId('kit_id')->constrained();
+
         });
     }
 

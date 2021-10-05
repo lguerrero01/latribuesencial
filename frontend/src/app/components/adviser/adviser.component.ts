@@ -33,7 +33,7 @@ export class AdviserComponent implements OnInit {
   ngOnInit(): void {
     this.adviserForm = this.fb.group({
       form1Adviser: this.fb.group({
-        ocupation: ["", [Validators.required]],
+        ocupation: ["", [Validators.required ,Validators.pattern(/^[a-zA-Z\s]*$/)]],
         maritalStatus: ["", [Validators.required]],
         children: ["", [Validators.required]],
       }),
@@ -59,7 +59,6 @@ export class AdviserComponent implements OnInit {
     }
     if (this.step == 5) {
       this.formService.sendFormAdviser(this.adviserForm.value);
-      this.router.navigate(["/despedida"]);
       return;
     }
     this.status = true;
@@ -73,7 +72,7 @@ export class AdviserComponent implements OnInit {
     this.status = false;
     this.step--;
   }
-  
+
   // ======================================
   //				Validation
   // ======================================

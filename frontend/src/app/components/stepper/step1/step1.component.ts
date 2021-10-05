@@ -6,6 +6,9 @@ import {
   Validators,
 } from "@angular/forms";
 
+
+import { countries } from "../../../shared/helpers/countries";
+
 @Component({
   selector: "app-step1",
   templateUrl: "./step1.component.html",
@@ -15,8 +18,15 @@ export class Step1Component implements OnInit {
   // ======================================
   //				Attributes
   // ======================================
+  public letters = [/[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/,/[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/,/[0-9]/, /[0-9]/, /[0-9]/]
+  public mask2 = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
   @Input() formGroupName: string;
   form1: FormGroup;
+  public countries: any = countries;
+  // ======================================
+  //				phone
+  // ======================================
+
 
   // ======================================
   //				Constructor
@@ -37,9 +47,16 @@ export class Step1Component implements OnInit {
       this.form1.controls[field].errors && this.form1.controls[field].touched
     );
   }
-  
-  public validEmail(field: string){
+
+  public validPattern(field: string) {
     return this.form1.controls[field].errors?.pattern;
   }
 
+  public validPhone(field: string) {
+    return this.form1.controls[field].errors?.maxlength;
+  }
+
+  
+
+  
 }
