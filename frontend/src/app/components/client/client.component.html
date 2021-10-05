@@ -1,0 +1,70 @@
+<app-decoration ></app-decoration>
+
+<div class="container mt-5">
+  <div class="row mb-3 text-center justify-content-center">
+    <span class="emblem border rounded-pill">
+      <h2>Cliente</h2>
+    </span>
+  </div>
+  <ng-container [formGroup]="clientForm" class="overflow-hidden">
+    <!-- <pre> {{ clientForm.value | json }}</pre> -->
+    <fieldset
+      *ngIf="step == 1"
+      [ngClass]="
+        status
+          ? 'animate__animated animate__fadeInRight'
+          : 'animate__animated animate__fadeInLeft'
+      "
+    >
+      <app-form1-client formGroupName="basicInfoClient"></app-form1-client>
+    </fieldset>
+
+    <fieldset
+      *ngIf="step == 2"
+      [ngClass]="
+        status
+          ? 'animate__animated animate__fadeInRight'
+          : 'animate__animated animate__fadeInLeft'
+      "
+    >
+      <app-diseases formArrayName="checkArray"></app-diseases>
+    </fieldset>
+
+    <fieldset
+      *ngIf="step == 3"
+      [ngClass]="
+        status
+          ? 'animate__animated animate__fadeInRight'
+          : 'animate__animated animate__fadeInLeft'
+      "
+    >
+      <app-kits [checks]="clientForm.value.checkArray"></app-kits>
+    </fieldset>
+  </ng-container>
+  <!-- Botones prev y next -->
+
+  <div class="row justify-content-center">
+    <button
+      *ngIf="step != 1"
+      (click)="previous()"
+      type="button"
+      name="previous"
+      class="col-2"
+      value="Previous"
+    >
+      <i class="fa fa-chevron-left" aria-hidden="true"></i>
+    </button>
+
+    <button
+      [disabled]="disabled"
+      *ngIf="step != 4"
+      (click)="next()"
+      type="button"
+      name="next"
+      value="Next"
+      class="col-2"
+    >
+      <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>

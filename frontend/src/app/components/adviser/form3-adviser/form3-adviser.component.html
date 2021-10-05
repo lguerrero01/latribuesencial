@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="text-center row justify-content-center">
+    <form class="col-md-7" action="" [formGroup]="form3Adviser" autocomplete="off">
+      <div class="row">
+        <h3>¿Posees alguna tarjeta que te permita hacer compras online?</h3>
+        <div class="justify-content-center">
+          <select class="form-select" formControlName="card" aria-label="Default select example">
+            <option value="" disabled>Seleccione</option>
+            <option value="si">Si</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+      </div>
+      <p class="row text-danger" *ngIf="fieldValid('card')">
+        Campo Requerido
+      </p>
+      <div class="row">
+        <h3>¿Actualmente estas trabajando?</h3>
+        <div class="d-flex justify-content-center">
+          <select class="form-select" formControlName="workingStatus" aria-label="Default select example">
+            <option value="" disabled>Seleccione</option>
+            <option value="si">Si</option>
+            <option value="no">No</option>
+          </select>
+          <p class="text-danger" *ngIf="fieldValid('workingStatus')">
+            Campo Requerido
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <h3>
+          ¿Estás dispuesto a invertir para tu uso personal y para tu hogar 120$
+          aproximadamente en productos?
+        </h3>
+        <h2>Considerando que a su vez esto te ayudará a obtener ganancias.</h2>
+        <div class="d-flex justify-content-center">
+          <select class="form-select" formControlName="help" aria-label="Default select example">
+            <option value="" disabled>Seleccione</option>
+            <option value="si">Si</option>
+            <option value="no">No</option>
+          </select>
+          <p class="text-danger" *ngIf="fieldValid('help')">
+            Campo Requerido
+          </p>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

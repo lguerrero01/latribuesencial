@@ -1,0 +1,96 @@
+<app-decoration></app-decoration>
+<div
+  class="d-flex row justify-content-center animate__animated animate__fadeInUp"
+>
+  <!-- progressbar -->
+  <div id="msform" class="row justify-content-center">
+    <ul id="progressbar" class="d-flex col-md-6">
+      <li [ngClass]="step >= 1 ? 'active' : 'inactive'"></li>
+      <li [ngClass]="step >= 2 ? 'active' : 'inactive'"></li>
+      <li [ngClass]="step >= 3 ? 'active' : 'inactive'"></li>
+      <li [ngClass]="step == 4 ? 'active' : 'inactive'"></li>
+    </ul>
+  </div>
+  <div class="col-md-6 col-md-offset-3 overflow-hidden">
+    <ng-container [formGroup]="stepForm">
+      <!-- <pre> {{ stepForm.value | json }}</pre> -->
+      <!------------------- Step 1 Start ----------------------->
+      <fieldset
+        *ngIf="step == 1"
+        [ngClass]="
+          status
+            ? 'animate__animated animate__fadeInRight'
+            : 'animate__animated animate__fadeInLeft'
+        "
+      >
+        <app-step1 formGroupName="infoStepForm"></app-step1>
+      </fieldset>
+      <!------------------- Step 2 Start ----------------------->
+      <fieldset
+        *ngIf="step == 2"
+        [ngClass]="
+          status
+            ? 'animate__animated animate__fadeInRight'
+            : 'animate__animated animate__fadeInLeft'
+        "
+      >
+        <app-step2></app-step2>
+      </fieldset>
+      <!------------------- Step 3 Start ----------------------->
+      <fieldset
+        *ngIf="step == 3"
+        [ngClass]="
+          status
+            ? 'animate__animated animate__fadeInRight'
+            : 'animate__animated animate__fadeInLeft'
+        "
+      >
+        <app-step3></app-step3>
+      </fieldset>
+      <!------------------- Step 4 Start ----------------------->
+      <fieldset
+        *ngIf="step == 4"
+        [ngClass]="
+          status
+            ? 'animate__animated animate__fadeInRight'
+            : 'animate__animated animate__fadeInLeft'
+        "
+      >
+        <app-step4 (messageEvent)="getRoute($event)"></app-step4>
+      </fieldset>
+    </ng-container>
+    <!------------------- Buttons Form ----------------------->
+    <div class="row justify-content-center">
+      <button
+        *ngIf="step != 1"
+        (click)="previous()"
+        type="submit"
+        name="previous"
+        class="col-1 animate__animated animate__fadeIn"
+        value="Previous"
+      >
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+      </button>
+
+      <button
+        [disabled]="!stepForm.controls.infoStepForm.valid"
+        *ngIf="step <= 3"
+        (click)="next()"
+        type="submit"
+        name="next"
+        class="col-1 animate__animated animate__fadeIn"
+      >
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </button>
+      <button
+        *ngIf="ruta && step == 4"
+        (click)="next()"
+        type="submit"
+        name="next"
+        class="col-1 animate__animated animate__fadeIn"
+      >
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</div>

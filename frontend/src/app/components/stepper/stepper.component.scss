@@ -1,0 +1,37 @@
+.col-md-offset-3 {
+    width: 700px;
+}
+
+@media(min-width:1024px) {
+  #progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 40px;
+    height: 40px;
+    line-height: 35px;
+    display: block;
+    font-size: 30px;
+    border-radius: 25px;
+    margin: 0 auto 10px auto;
+  }
+
+  .col-md-offset-3 {
+    width: 860px;
+    margin-left: 0;
+    margin-right: 25px;
+    line-height: 35px;
+  }
+
+  #progressbar li:before {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 35px;
+  }
+}
+@media(min-width:1440px) {
+  .col-md-offset-3 {
+    width: 1000px;
+  }
+}
+

@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.diseases {
+  font-family: "";
+  list-style: none;
+  overflow: auto;
+  margin: 20px auto 50px auto;
+  border: 1px solid rgba(37, 40, 46, 0.3);
+  margin-left: 5px;
+
+  .diseases-list {
+    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 2px solid rgba(37, 40, 46, 0.3);
+
+    label {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        right: 0px;
+        border: 1px solid rgba(37, 40, 46, 0.5);
+        border-radius: 50%;
+      }
+
+    }
+
+    .checkbox {
+      display: none;
+
+      &:checked {
+        +label {
+          &::after {
+            content: "";
+            background: linear-gradient(90deg, #0ca72e 0%, #0dbb2a 100%);
+            border: 1px solid #8a867b;
+          }
+        }
+      }
+    }
+  }
+}
+
+h3 {
+  font-size: 23px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-top: 30px;
+}
+
+// MEDIA QUERY
+@media(min-width:1024px) {
+  ul.diseases {
+    font-size: 30px;
+  }
+  h3 {
+    font-size: 45px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+  h2 {
+    font-size: 30px;
+    margin-top: 30px;
+  }
+}
+
+@media(min-width:1440px) {
+  h2 {
+    font-size: 35px;
+    margin-top: 55px;
+  }
+
+  h3 {
+    font-size: 45px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+
+  ul.diseases {
+    font-size: 35px;
+  }
+}
+

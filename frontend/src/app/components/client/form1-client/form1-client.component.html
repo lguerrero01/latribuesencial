@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row text-center">
+    <h3>
+      Esta es tu opción si quieres vivir el estilo de vida dōTERRA y tener mayor
+      bienestar emocional y físico.
+    </h3>
+    <h2>Queremos saber más sobre ti:</h2>
+  </div>
+  <form [formGroup]="form" autocomplete="off">
+    <div class="center-input">
+      <!-- Campo de ocupacion -->
+      <div class="mb-2">
+        <select
+          class="form-select"
+          formControlName="children"
+          aria-label="Default select example"
+        >
+          <option value="" disabled>¿Tienes Hijos?</option>
+          <option value="si">Si</option>
+          <option value="no">No</option>
+        </select>
+        <p class="form-text text-danger" *ngIf="fieldValid('children')">
+          Campo Requerido
+        </p>
+      </div>
+
+      <div class="mb-2">
+        <select
+          class="form-select"
+          formControlName="sport"
+          aria-label="Default select example"
+        >
+          <option value="" disabled>
+            ¿Practicas algún deporte o pasatiempo?*
+          </option>
+          <option value="si">Si</option>
+          <option value="no">No</option>
+        </select>
+        <p class="form-text text-danger" *ngIf="fieldValid('sport')">
+          Campo Requerido
+        </p>
+      </div>
+    </div>
+  </form>
+</div>
