@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  urlAPI: 'http://api.latribu.test/api',
+  urlAPI: 'https://latribuesencial.com/api',
+  //'http://api.latribu.test/api',
 };
 
 /*

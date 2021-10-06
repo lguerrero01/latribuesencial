@@ -6,6 +6,7 @@ import {
   Validators,
 } from "@angular/forms";
 
+import { SearchCountryField, CountryISO, PhoneNumberFormat } from 'ngx-intl-tel-input';
 
 import { countries } from "../../../shared/helpers/countries";
 
@@ -18,16 +19,21 @@ export class Step1Component implements OnInit {
   // ======================================
   //				Attributes
   // ======================================
-  public letters = [/[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/,/[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/,/[0-9]/, /[0-9]/, /[0-9]/]
-  public mask2 = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
+  public letters = [/[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/,/[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/,/[0-9]/, /[0-9]/, /[0-9]/];
+  public mask2 = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
   @Input() formGroupName: string;
   form1: FormGroup;
   public countries: any = countries;
   // ======================================
   //				phone
   // ======================================
-
-
+	separateDialCode = false;
+	SearchCountryField = SearchCountryField;
+	CountryISO = CountryISO;
+  PhoneNumberFormat = PhoneNumberFormat;
+	preferredCountries: CountryISO[] = [CountryISO.UnitedStates, CountryISO.UnitedKingdom];
+	
+	
   // ======================================
   //				Constructor
   // ======================================
@@ -55,8 +61,5 @@ export class Step1Component implements OnInit {
   public validPhone(field: string) {
     return this.form1.controls[field].errors?.maxlength;
   }
-
-  
-
-  
+ 
 }

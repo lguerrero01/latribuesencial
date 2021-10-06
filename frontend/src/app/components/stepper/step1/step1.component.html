@@ -10,16 +10,16 @@
           placeholder="Nombre y Apellido*"
           pattern="^[a-zA-Z\s]*$"
         />
-        <p class="form-text text-danger" *ngIf="fieldValid('name')">
+        <p class="text-danger" *ngIf="fieldValid('name')">
           El nombre y el apellido son requeridos
         </p>
-        <p class="form-text text-danger" *ngIf="validPattern('name')">
+        <p class="text-danger" *ngIf="validPattern('name')">
           Debe contener solo letras.
         </p>
       </div>
     </div>
     <!-- Campo de Email -->
-    <div class="mb-1 row justify-content-center">
+    <div class="mb-5 row justify-content-center">
       <div class="col-sm-6">
         <input
           type="email"
@@ -35,11 +35,40 @@
         </p>
       </div>
     </div>
+    <!-- Campo de Telefono -->
+    <div class="mb-2 row justify-content-center">
+      <div class="col-sm-6">
+        <ngx-intl-tel-input
+          [preferredCountries]="preferredCountries"
+          [enableAutoCountrySelect]="true"
+          [enablePlaceholder]="true"
+          [searchCountryFlag]="true"
+          [phoneValidation]="true"
+          [searchCountryField]="[
+            SearchCountryField.Iso2,
+            SearchCountryField.Name
+          ]"
+          [selectedCountryISO]="CountryISO.Venezuela"
+          [separateDialCode]="separateDialCode"
+          [numberFormat]="PhoneNumberFormat.National"
+          name="phone"
+          formControlName="phone"
+          [maxLength]="'15'"
+        >
+        </ngx-intl-tel-input>
+        <span
+          class="form-text m-1 text-danger col-sm-6 row "
+          *ngIf="fieldValid('phone')"
+        >
+          Campo incorrecto
+        </span>
+      </div>
+    </div>
     <!-- Campo de Pais -->
-    <div class="mb-1 row justify-content-center">
+    <div class="mb-3 row justify-content-center">
       <div class="col-sm-6">
         <select class="form-select" formControlName="country">
-          <option value="" disabled selected>Selecciona Pais de origen</option>
+          <option value="" disabled selected>Seleccione Pais de origen</option>
           <option *ngFor="let country of countries" [value]="country.name">
             {{ country.name }}
           </option>
@@ -50,7 +79,7 @@
       </div>
     </div>
     <!-- Campo de Pais de recidencia-->
-    <div class="mb-2 row justify-content-center">
+    <div class="mb-4 row justify-content-center">
       <div class="col-sm-6">
         <select class="form-select" formControlName="resCountry">
           <option value="" disabled selected>
@@ -64,25 +93,6 @@
         <span class="form-text text-danger" *ngIf="fieldValid('resCountry')">
           Pais de residencia es Requerido
         </span>
-      </div>
-    </div>
-    <!-- Campo de Telefono -->
-    <div class="mb-2 row justify-content-center">
-      <div class="col-sm-6">
-        <input
-          type="tel"
-          class="form-control"
-          formControlName="phone"
-          placeholder="Telefono*"
-          
-          [textMask]="{mask: mask2}"
-        />
-        <span class="form-text text-danger" *ngIf="fieldValid('phone')">
-          Un Telefono es Requerido
-        </span>
-        <!-- <span class="form-text text-danger" *ngIf="validPattern('phone')">
-          Deben ser solo numeros
-        </span> -->
       </div>
     </div>
   </form>

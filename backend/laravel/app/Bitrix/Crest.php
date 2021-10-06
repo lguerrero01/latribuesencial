@@ -1,5 +1,10 @@
 <?php
-require_once (__DIR__.'/settings.php');
+
+namespace App\Bitrix;
+
+use Exception;
+
+require_once (__DIR__.'/Settings.php');
 
 /**
  *  @version 1.36
@@ -16,7 +21,7 @@ require_once (__DIR__.'/settings.php');
  *      C_REST_IGNORE_SSL = true //turn off validate ssl by curl
  */
 
-class CRest
+class Crest
 {
 	const VERSION = '1.36';
 	const BATCH_COUNT    = 50;//count batch 1 query
@@ -227,9 +232,10 @@ class CRest
 			'method' => $method,
 			'params' => $params
 		];
+
 		if(defined('C_REST_CURRENT_ENCODING'))
 		{
-			$arPost[ 'params' ] = static::changeEncoding($arPost[ 'params' ]);
+			$arPost['params'] = static::changeEncoding($arPost['params']);
 		}
 
 		$result = static::callCurl($arPost);

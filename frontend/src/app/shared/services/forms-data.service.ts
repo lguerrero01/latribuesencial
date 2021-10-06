@@ -60,6 +60,7 @@ export class FormsDataService {
         },
         (err) => {
           this.errorHandler(err);
+          this.router.navigate(["/despedida"]);
         }
       );
 
@@ -88,10 +89,12 @@ export class FormsDataService {
       .subscribe(
         (rest) => {
           console.log("Se creo un asesor", rest);
-          this.router.navigate(["/despedida"]);
+          window.location.href =
+            "https://www.doterra.com/US/en/selectRegion/WC/8619844";
         },
         (err) => {
           this.errorHandler(err);
+          this.router.navigate(["/despedida"]);
         }
       );
 
@@ -99,7 +102,7 @@ export class FormsDataService {
       .post<any>(`${this.apiUrl}/sendBitrix`, this.formFinal)
       .subscribe(
         (data) => {
-          console.log("send info client to bitrix");
+          console.log("send info client to bitrix", data);
         },
         (err) => {
           this.errorHandler(err);
