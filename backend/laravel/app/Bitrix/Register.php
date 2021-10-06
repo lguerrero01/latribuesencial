@@ -1,5 +1,6 @@
 <?php
-require_once(__DIR__ . '/lead.php');
+
+use App\Bitrix\Lead;
 
 $addLead = new Lead(
 	$_POST['email'],
@@ -9,7 +10,6 @@ $addLead = new Lead(
 	$_POST['phone'],
 	$_POST['children'],
 	$_POST['sport']
-
 );
 
 echo json_encode($addLead->Add());

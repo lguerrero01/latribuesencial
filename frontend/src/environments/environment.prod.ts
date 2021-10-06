@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  urlAPI: 'https://latribuesencial.com/api',
+  urlAPI: 'https://api.latribuesencial.com/api',
   //'http://api.latribu.test/api',
 };

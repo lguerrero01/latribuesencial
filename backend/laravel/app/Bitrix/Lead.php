@@ -1,25 +1,27 @@
 <?php
-require_once(__DIR__ . '/crest.php');
 
+namespace App\Bitrix;
+
+use App\Bitrix\Crest;
 
 class Lead
 {
     private $email;
     private $name;
     private $country;
-    private $resCountry; 
-    private $phone; 
+    private $resCountry;
+    private $phone;
     private $children;
-    private $sport;   
+    private $sport;
 
     public function __construct(
-         $email,  
-         $name,
-         $country,
-         $resCountry,
-         $phone,
-         $children,
-         $sport
+        $email,
+        $name,
+        $country,
+        $resCountry,
+        $phone,
+        $children,
+        $sport
     ) {
         $this->email = filter_var($email, FILTER_SANITIZE_EMAIL);
         $this->name = ucwords(filter_var($name, FILTER_SANITIZE_STRING));
@@ -33,7 +35,7 @@ class Lead
 
     public function Add()
     {
-        $result = CRest::call(
+        $result = Crest::call(
             'crm.lead.add',
             [
                 'fields' => [
@@ -57,11 +59,26 @@ class Lead
             ]
         );
 
-        if (isset($result['error'])) {
-            return $this->return('no cumple con el formato valido', 422);
-        }
+        $response = (!isset($result['error']))
+        ? (object)[
+            'data' => [
+                (object)[
+                    'code'    => 200,
+                    'message' => 'ok'
+                ]
+            ],
+            'errors' => []
+        ] : (object)[
+            'data' => [],
+            'errors' => [
+                (object)[
+                    'code'    => 422,
+                    'message' => 'no cumple con el formato valido'
+                ]
+            ]
+        ];
 
-        return  $this->return('ok', 200);
+        return $response;
     }
 
     /**
@@ -90,13 +107,5 @@ class Lead
         $phone = '+' . $countryCode . $areaCode . $nextThree . $lastFour;
 
         return $phone;
-    }
-
-    private function return($msg = null, $status)
-    {
-        return [
-            'msg' => $msg,
-            'status' => $status
-        ];
     }
 }
