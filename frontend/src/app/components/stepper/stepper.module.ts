@@ -17,6 +17,7 @@ import { Step1Component } from "./step1/step1.component";
 import { StepperComponent } from "./stepper.component";
 import { Ng2TelInputModule } from "ng2-tel-input";
 import { TextMaskModule } from "angular2-text-mask";
+import { NgxIntlTelInputModule } from "ngx-intl-tel-input";
 @NgModule({
   declarations: [
     StepperComponent,
@@ -31,9 +32,9 @@ import { TextMaskModule } from "angular2-text-mask";
     CommonModule,
     StepperRoutingModule,
     SharedModule,
-    Ng2TelInputModule,
     FormsModule,
-    TextMaskModule
+    TextMaskModule,
+    NgxIntlTelInputModule
   ],
 })
 export class StepperModule {}

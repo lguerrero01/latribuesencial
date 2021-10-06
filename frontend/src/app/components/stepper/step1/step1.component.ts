@@ -6,6 +6,7 @@ import {
   Validators,
 } from "@angular/forms";
 
+import { SearchCountryField, CountryISO, PhoneNumberFormat } from 'ngx-intl-tel-input';
 
 import { countries } from "../../../shared/helpers/countries";
 
@@ -26,8 +27,13 @@ export class Step1Component implements OnInit {
   // ======================================
   //				phone
   // ======================================
-
-
+	separateDialCode = false;
+	SearchCountryField = SearchCountryField;
+	CountryISO = CountryISO;
+  PhoneNumberFormat = PhoneNumberFormat;
+	preferredCountries: CountryISO[] = [CountryISO.UnitedStates, CountryISO.UnitedKingdom];
+	
+	
   // ======================================
   //				Constructor
   // ======================================

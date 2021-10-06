@@ -56,7 +56,7 @@ export class DiseasesComponent implements OnInit {
       this.diseases.getDiseases().subscribe((resp) => {
         this.Data = resp;
       });
-      
+    // this.Data = this.diseases.Data;
   
   }
 
