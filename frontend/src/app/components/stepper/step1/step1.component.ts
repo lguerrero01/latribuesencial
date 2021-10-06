@@ -19,8 +19,8 @@ export class Step1Component implements OnInit {
   // ======================================
   //				Attributes
   // ======================================
-  public letters = [/[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/,/[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/,/[0-9]/, /[0-9]/, /[0-9]/]
-  public mask2 = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
+  public letters = [/[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/,/[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/,/[0-9]/, /[0-9]/, /[0-9]/];
+  public mask2 = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
   @Input() formGroupName: string;
   form1: FormGroup;
   public countries: any = countries;
@@ -61,8 +61,5 @@ export class Step1Component implements OnInit {
   public validPhone(field: string) {
     return this.form1.controls[field].errors?.maxlength;
   }
-
-  
-
-  
+ 
 }

@@ -37,7 +37,5 @@ export class Step4Component implements OnInit {
       }
     }
     this.messageEvent.emit($event);
-
-    // this.formService.getRole($event);
   }
 }

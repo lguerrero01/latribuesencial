@@ -31,7 +31,7 @@ class ClientController extends Controller
         $data['email'] = $request['infoStepForm']['email'];
         $data['country'] = $request['infoStepForm']['country'];
         $data['resCountry'] = $request['infoStepForm']['resCountry'];
-        $data['phone'] = $request['infoStepForm']['phone'];
+        $data['phone'] = $request['infoStepForm']['phone']['internationalNumber'];
         $data['children'] = $request['basicInfoClient']['children'];
         $data['sport'] = $request['basicInfoClient']['sport'];
         $data['kit_id'] = $request['kit'];
