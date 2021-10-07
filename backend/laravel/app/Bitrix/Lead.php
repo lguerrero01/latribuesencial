@@ -3,6 +3,9 @@
 namespace App\Bitrix;
 
 use App\Bitrix\Crest;
+use GrahamCampbell\ResultType\Result;
+
+use function GuzzleHttp\Promise\all;
 
 class Lead
 {
@@ -39,7 +42,7 @@ class Lead
             'crm.lead.add',
             [
                 'fields' => [
-                    'NAME' => $this->name, // nombre del contacto
+                    'TITLE' => $this->name, // nombre del contacto
                     'HAS_PHONE' => 'Y', // indica si el campo phone esta activo
                     'HAS_EMAIL' => 'Y', // indica si el campo email esta activo
                     'PHONE' => [[ // 
@@ -51,32 +54,32 @@ class Lead
                         "VALUE" => $this->email
                     ]],
                     "OPENED" => "Y", // prospecto disponible para todos
-                    'UF_CRM_1633358912' => $this->country, // Pais de Origen
-                    'UF_CRM_1633358938' => $this->resCountry, // Pais de residencia
-                    'UF_CRM_1633360888176' => $this->children, // Documento de identidad
-                    'UF_CRM_1633360995266' => $this->sport, // Tipo de documento de identidad
+                    'UfCrm1633358912' => $this->country, // Pais de Origen
+                    'UfCrm1633358938' => $this->resCountry, // Pais de residencia
+                    'UfCrm1633360888176' => $this->children, // hijos
+                    'Ufcrm1633360995266' => $this->sport, // deporte
                 ]
             ]
         );
 
         $response = (!isset($result['error']))
-        ? (object)[
-            'data' => [
-                (object)[
-                    'code'    => 200,
-                    'message' => 'ok'
+            ? (object)[
+                'data' => [
+                    (object)[
+                        'code'    => 200,
+                        'message' => 'ok'
+                    ]
+                ],
+                'errors' => []
+            ] : (object)[
+                'data' => [],
+                'errors' => [
+                    (object)[
+                        'code'    => 422,
+                        'message' => 'no cumple con el formato valido'
+                    ]
                 ]
-            ],
-            'errors' => []
-        ] : (object)[
-            'data' => [],
-            'errors' => [
-                (object)[
-                    'code'    => 422,
-                    'message' => 'no cumple con el formato valido'
-                ]
-            ]
-        ];
+            ];
 
         return $response;
     }

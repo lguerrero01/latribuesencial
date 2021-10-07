@@ -55,8 +55,8 @@
     <button *ngIf="!(step == 1)" (click)="previous()" type="button" name="previous" class="col-2" value="Previous">
       <i class="fa fa-chevron-left" aria-hidden="true"></i>
     </button>
-
-    <button [disabled]="!adviserForm.controls.form1Adviser.valid" (click)="next()" type="button" name="next"
+    
+    <button [disabled]="disabledAdviser" (click)="next()" type="button" name="next"
       class="col-2" value="Next">
       <i class="fa fa-chevron-right" aria-hidden="true"></i>
     </button>

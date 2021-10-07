@@ -29,8 +29,8 @@ export class ClientComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.formService.disableNext$.subscribe((rest) => {
-      this.disabled = rest;
+    this.formService.disableNext$.subscribe((resp) => {
+      this.disabled = resp;
     });
 
     this.clientForm = this.fb.group({
@@ -51,7 +51,6 @@ export class ClientComponent implements OnInit {
 
     if (this.step == 3) {
       this.formService.sendFormClient(this.clientForm.value);
-      return;
     }
     this.step++;
   }

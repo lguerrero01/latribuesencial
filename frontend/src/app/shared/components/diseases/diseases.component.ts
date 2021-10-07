@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnDestroy, OnInit } from "@angular/core";
 // ======================================
 //				servives
 // ======================================
@@ -13,13 +13,14 @@ import {
   FormControl,
   FormGroupDirective,
 } from "@angular/forms";
+import { Subscriber, Subscription } from "rxjs";
 
 @Component({
   selector: "app-diseases",
   templateUrl: "./diseases.component.html",
   styleUrls: ["./diseases.component.scss"],
 })
-export class DiseasesComponent implements OnInit {
+export class DiseasesComponent implements OnInit, OnDestroy {
   // ======================================
   //				Atributes
   // ======================================
@@ -27,6 +28,7 @@ export class DiseasesComponent implements OnInit {
   public Data = [];
   formArray!: FormArray;
   public form: FormGroup;
+  public closeSubs: Subscription;
 
   // ======================================
   //				Constructor
@@ -45,19 +47,22 @@ export class DiseasesComponent implements OnInit {
     this.formArray = this.form.get("checkArray") as FormArray;
 
     this.formService.disableNext$.next(!this.formArray.length);
-    this.form.valueChanges.subscribe((resp) => {
+    this.formService.disabledNextAdviser$.next(!this.formArray.length);
+
+    this.closeSubs = this.form.valueChanges.subscribe((resp) => {
+      console.log('linea 53');
       this.formService.disableNext$.next(!this.formArray.length);
+      this.formService.disabledNextAdviser$.next(!this.formArray.length);
     });
 
     this.formArray.controls.forEach((item, index) => {
       this.values.push(this.formArray.at(index).value as string);
     });
 
-      this.diseases.getDiseases().subscribe((resp) => {
-        this.Data = resp;
-      });
+    this.diseases.getDiseases().subscribe((resp) => {
+      this.Data = resp;
+    });
     // this.Data = this.diseases.Data;
-  
   }
 
   // ======================================
@@ -76,5 +81,10 @@ export class DiseasesComponent implements OnInit {
         i++;
       });
     }
+  }
+
+  ngOnDestroy() {
+    this.closeSubs.unsubscribe();
+    console.log("Destroy");
   }
 }

@@ -18,6 +18,7 @@ export class FormsDataService {
   public formFinal: {} = {};
   public apiUrl: string = environment.urlAPI;
   public disableNext$ = new BehaviorSubject(true);
+  public disabledNextAdviser$ = new BehaviorSubject(true);
   public httpOptions = {
     headers: new HttpHeaders({
       "Content-Type": "application/json",
@@ -33,7 +34,7 @@ export class FormsDataService {
   // ======================================
   //				Get kit
   // ======================================
-  public getKit(kitId: {}) {
+  public setKit(kitId: {}) {
     this.kit = kitId;
   }
   // ======================================
@@ -55,23 +56,13 @@ export class FormsDataService {
       .subscribe(
         (resp) => {
           console.log("Se creo un cliente", resp);
+          this.sendBitrix(this.formFinal);
           window.location.href =
             "https://www.doterra.com/US/en/selectRegion/WC/8619844";
         },
         (err) => {
           this.errorHandler(err);
-          this.router.navigate(["/despedida"]);
-        }
-      );
-
-    this.httpClient
-      .post<any>(`${this.apiUrl}/sendBitrix`, this.formFinal)
-      .subscribe(
-        (data) => {
-          console.log("send info client to bitrix");
-        },
-        (err) => {
-          this.errorHandler(err);
+          this.router.navigate(["despedida"]);
         }
       );
   }
@@ -79,6 +70,17 @@ export class FormsDataService {
   // ======================================
   //				Send info to adviser
   // ======================================
+
+  public sendBitrix(form: any) {
+    this.httpClient.post<any>(`${this.apiUrl}/sendBitrix`, form).subscribe(
+      (data) => {
+        console.log("send info client to bitrix");
+      },
+      (err) => {
+        this.errorHandler(err);
+      }
+    );
+  }
 
   public sendFormAdviser(form: {}) {
     this.formFinal = { ...form, ...this.basicInfo };
@@ -89,23 +91,13 @@ export class FormsDataService {
       .subscribe(
         (rest) => {
           console.log("Se creo un asesor", rest);
+          this.sendBitrix(this.formFinal);
           window.location.href =
             "https://www.doterra.com/US/en/selectRegion/WC/8619844";
         },
         (err) => {
           this.errorHandler(err);
-          this.router.navigate(["/despedida"]);
-        }
-      );
-
-    this.httpClient
-      .post<any>(`${this.apiUrl}/sendBitrix`, this.formFinal)
-      .subscribe(
-        (data) => {
-          console.log("send info client to bitrix", data);
-        },
-        (err) => {
-          this.errorHandler(err);
+          this.router.navigate(["despedida"]);
         }
       );
   }
