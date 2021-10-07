@@ -15,15 +15,14 @@
           class="form-control"
           formControlName="bePart"
           placeholder="Tu Respuesta"
-          pattern="^[a-zA-Z\s]*$"
         />
         <p class="text-danger" *ngIf="fieldValid('bePart')">
           Campo Requerido
         </p>
       </div>
-      <p class="text-danger row" *ngIf="validPattern('bePart')">
+      <!-- <p class="text-danger row" *ngIf="validPattern('bePart')">
         Debe contener solo letras.
-      </p>
+      </p> -->
       <!-- Campo Como te describes -->
       <div class="column mt-3 mb-3">
         <h2>¿Cómo te describes? Nombra 3 de tus fortalezas</h2>
@@ -32,13 +31,9 @@
           class="form-control"
           formControlName="desc"
           placeholder="Tu Respuesta"
-          pattern="^[a-zA-Z\s]*$"
         />
         <p class="text-danger" *ngIf="fieldValid('desc')">
           Campo Requerido
-        </p>
-        <p class="text-danger" *ngIf="validPattern('desc')">
-          Debe contener solo letras y espacios.
         </p>
       </div>
     </form>

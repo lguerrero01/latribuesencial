@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { AfterViewChecked, ChangeDetectorRef, Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { FormsDataService } from "@shared/services/forms-data.service";
@@ -9,28 +9,38 @@ import { GetKitsService } from "@shared/services/get-kits.service";
   templateUrl: "./adviser.component.html",
   styleUrls: ["./adviser.component.scss"],
 })
-export class AdviserComponent implements OnInit {
+export class AdviserComponent implements OnInit,  AfterViewChecked {
   // ======================================
   //				Atributes
   // ======================================
   public step: number = 1;
   public valid!: boolean;
-  status: boolean = false;
+  public status: boolean = false;
   public adviserForm!: FormGroup;
+  public disabledAdviser: boolean = true;
 
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private formService: FormsDataService,
-    private getKits: GetKitsService
+    private getKits: GetKitsService,
+    private change: ChangeDetectorRef
   ) {}
+
+  ngAfterViewChecked(): void {
+    this.disabledAdviser = this.formService.disabledNextAdviser$.getValue();
+    this.change.detectChanges();
+  }
 
   // ======================================
   //				Reactive Forms
   // ======================================
   public personalInfo: FormGroup = this.fb.group({});
   public nuevaPropiedad: boolean = false;
+
   ngOnInit(): void {
+
+
     this.adviserForm = this.fb.group({
       form1Adviser: this.fb.group({
         ocupation: ["", [Validators.required ,Validators.pattern(/^[a-zA-Z\s]*$/)]],
@@ -48,6 +58,13 @@ export class AdviserComponent implements OnInit {
         help: ["", [Validators.required]],
       }),
     });
+    
+    this.formService.disabledNextAdviser$.subscribe((resp) => {
+      console.log('32',resp)
+      
+      this.disabledAdviser = resp;
+      this.change.detectChanges();
+      });
   }
 
   // ======================================
@@ -73,10 +90,5 @@ export class AdviserComponent implements OnInit {
     this.step--;
   }
 
-  // ======================================
-  //				Validation
-  // ======================================
-  public disabled(field: string) {
-    return this.adviserForm.controls[field].valid;
-  }
+
 }

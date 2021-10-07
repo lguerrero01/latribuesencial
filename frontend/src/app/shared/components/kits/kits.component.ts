@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from "@angular/core";
 import { GetKitsService } from "@shared/services/get-kits.service";
 
 import { FormsDataService } from "@shared/services/forms-data.service";
+import { catchError } from "rxjs/operators";
 
 @Component({
   selector: "app-kits",
@@ -24,6 +25,8 @@ export class KitsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.formService.disableNext$.next(true);
+    this.formService.disabledNextAdviser$.next(true);
     this.showKitsByDiseases(this.checks);
   }
 
@@ -47,7 +50,8 @@ export class KitsComponent implements OnInit {
 
   public sendKit(id: number) {
     this.kitSelected = id;
-    this.formService.getKit(id);
-    
+    this.formService.setKit(id);
+
+    this.formService.disableNext$.next(false);
   }
 }
