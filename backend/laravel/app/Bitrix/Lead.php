@@ -104,6 +104,10 @@ class Lead
 
                     'UF_CRM_1633633809317' => $this->workingStatus, // esta trabajando actualmente?
                     'UF_CRM_1633633841892' => $this->maritalStatus, // estado civil
+                    'UF_CRM_1633639294247' => $this->bePart,
+                    'UF_CRM_1633639294247' => $this->desc,
+                    'UF_CRM_1633633769090' => $this->help,
+            
                 ]
             ]
         );
