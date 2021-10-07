@@ -3,6 +3,9 @@
 namespace App\Bitrix;
 
 use App\Bitrix\Crest;
+use GrahamCampbell\ResultType\Result;
+
+use function GuzzleHttp\Promise\all;
 
 class Lead
 {
@@ -60,23 +63,23 @@ class Lead
         );
 
         $response = (!isset($result['error']))
-        ? (object)[
-            'data' => [
-                (object)[
-                    'code'    => 200,
-                    'message' => 'ok'
+            ? (object)[
+                'data' => [
+                    (object)[
+                        'code'    => 200,
+                        'message' => 'ok'
+                    ]
+                ],
+                'errors' => []
+            ] : (object)[
+                'data' => [],
+                'errors' => [
+                    (object)[
+                        'code'    => 422,
+                        'message' => 'no cumple con el formato valido'
+                    ]
                 ]
-            ],
-            'errors' => []
-        ] : (object)[
-            'data' => [],
-            'errors' => [
-                (object)[
-                    'code'    => 422,
-                    'message' => 'no cumple con el formato valido'
-                ]
-            ]
-        ];
+            ];
 
         return $response;
     }
