@@ -2,6 +2,7 @@
     width: 700px;
 }
 
+
 @media(min-width:1024px) {
   #progressbar li:before {
     content: counter(step);

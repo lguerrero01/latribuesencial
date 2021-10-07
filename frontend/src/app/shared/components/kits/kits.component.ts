@@ -53,5 +53,6 @@ export class KitsComponent implements OnInit {
     this.formService.setKit(id);
 
     this.formService.disableNext$.next(false);
+    this.formService.disabledNextAdviser$.next(false);
   }
 }
