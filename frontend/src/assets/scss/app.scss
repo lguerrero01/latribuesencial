@@ -63,10 +63,6 @@
   font-family: "madeSunflower";
 }
 
-.mx-2 {
-  margin-left: 0px !important;
-}
-
 #button-start:hover {
   background-color: #d7b367;
   color: white;
@@ -120,8 +116,7 @@ p strong {
 
   .about-us {
     background-size: cover;
-    background-position-y: center;
-    background-position-x: -145px;
+    background-position: center;
   }
 
   .text-white h2 {
@@ -152,12 +147,6 @@ p strong {
   .about-us{
     background-position-y: center;
     background-position-x: -110px;
-  }
-}
-@media(min-width:400px){
-  .about-us{
-    background-position-y: center;
-    background-position-x: 0px;
   }
 }
 
@@ -225,12 +214,6 @@ p strong {
   .about-us {
     background-size: cover;
     background-position: center;
-  }
-
-  .row .mx-2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
   }
 
   .row .mx-auto {
