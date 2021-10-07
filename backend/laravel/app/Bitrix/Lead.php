@@ -9,30 +9,72 @@ use function GuzzleHttp\Promise\all;
 
 class Lead
 {
+    // info stepper
     private $email;
     private $name;
     private $country;
     private $resCountry;
     private $phone;
+    // info client
     private $children;
     private $sport;
+    // kit
+    private $kit;
+    // form1Adviser
+    private $ocupation;
+    private $maritalStatus;
+    //form2Adviser
+    private $bePart;
+    private $desc;
+    // form3Adviser
+    private $card;
+    private $workingStatus;
+    private $help;
 
     public function __construct(
+        // info stepper
         $email,
         $name,
         $country,
         $resCountry,
         $phone,
+        // info client
         $children,
-        $sport
+        $sport,
+        // kit
+        $kit,
+        // form1Adviser
+        $ocupation,
+        $maritalStatus,
+        //form2Adviser
+        $bePart,
+        $desc,
+        // form3Adviser
+        $card,
+        $workingStatus,
+        $help
+
     ) {
         $this->email = filter_var($email, FILTER_SANITIZE_EMAIL);
         $this->name = ucwords(filter_var($name, FILTER_SANITIZE_STRING));
         $this->country = filter_var($country, FILTER_SANITIZE_STRING);
         $this->resCountry = filter_var($resCountry, FILTER_SANITIZE_STRING);
         $this->phone = $this->getPhoneNumber(filter_var($phone, FILTER_SANITIZE_NUMBER_INT));
-        $this->children = filter_var($children, FILTER_SANITIZE_EMAIL);
-        $this->sport = filter_var($sport, FILTER_SANITIZE_EMAIL);
+
+        $this->children = filter_var($children, FILTER_SANITIZE_STRING);
+        $this->sport = filter_var($sport, FILTER_SANITIZE_STRING);
+
+        $this->$kit = filter_var($kit, FILTER_SANITIZE_STRING);
+
+        $this->$ocupation = filter_var($ocupation, FILTER_SANITIZE_STRING);
+        $this->$maritalStatus = filter_var($maritalStatus, FILTER_SANITIZE_STRING);
+
+        $this->$bePart = filter_var($bePart, FILTER_SANITIZE_STRING);
+        $this->$desc = filter_var($desc, FILTER_SANITIZE_STRING);
+
+        $this->$card = filter_var($card, FILTER_SANITIZE_STRING);
+        $this->$workingStatus = filter_var($workingStatus, FILTER_SANITIZE_STRING);
+        $this->$help = filter_var($help, FILTER_SANITIZE_STRING);
     }
 
 
@@ -54,10 +96,14 @@ class Lead
                         "VALUE" => $this->email
                     ]],
                     "OPENED" => "Y", // prospecto disponible para todos
-                    'UfCrm1633358912' => $this->country, // Pais de Origen
-                    'UfCrm1633358938' => $this->resCountry, // Pais de residencia
-                    'UfCrm1633360888176' => $this->children, // hijos
-                    'Ufcrm1633360995266' => $this->sport, // deporte
+                    'UF_CRM_1633358912' => $this->country, // Pais de Origen
+                    'UF_CRM_1633358938' => $this->resCountry, // Pais de residencia
+
+                    'UF_CRM_1633633674193' => $this->card, // tarjeta de credito
+                    'UF_CRM_1633633769090' => $this->help, // ayuda
+
+                    'UF_CRM_1633633809317' => $this->workingStatus, // esta trabajando actualmente?
+                    'UF_CRM_1633633841892' => $this->maritalStatus, // estado civil
                 ]
             ]
         );
@@ -83,14 +129,6 @@ class Lead
 
         return $response;
     }
-
-    /**
-     * tipo de documento de identidad
-     * 
-     * "4166" => "V" 
-     * "4168" => "J"
-     * "4170" => "E"
-     */
 
     private function getPhoneNumber(string $var = null)
     {

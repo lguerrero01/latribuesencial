@@ -3,7 +3,7 @@
 // define('C_REST_CLIENT_ID','local.5c8bb1b0891cf2.87252039');//Application ID
 // define('C_REST_CLIENT_SECRET','SakeVG5mbRdcQet45UUrt6q72AMTo7fkwXSO7Y5LYFYNCRsA6f');//Application key
 // or
-define('C_REST_WEB_HOOK_URL', 'https://b24-ap3iwg.bitrix24.es/rest/1/ogggradjacfsl8fv/');//url on creat Webhook
+define('C_REST_WEB_HOOK_URL', 'https://b24-ap3iwg.bitrix24.es/rest/1/4iy0h0svm8zjgpet/');//url on creat Webhook
 
 define('C_REST_CURRENT_ENCODING','windows-1251');
 define('C_REST_IGNORE_SSL',true);//turn off validate ssl by curl
