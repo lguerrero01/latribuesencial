@@ -85,7 +85,6 @@ class Lead
 
     public function Add()
     {
-        return ($this->childrenAdviser);
         $result = Crest::call(
             'crm.lead.add',
             [
