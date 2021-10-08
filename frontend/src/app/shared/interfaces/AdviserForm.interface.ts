@@ -12,7 +12,7 @@ export interface AdviserForm {
 export interface Form1Adviser {
   ocupation: string;
   maritalStatus: string;
-  children: string;
+  childrenAdviser: string;
 }
 
 export interface Form2Adviser {

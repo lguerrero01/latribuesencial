@@ -23,6 +23,7 @@ class Lead
     // form1Adviser
     private $ocupation;
     private $maritalStatus;
+    private $childrenAdviser;
     //form2Adviser
     private $bePart;
     private $desc;
@@ -31,6 +32,7 @@ class Lead
     private $workingStatus;
     private $help;
 
+
     public function __construct(
         // info stepper
         $email,
@@ -38,48 +40,52 @@ class Lead
         $country,
         $resCountry,
         $phone,
-        // info client
+        //  info client
         $children,
         $sport,
-        // kit
+        //  kit
         $kit,
-        // form1Adviser
+        //  form1Adviser
         $ocupation,
         $maritalStatus,
-        //form2Adviser
+        $childrenAdviser,
+        // form2Adviser
         $bePart,
         $desc,
-        // form3Adviser
+        //  form3Adviser
         $card,
         $workingStatus,
-        $help
+        $help,
+        $role
 
     ) {
         $this->email = filter_var($email, FILTER_SANITIZE_EMAIL);
         $this->name = ucwords(filter_var($name, FILTER_SANITIZE_STRING));
         $this->country = filter_var($country, FILTER_SANITIZE_STRING);
         $this->resCountry = filter_var($resCountry, FILTER_SANITIZE_STRING);
-        $this->phone = $this->getPhoneNumber(filter_var($phone, FILTER_SANITIZE_NUMBER_INT));
+        $this->phone = filter_var($phone, FILTER_SANITIZE_STRING);
 
         $this->children = filter_var($children, FILTER_SANITIZE_STRING);
         $this->sport = filter_var($sport, FILTER_SANITIZE_STRING);
 
-        $this->$kit = filter_var($kit, FILTER_SANITIZE_STRING);
+        $this->kit = $kit;
 
-        $this->$ocupation = filter_var($ocupation, FILTER_SANITIZE_STRING);
-        $this->$maritalStatus = filter_var($maritalStatus, FILTER_SANITIZE_STRING);
+        $this->ocupation = filter_var($ocupation, FILTER_SANITIZE_STRING);
+        $this->maritalStatus = filter_var($maritalStatus, FILTER_SANITIZE_STRING);
+        $this->childrenAdviser = filter_var($childrenAdviser, FILTER_SANITIZE_STRING);
 
-        $this->$bePart = filter_var($bePart, FILTER_SANITIZE_STRING);
-        $this->$desc = filter_var($desc, FILTER_SANITIZE_STRING);
+        $this->bePart = filter_var($bePart, FILTER_SANITIZE_STRING);
+        $this->desc = filter_var($desc, FILTER_SANITIZE_STRING);
 
-        $this->$card = filter_var($card, FILTER_SANITIZE_STRING);
-        $this->$workingStatus = filter_var($workingStatus, FILTER_SANITIZE_STRING);
-        $this->$help = filter_var($help, FILTER_SANITIZE_STRING);
+        $this->card = filter_var($card, FILTER_SANITIZE_STRING);
+        $this->workingStatus = filter_var($workingStatus, FILTER_SANITIZE_STRING);
+        $this->help = filter_var($help, FILTER_SANITIZE_STRING);
+        $this->role = filter_var($role, FILTER_SANITIZE_STRING);
     }
-
 
     public function Add()
     {
+        return ($this->childrenAdviser);
         $result = Crest::call(
             'crm.lead.add',
             [
@@ -104,9 +110,9 @@ class Lead
 
                     'UF_CRM_1633633809317' => $this->workingStatus, // esta trabajando actualmente?
                     'UF_CRM_1633633841892' => $this->maritalStatus, // estado civil
-                    'UF_CRM_1633639294247' => $this->bePart,
-                    'UF_CRM_1633639294247' => $this->desc,
-                    'UF_CRM_1633633769090' => $this->help,
+                    'UF_CRM_1633639294247' => $this->bePart, // ¿Por que quieres ser parte de la Tribu Esencial?
+                    'UF_CRM_1633639294247' => $this->desc, // ¿Cómo te describes?
+                    'UF_CRM_1633633769090' => $this->help, //  ¿Estás dispuesto a invertir para tu uso personal y para tu hogar 120$ aproximadamente en productos?
             
                 ]
             ]

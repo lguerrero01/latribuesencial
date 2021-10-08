@@ -23,7 +23,7 @@ class CreateAdvisersTable extends Migration
             $table->string('phone');
             $table->string('ocupation');
             $table->string('maritalStatus');
-            $table->string('children');
+            $table->string('childrenAdviser');
             $table->string('bePart');
             $table->string('desc');
             $table->string('workingStatus');

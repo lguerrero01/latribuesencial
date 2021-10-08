@@ -40,8 +40,6 @@ export class Form2AdviserComponent implements OnInit, OnDestroy {
       this.formGroupName
     ) as FormGroup;
 
-    console.log("linea40", this.form2Adviser.value);
-
     this.formService.disabledNextAdviser$.next(this.form2Adviser.invalid);
 
      this.closeSubs = this.form2Adviser.valueChanges.subscribe((resp) => {
@@ -58,10 +56,6 @@ export class Form2AdviserComponent implements OnInit, OnDestroy {
       this.form2Adviser.controls[field].touched
     );
   }
-
-  // public validPattern(field: string) {
-  //   return this.form2Adviser.controls[field].errors?.pattern;
-  // }
 
   ngOnDestroy() {
     this.closeSubs.unsubscribe();

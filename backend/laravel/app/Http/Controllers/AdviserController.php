@@ -32,12 +32,15 @@ class AdviserController extends Controller
         
         $data['ocupation'] = $request['form1Adviser']['ocupation'];
         $data['maritalStatus'] = $request['form1Adviser']['maritalStatus'];
-        $data['children'] = $request['form1Adviser']['children'];
+        $data['childrenAdviser'] = $request['form1Adviser']['childrenAdviser'];
+
         $data['bePart'] = $request['form2Adviser']['bePart'];
         $data['desc'] = $request['form2Adviser']['desc'];
+
         $data['workingStatus'] = $request['form3Adviser']['workingStatus'];
         $data['card'] = $request['form3Adviser']['card'];
         $data['help'] = $request['form3Adviser']['help'];
+        
         $data['kit_id'] = $request['kit'];
 
         Adviser::create($data);

@@ -13,6 +13,7 @@ import { KitsComponent } from "./components/kits/kits.component";
 import { LastPageComponent } from "./components/last-page/last-page.component";
 import { DecorationComponent } from "./components/decoration/decoration.component";
 import { HttpClientModule } from "@angular/common/http";
+import { AppRoutingModule } from "app/app-routing.module";
 // ======================================
 //				Services
 // ======================================

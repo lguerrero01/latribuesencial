@@ -50,6 +50,7 @@ export class FormsDataService {
   public sendFormClient(form: {}) {
     this.formFinal = { ...form, ...this.basicInfo };
     this.formFinal["kit"] = this.kit;
+    this.formFinal["role"] = 'Cliente'
 
     this.httpClient
       .post<any>(`${this.apiUrl}/client`, this.formFinal, this.httpOptions)
@@ -59,7 +60,8 @@ export class FormsDataService {
           this.sendBitrix(this.formFinal);
           window.location.href =
             "https://www.doterra.com/US/en/selectRegion/WC/8619844";
-        },
+        }
+        ,
         (err) => {
           this.errorHandler(err);
           this.router.navigate(["despedida"]);
@@ -85,6 +87,7 @@ export class FormsDataService {
   public sendFormAdviser(form: {}) {
     this.formFinal = { ...form, ...this.basicInfo };
     this.formFinal["kit"] = this.kit;
+    this.formFinal["role"] = 'Asesor'
 
     this.httpClient
       .post<any>(`${this.apiUrl}/adviser`, this.formFinal, this.httpOptions)

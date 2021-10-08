@@ -13,7 +13,7 @@ export class AdviserComponent implements OnInit,  AfterViewChecked {
   // ======================================
   //				Atributes
   // ======================================
-  public step: number = 1;
+  public step: number = 5;
   public valid!: boolean;
   public status: boolean = false;
   public adviserForm!: FormGroup;
@@ -45,7 +45,7 @@ export class AdviserComponent implements OnInit,  AfterViewChecked {
       form1Adviser: this.fb.group({
         ocupation: ["", [Validators.required ,Validators.pattern(/^[a-zA-Z\s]*$/)]],
         maritalStatus: ["", [Validators.required]],
-        children: ["", [Validators.required]],
+        childrenAdviser: ["", [Validators.required]],
       }),
       checkArray: this.fb.array([], [Validators.required]),
       form2Adviser: this.fb.group({
@@ -59,9 +59,7 @@ export class AdviserComponent implements OnInit,  AfterViewChecked {
       }),
     });
     
-    this.formService.disabledNextAdviser$.subscribe((resp) => {
-      console.log('32',resp)
-      
+    this.formService.disabledNextAdviser$.subscribe((resp) => {      
       this.disabledAdviser = resp;
       this.change.detectChanges();
       });

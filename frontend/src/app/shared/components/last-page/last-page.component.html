@@ -1,16 +1,18 @@
 <div class="last-page animate__animated animate__fadeIn overflow-hidden">
-    <div class=" animate__animated animate__fadeInLeft">
-        <img
-          id="logo"
-          [src]="'assets/img/logo-blanco.svg'"
-          routerLink= ''
-          height="auto"
-          alt="logo"
-          class="mt-3"
-        />
-    </div>
-      <div class="row text-center animate__animated animate__fadeInLeft">
-          <h3>Hubo un error en la conexión</h3>
-          <h3>intente llenando el formulario nuevamente.</h3>
-      </div>
+  <div class="animate__animated animate__fadeInLeft">
+    
+      <img
+        id="logo"
+        [src]="'assets/img/logo-blanco.svg'"
+        height="auto"
+        alt="logo"
+        class="mt-3"
+        (click) ="redirect()"
+      />
+    
+  </div>
+  <div class="row text-center animate__animated animate__fadeInLeft">
+    <h3>Hubo un error en la conexión</h3>
+    <h3>intente llenando el formulario nuevamente.</h3>
+  </div>
 </div>
