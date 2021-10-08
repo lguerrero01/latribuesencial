@@ -110,8 +110,9 @@ class Lead
                     'UF_CRM_1633633809317' => $this->workingStatus, // esta trabajando actualmente?
                     'UF_CRM_1633633841892' => $this->maritalStatus, // estado civil
                     'UF_CRM_1633639294247' => $this->bePart, // ¿Por que quieres ser parte de la Tribu Esencial?
-                    'UF_CRM_1633639294247' => $this->desc, // ¿Cómo te describes?
-                    'UF_CRM_1633633769090' => $this->help, //  ¿Estás dispuesto a invertir para tu uso personal y para tu hogar 120$ aproximadamente en productos?
+                    'UF_CRM_1633372595799' => $this->desc, // ¿Cómo te describes?
+                    'UF_CRM_1633633769090' => $this->help,//  ¿Estás dispuesto a invertir para tu uso personal y para tu hogar 120$ aproximadamente en productos?
+                    'UF_CRM_1633633368907' => $this->kit, 
             
                 ]
             ]
