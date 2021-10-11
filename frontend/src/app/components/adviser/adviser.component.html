@@ -9,55 +9,91 @@
   <ng-container [formGroup]="adviserForm">
     <!-- <pre> {{ adviserForm.value | json }}</pre> -->
 
-    <fieldset *ngIf="step == 1" [ngClass]="
+    <fieldset
+      *ngIf="step == 1"
+      [ngClass]="
         status
           ? 'animate__animated animate__fadeInRight'
           : 'animate__animated animate__fadeInLeft'
-      ">
+      "
+    >
       <app-form1-adviser formGroupName="form1Adviser"></app-form1-adviser>
     </fieldset>
 
-    <fieldset *ngIf="step == 2" [ngClass]="
+    <fieldset
+      *ngIf="step == 2"
+      [ngClass]="
         status
           ? 'animate__animated animate__fadeInRight'
           : 'animate__animated animate__fadeInLeft'
-      ">
-      <app-diseases formArrayName="checkArray"></app-diseases>
-    </fieldset>
-
-    <fieldset *ngIf="step == 3" [ngClass]="
-        status
-          ? 'animate__animated animate__fadeInRight'
-          : 'animate__animated animate__fadeInLeft'
-      ">
-      <app-kits [checks]="adviserForm.value.checkArray"></app-kits>
-    </fieldset>
-
-    <fieldset *ngIf="step == 4" [ngClass]="
-        status
-          ? 'animate__animated animate__fadeInRight'
-          : 'animate__animated animate__fadeInLeft'
-      ">
+      "
+    >
       <app-form2-adviser formGroupName="form2Adviser"></app-form2-adviser>
     </fieldset>
 
-    <fieldset *ngIf="step == 5" [ngClass]="
+    <fieldset
+      *ngIf="step == 3"
+      [ngClass]="
         status
           ? 'animate__animated animate__fadeInRight'
           : 'animate__animated animate__fadeInLeft'
-      ">
+      "
+    >
       <app-form3-adviser formGroupName="form3Adviser"> </app-form3-adviser>
+    </fieldset>
+
+    <fieldset
+      *ngIf="step == 4"
+      [ngClass]="
+        status
+          ? 'animate__animated animate__fadeInRight'
+          : 'animate__animated animate__fadeInLeft'
+      "
+    >
+      <app-diseases formArrayName="checkArray"></app-diseases>
+    </fieldset>
+
+    <fieldset
+      *ngIf="step == 5"
+      [ngClass]="
+        status
+          ? 'animate__animated animate__fadeInRight'
+          : 'animate__animated animate__fadeInLeft'
+      "
+    >
+      <app-kits [checks]="adviserForm.value.checkArray"></app-kits>
+    </fieldset>
+
+    <fieldset *ngIf="step == 6" class="text-center">
+      <h2>Enviando informacion</h2>
+      <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div>
     </fieldset>
   </ng-container>
   <!-- Botones prev y next -->
 
   <div class="row justify-content-center">
-    <button *ngIf="!(step == 1)" (click)="previous()" type="button" name="previous" class="col-2" value="Previous">
+    <button
+      *ngIf="!(step == 1)"
+      (click)="previous()"
+      type="button"
+      name="previous"
+      class="col-2"
+      value="Previous"
+    >
       <i class="fa fa-chevron-left" aria-hidden="true"></i>
     </button>
-    
-    <button [disabled]="disabledAdviser" (click)="next()" type="button" name="next"
-      class="col-2" value="Next">
+
+    <button
+      [disabled]="disabledAdviser"
+      (click)="next()"
+      type="button"
+      name="next"
+      class="col-2"
+      value="Next"
+    >
       <i class="fa fa-chevron-right" aria-hidden="true"></i>
     </button>
   </div>

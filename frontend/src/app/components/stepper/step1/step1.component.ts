@@ -1,3 +1,4 @@
+import { HttpClient } from "@angular/common/http";
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import {
   FormBuilder,
@@ -6,7 +7,11 @@ import {
   Validators,
 } from "@angular/forms";
 
-import { SearchCountryField, CountryISO, PhoneNumberFormat } from 'ngx-intl-tel-input';
+import {
+  SearchCountryField,
+  CountryISO,
+  PhoneNumberFormat
+} from "ngx-intl-tel-input";
 
 import { countries } from "../../../shared/helpers/countries";
 
@@ -19,25 +24,27 @@ export class Step1Component implements OnInit {
   // ======================================
   //				Attributes
   // ======================================
-  public letters = [/[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/,/[0-9]/, /[0-9]/, /[0-9]/, /[0-9]/,/[0-9]/, /[0-9]/, /[0-9]/];
-  public mask2 = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
+  @Output() countryEvent = new EventEmitter<string>();
   @Input() formGroupName: string;
   form1: FormGroup;
   public countries: any = countries;
   // ======================================
   //				phone
   // ======================================
-	separateDialCode = false;
-	SearchCountryField = SearchCountryField;
-	CountryISO = CountryISO;
+
+  separateDialCode = false;
+  SearchCountryField = SearchCountryField;
+  CountryISO = CountryISO;
   PhoneNumberFormat = PhoneNumberFormat;
-	preferredCountries: CountryISO[] = [CountryISO.UnitedStates, CountryISO.UnitedKingdom];
-	
-	
+  preferredCountries: CountryISO[] = [
+    CountryISO.UnitedStates,
+    CountryISO.UnitedKingdom,
+  ];
+
   // ======================================
   //				Constructor
   // ======================================
-  constructor(private rootFormGroup: FormGroupDirective) {}
+  constructor(private rootFormGroup: FormGroupDirective, private  httpClient: HttpClient) {}
 
   // ======================================
   //				onInit
@@ -46,6 +53,7 @@ export class Step1Component implements OnInit {
     this.form1 = this.rootFormGroup.control.get(
       this.formGroupName
     ) as FormGroup;
+
   }
 
   public fieldValid(field: string) {
@@ -61,5 +69,8 @@ export class Step1Component implements OnInit {
   public validPhone(field: string) {
     return this.form1.controls[field].errors?.maxlength;
   }
- 
+
+  public onCountryChange(event) {
+      this.countryEvent.emit(event.target.innerText);
+  }
 }

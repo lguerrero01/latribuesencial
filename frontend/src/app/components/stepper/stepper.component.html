@@ -23,7 +23,7 @@
             : 'animate__animated animate__fadeInLeft'
         "
       >
-        <app-step1 formGroupName="infoStepForm"></app-step1>
+        <app-step1 formGroupName="infoStepForm" (countryEvent)="receiveCountry($event)"></app-step1>
       </fieldset>
       <!------------------- Step 2 Start ----------------------->
       <fieldset

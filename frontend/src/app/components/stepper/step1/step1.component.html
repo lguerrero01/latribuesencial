@@ -8,7 +8,7 @@
           class="form-control"
           formControlName="name"
           placeholder="Nombre y Apellido*"
-          pattern="^[a-zA-Z\s]*$"
+          maxlength="25"
         />
         <p class="m-2 text-danger" *ngIf="fieldValid('name')">
           El nombre y el apellido son requeridos
@@ -42,6 +42,7 @@
           [preferredCountries]="preferredCountries"
           [enableAutoCountrySelect]="true"
           [enablePlaceholder]="true"
+          searchCountryPlaceholder="Buscar Pais"
           [searchCountryFlag]="true"
           [phoneValidation]="true"
           [searchCountryField]="[
@@ -54,6 +55,7 @@
           name="phone"
           formControlName="phone"
           [maxLength]="'15'"
+          (click)="onCountryChange($event)"
         >
         </ngx-intl-tel-input>
         <p class="m-1 text-danger col-sm-6 row" *ngIf="fieldValid('phone')">
