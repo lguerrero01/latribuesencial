@@ -50,7 +50,6 @@ export class DiseasesComponent implements OnInit, OnDestroy {
     this.formService.disabledNextAdviser$.next(!this.formArray.length);
 
     this.closeSubs = this.form.valueChanges.subscribe((resp) => {
-      console.log('linea 53');
       this.formService.disableNext$.next(!this.formArray.length);
       this.formService.disabledNextAdviser$.next(!this.formArray.length);
     });
@@ -85,6 +84,6 @@ export class DiseasesComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.closeSubs.unsubscribe();
-    console.log("Destroy");
+    ("Destroy");
   }
 }

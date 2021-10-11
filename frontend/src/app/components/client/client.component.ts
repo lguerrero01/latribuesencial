@@ -44,7 +44,6 @@ export class ClientComponent implements OnInit {
 
   public next() {
     this.status = true;
-    console.log(this.clientForm.value);
     if (this.step == 2) {
       this.getKits.getKitsByDiseases(this.clientForm.value.checkArray);
     }

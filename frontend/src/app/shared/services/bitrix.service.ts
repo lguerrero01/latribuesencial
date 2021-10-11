@@ -12,7 +12,6 @@ export class BitrixService {
 
   public sendFormClient (data:any){
     this.httpClient.post('',data).subscribe(resp =>{
-      console.log(resp)
     })
   }
 }

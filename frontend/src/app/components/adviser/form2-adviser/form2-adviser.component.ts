@@ -43,7 +43,6 @@ export class Form2AdviserComponent implements OnInit, OnDestroy {
     this.formService.disabledNextAdviser$.next(this.form2Adviser.invalid);
 
      this.closeSubs = this.form2Adviser.valueChanges.subscribe((resp) => {
-      console.log(this.form2Adviser.value, this.form2Adviser.invalid);
       this.formService.disabledNextAdviser$.next(this.form2Adviser.invalid);
     });
   }

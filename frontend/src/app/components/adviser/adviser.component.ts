@@ -13,7 +13,7 @@ export class AdviserComponent implements OnInit,  AfterViewChecked {
   // ======================================
   //				Atributes
   // ======================================
-  public step: number = 5;
+  public step: number = 1;
   public valid!: boolean;
   public status: boolean = false;
   public adviserForm!: FormGroup;
@@ -74,7 +74,6 @@ export class AdviserComponent implements OnInit,  AfterViewChecked {
     }
     if (this.step == 5) {
       this.formService.sendFormAdviser(this.adviserForm.value);
-      return;
     }
     this.status = true;
     this.step++;
