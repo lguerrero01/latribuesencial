@@ -89,7 +89,7 @@ class Lead
             'crm.lead.add',
             [
                 'fields' => [
-                    'TITLE' => $this->name, // nombre del contacto
+                    'UF_CRM_1633961166042' . 'TITLE' => $this->name, // nombre del contacto
                     'HAS_PHONE' => 'Y', // indica si el campo phone esta activo
                     'HAS_EMAIL' => 'Y', // indica si el campo email esta activo
                     'PHONE' => [[ // 
