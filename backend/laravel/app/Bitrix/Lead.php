@@ -84,8 +84,8 @@ class Lead
     }
 
     public function Add()
-    {
-        $apellido = explode(' ',$this->name);
+     {
+    //     $apellido = explode(' ',$this->name);
         $result = Crest::call(
             'crm.lead.add',
             [
