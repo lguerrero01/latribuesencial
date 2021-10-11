@@ -116,7 +116,7 @@ p strong {
 
   .about-us {
     background-size: cover;
-    background-position: center;
+    background-position: 41%;
   }
 
   .text-white h2 {
@@ -146,7 +146,7 @@ p strong {
 @media(min-width:375px){
   .about-us{
     background-position-y: center;
-    background-position-x: 0px;
+    background-position-x: -95px;
   }
 }
 
@@ -161,6 +161,10 @@ p strong {
   }
   #button-start{
     margin-bottom: 20px;
+  }
+  .about-us{
+    background-position-y: center;
+    background-position-x: -63px;
   }
 }
 
