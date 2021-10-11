@@ -85,11 +85,13 @@ class Lead
 
     public function Add()
     {
+        $apellido = explode(' ',$this->name);
         $result = Crest::call(
             'crm.lead.add',
             [
                 'fields' => [
                     'UF_CRM_1633961166042' => $this->name, // nombre del contacto
+                    'UF_CRM_1633961275273' =>$this->apellido[1],
                     'TITLE' => $this->name,
                     'HAS_PHONE' => 'Y', // indica si el campo phone esta activo
                     'HAS_EMAIL' => 'Y', // indica si el campo email esta activo
